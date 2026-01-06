@@ -1,0 +1,2 @@
+﻿vessel_id;vessel_name;imo;vessel_type;vessel_class;dwt_mt;capacity_mt;loa_m;beam_m;draft_laden_m;draft_ballast_m;speed_laden_kn;speed_ballast_kn;consumption_laden_mt;consumption_ballast_mt;daily_hire_usd;owner;flag;built_year;ice_class;tank_coated;heating_capable
+DS_01;DYLAN (TC);9421336;Tanker MR2 ;MR2-CHEM;50000;38000;183;30;12;8;11;12;27;25;25350;WINDMASTERS;LIBERIA;2009;No;Yes;Yes

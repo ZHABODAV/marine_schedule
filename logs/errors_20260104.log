@@ -1,0 +1,1 @@
+2026-01-04 13:12:51 [ERROR] api_server_enhanced.<module>:171 - Failed to register missing endpoints: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers (api_missing_endpoints.py, line 75)

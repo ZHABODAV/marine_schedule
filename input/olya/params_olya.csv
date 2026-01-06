@@ -1,0 +1,13 @@
+# Параметры системы Olya;
+parameter;value
+speed_barge;10
+speed_vessel;12
+load_rate_bko;2500
+load_rate_oya;1500
+discharge_rate_oya;4000
+discharge_rate_iran;1800
+storage_capacity;10000
+demurrage_barge;8000
+demurrage_vessel;12000
+ideal_buffer;10000
+port_turnaround;15

@@ -1,0 +1,195 @@
+2025-12-26 00:37:49 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 00:37:49 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 00:37:49 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 00:37:50 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 00:37:50 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 00:37:50 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 00:38:12 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:38:12.827159
+2025-12-26 00:38:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:38:14 [WARNING] api_extensions._load_berths_from_csv:564 - Berths CSV not found: C:\Users\Asus\Documents\project\input\Berths.csv
+2025-12-26 00:38:14 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 00:38:17 [INFO] api_extensions.get_bunker_data:981 - Returning bunker data for 5 ports
+2025-12-26 00:38:18 [WARNING] api_extensions.load_weather_warnings:434 - Failed to load weather warnings from C:\Users\Asus\Documents\project\input\WeatherWarnings.csv: [Errno 2] No such file or directory: 'C:\\Users\\Asus\\Documents\\project\\input\\WeatherWarnings.csv'
+2025-12-26 00:38:19 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:38:21 [INFO] api_extensions.handle_scenarios:1205 - Returning 0 scenarios
+2025-12-26 00:38:21 [INFO] api_extensions.handle_voyage_templates:1316 - Voyage Templates API called: GET
+2025-12-26 00:38:21 [WARNING] api_extensions._load_routes_as_templates:676 - Routes CSV not found: C:\Users\Asus\Documents\project\input\Routes.csv
+2025-12-26 00:38:27 [WARNING] api_extensions._load_berths_from_csv:564 - Berths CSV not found: C:\Users\Asus\Documents\project\input\Berths.csv
+2025-12-26 00:38:27 [WARNING] api_extensions._compute_capacity:614 - Could not load rail cargo data: [Errno 2] No such file or directory: 'C:\\Users\\Asus\\Documents\\project\\input\\rail_cargo.csv', using synthetic demand
+2025-12-26 00:38:37 [INFO] api_extensions.handle_voyage_templates:1316 - Voyage Templates API called: GET
+2025-12-26 00:38:37 [WARNING] api_extensions._load_routes_as_templates:676 - Routes CSV not found: C:\Users\Asus\Documents\project\input\Routes.csv
+2025-12-26 00:38:42 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-26 00:38:42 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:39:13 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:39:13.204593
+2025-12-26 00:39:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:39:19 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:39:43 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-26 00:39:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:40:13 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:40:13.632195
+2025-12-26 00:40:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:40:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:40:43 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-26 00:40:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:41:13 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:41:13.940561
+2025-12-26 00:41:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:41:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:42:11 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (57s old)
+2025-12-26 00:42:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:42:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:43:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:43:11.933702
+2025-12-26 00:43:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:43:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:44:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:44:11.935518
+2025-12-26 00:44:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:44:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:45:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:45:11.940005
+2025-12-26 00:45:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:46:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:46:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:46:11.943617
+2025-12-26 00:46:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:47:11 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-26 00:47:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:47:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:48:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:48:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:48:11.936161
+2025-12-26 00:48:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:49:06 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (54s old)
+2025-12-26 00:49:06 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:49:06 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:49:12 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:49:12.885968
+2025-12-26 00:49:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:49:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:49:42 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-26 00:49:42 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:50:13 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:50:13.203263
+2025-12-26 00:50:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:50:19 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:50:43 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-26 00:50:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:51:10 [INFO] api_extensions.handle_voyage_templates:1316 - Voyage Templates API called: GET
+2025-12-26 00:51:10 [WARNING] api_extensions._load_routes_as_templates:676 - Routes CSV not found: C:\Users\Asus\Documents\project\input\Routes.csv
+2025-12-26 00:51:12 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-26 00:51:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:51:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:51:43 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:51:43.627008
+2025-12-26 00:51:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:52:13 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-26 00:52:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:52:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:52:43 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:52:43.941636
+2025-12-26 00:52:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:54:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:54:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:54:11.941687
+2025-12-26 00:54:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:55:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:55:11 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-26 00:55:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:56:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:56:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:56:11.930797
+2025-12-26 00:56:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:57:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:57:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:57:11.940323
+2025-12-26 00:57:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:58:11 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-26 00:58:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 00:58:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:59:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 00:59:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T21:59:11.945072
+2025-12-26 00:59:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 01:00:11 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-26 01:00:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 01:00:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 01:01:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 01:01:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T22:01:11.928364
+2025-12-26 01:01:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 01:02:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 01:02:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T22:02:11.943434
+2025-12-26 01:02:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 01:03:11 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 01:03:11 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T22:03:11.944249
+2025-12-26 01:03:11 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 01:16:52 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 01:16:52 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 01:16:52 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 01:17:03 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 01:17:03 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 01:17:03 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 01:21:22 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 01:21:22 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 01:21:22 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 01:42:21 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 01:42:21 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 01:42:21 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 01:53:06 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 01:53:06 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 01:53:06 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 01:57:15 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 01:57:15 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 01:57:15 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:02:53 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:02:53 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:02:53 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:02:53 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:02:53 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:02:53 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:04:45 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:04:45 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:04:45 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:04:45 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:04:45 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:04:45 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:04:55 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 02:04:56 [INFO] api_extensions.handle_scenarios:1205 - Returning 0 scenarios
+2025-12-26 02:05:55 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 02:09:07 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:09:07 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:09:07 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:09:08 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:09:08 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:09:08 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:09:08 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T23:09:08.671079
+2025-12-26 02:09:08 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:09:08 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-26 02:09:08 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:13:12 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T23:13:12.601366
+2025-12-26 02:13:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:13:16 [WARNING] api_extensions._load_berths_from_csv:564 - Berths CSV not found: C:\Users\Asus\Documents\project\input\Berths.csv
+2025-12-26 02:13:16 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:13:18 [WARNING] api_extensions.load_weather_warnings:434 - Failed to load weather warnings from C:\Users\Asus\Documents\project\input\WeatherWarnings.csv: [Errno 2] No such file or directory: 'C:\\Users\\Asus\\Documents\\project\\input\\WeatherWarnings.csv'
+2025-12-26 02:13:18 [INFO] api_extensions.get_bunker_data:981 - Returning bunker data for 5 ports
+2025-12-26 02:13:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 02:13:22 [INFO] api_extensions.handle_scenarios:1205 - Returning 0 scenarios
+2025-12-26 02:13:22 [INFO] api_extensions.handle_voyage_templates:1316 - Voyage Templates API called: GET
+2025-12-26 02:13:22 [WARNING] api_extensions._load_routes_as_templates:676 - Routes CSV not found: C:\Users\Asus\Documents\project\input\Routes.csv
+2025-12-26 02:13:24 [WARNING] api_extensions._load_berths_from_csv:564 - Berths CSV not found: C:\Users\Asus\Documents\project\input\Berths.csv
+2025-12-26 02:13:24 [WARNING] api_extensions._compute_capacity:614 - Could not load rail cargo data: [Errno 2] No such file or directory: 'C:\\Users\\Asus\\Documents\\project\\input\\rail_cargo.csv', using synthetic demand
+2025-12-26 02:13:42 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-26 02:13:42 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:14:12 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T23:14:12.630252
+2025-12-26 02:14:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:14:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 02:14:42 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-26 02:14:42 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:15:12 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-25T23:15:12.935832
+2025-12-26 02:15:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:15:20 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV
+2025-12-26 02:15:42 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-26 02:15:42 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:16:12 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-26 02:16:12 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-26 02:17:56 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:17:56 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:17:56 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 02:21:30 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 02:21:30 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 02:21:30 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 07:59:33 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 07:59:33 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 07:59:33 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 07:59:35 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 07:59:35 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 07:59:35 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 07:59:38 [INFO] api_extensions.initialize_constraints_storage:1678 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-26 07:59:38 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-26 07:59:38 [INFO] api_extensions.register_ui_module_endpoints:1658 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-26 07:59:38 [INFO] api_extensions.get_vessel_tracking:1171 - Loaded 1 vessel positions from CSV

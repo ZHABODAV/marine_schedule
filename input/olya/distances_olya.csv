@@ -1,0 +1,8 @@
+# Расстояния (морские мили)
+# BKO → OYA: речное расстояние (~1200 км = ~650 nm)
+# OYA → IRN: каспийское море (~750 км = ~400 nm)
+from_port;to_port;distance_nm
+BKO;OYA;650
+OYA;IRN;400
+IRN;OYA;400
+OYA;BKO;650

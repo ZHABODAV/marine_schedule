@@ -1,0 +1,55 @@
+2025-12-18 16:41:57 [INFO] test.<module>:1 - Test message
+2025-12-18 16:41:57 [ERROR] test.<module>:1 - Test error
+2025-12-18 16:42:44 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 16:42:44 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 16:42:44 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 16:42:44 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:11:45 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:11:45 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:11:45 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:11:45 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:11:49 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:11:49 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:11:49 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:11:49 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:12:30 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:12:30 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:12:30 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:12:30 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:12:32 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:12:32 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:12:32 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:12:32 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:13:19 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:13:19 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:13:19 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:13:19 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:13:30 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:13:30 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:13:30 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:13:30 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:21:22 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:21:22 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:21:22 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:21:22 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:21:37 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:21:37 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:21:37 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:21:37 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:23:34 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:23:34 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:23:34 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:23:34 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:25:26 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:25:26 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:25:26 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:25:26 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:25:35 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:25:35 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:25:35 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:25:35 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:25:57 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...
+2025-12-18 17:25:57 [INFO] __main__.<module>:54 - Flask version: 3.1.2
+2025-12-18 17:25:57 [INFO] __main__.<module>:55 - Pandas version: 2.3.3
+2025-12-18 17:25:57 [DEBUG] __main__.<module>:56 - Initialized data_store with 8 keys
+2025-12-18 17:28:04 [INFO] __main__.<module>:53 - Maritime Voyage Planner initializing...

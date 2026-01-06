@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Client & Form Validation Example</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        input.has-error, select.has-error {
+            border-color: #d32f2f;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+            margin-left: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box ul {
+            margin-left: 1.5rem;
+            color: #555;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .status.connected {
+            background: #c8e6c9;
+            color: #388e3c;
+        }
+
+        .status.disconnected {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .demo-buttons button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .demo-buttons button:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> API Client & Form Validation Demo</h1>
+
+        <!-- API Status Card -->
+        <div class="card">
+            <h2>
+                API Status 
+                <span id="api-status" class="status disconnected">Checking...</span>
+            </h2>
+            <div class="info-box">
+                <h3>Test the API Connection</h3>
+                <p>Click the button below to test the API health check.</p>
+            </div>
+            <button class="btn btn-primary" onclick="testAPIConnection()">Test API Connection</button>
+            <button class="btn btn-secondary" onclick="testAuthentication()">Test Login</button>
+            <div id="api-result" style="margin-top: 1rem;"></div>
+        </div>
+
+        <!-- Vessel Form Card -->
+        <div class="card">
+            <h2>Create Vessel (with Validation)</h2>
+            
+            <div class="info-box">
+                <h3>Validation Rules:</h3>
+                <ul>
+                    <li>Vessel ID: Required, 1-50 chars, alphanumeric</li>
+                    <li>Name: Required, 1-100 chars</li>
+                    <li>Class: Required, must be valid vessel class</li>
+                    <li>DWT: Required, 1,000 - 500,000 MT</li>
+                    <li>Speed: Required, 1 - 30 knots</li>
+                </ul>
+            </div>
+
+            <div id="vessel-errors"></div>
+
+            <form id="vessel-form">
+                <div class="form-group">
+                    <label for="vessel-id">Vessel ID *</label>
+                    <input type="text" id="vessel-id" name="id" placeholder="e.g., V001">
+                </div>
+
+                <div class="form-group">
+                    <label for="vessel-name">Vessel Name *</label>
+                    <input type="text" id="vessel-name" name="name" placeholder="e.g., Atlantic Star">
+                </div>
+
+                <div class="form-group">
+                    <label for="vessel-class">Vessel Class *</label>
+                    <select id="vessel-class" name="class">
+                        <option value="">Select class...</option>
+                        <option value="Handysize">Handysize</option>
+                        <option value="Handymax">Handymax</option>
+                        <option value="Panamax">Panamax</option>
+                        <option value="Suez max">Suez max</option>
+                        <option value="Capesize">Capesize</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vessel-dwt">DWT (MT) *</label>
+                    <input type="number" id="vessel-dwt" name="dwt" placeholder="e.g., 35000">
+                </div>
+
+                <div class="form-group">
+                    <label for="vessel-speed">Speed (knots) *</label>
+                    <input type="number" id="vessel-speed" name="speed" step="0.1" placeholder="e.g., 14.5">
+                </div>
+
+                <div class="form-group">
+                    <label for="vessel-status">Status</label>
+                    <select id="vessel-status" name="status">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Vessel</button>
+                <button type="button" class="btn btn-secondary" onclick="vesselFormValidator.reset()">Reset</button>
+            </form>
+
+            <div class="demo-buttons">
+                <h3 style="width: 100%; margin-bottom: 0.5rem;">Quick Fill Examples:</h3>
+                <button onclick="fillValidData()">Fill Valid Data</button>
+                <button onclick="fillInvalidData()">Fill Invalid Data</button>
+                <button onclick="fillPartialData()">Fill Partial Data</button>
+            </div>
+        </div>
+
+        <!-- Cargo Form Card -->
+        <div class="card">
+            <h2>Create Cargo (with Validation)</h2>
+
+            <div id="cargo-errors"></div>
+
+            <form id="cargo-form">
+                <div class="form-group">
+                    <label for="cargo-id">Cargo ID *</label>
+                    <input type="text" id="cargo-id" name="id" placeholder="e.g., C001">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo-commodity">Commodity *</label>
+                    <input type="text" id="cargo-commodity" name="commodity" placeholder="e.g., Grain">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo-quantity">Quantity (MT) *</label>
+                    <input type="number" id="cargo-quantity" name="quantity" placeholder="e.g., 50000">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo-load-port">Load Port *</label>
+                    <input type="text" id="cargo-load-port" name="loadPort" placeholder="e.g., Houston">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo-disch-port">Discharge Port *</label>
+                    <input type="text" id="cargo-disch-port" name="dischPort" placeholder="e.g., Rotterdam">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo-laycan-start">Laycan Start *</label>
+                    <input type="date" id="cargo-laycan-start" name="laycanStart">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo-laycan-end">Laycan End *</label>
+                    <input type="date" id="cargo-laycan-end" name="laycanEnd">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Cargo</button>
+                <button type="button" class="btn btn-secondary" onclick="cargoFormValidator.reset()">Reset</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Load Scripts -->
+    <script src="../js/api-validation.js"></script>
+    <script src="../js/services/api-client.js"></script>
+    <script src="../js/ui/validation-display.js"></script>
+    <script src="../js/ui/form-validation.js"></script>
+
+    <script>
+        // Test API connection
+        async function testAPIConnection() {
+            const resultDiv = document.getElementById('api-result');
+            const statusSpan = document.getElementById('api-status');
+            
+            resultDiv.textContent = 'Testing connection...';
+            
+            try {
+                const result = await apiClient.healthCheck();
+                
+                if (result.success) {
+                    statusSpan.textContent = 'Connected';
+                    statusSpan.className = 'status connected';
+                    resultDiv.innerHTML = `<div style="color: green;"> API is healthy: ${JSON.stringify(result.data, null, 2)}</div>`;
+                } else {
+                    statusSpan.textContent = 'Disconnected';
+                    statusSpan.className = 'status disconnected';
+                    resultDiv.innerHTML = `<div style="color: red;"> API is not accessible: ${result.error}</div>`;
+                }
+            } catch (error) {
+                statusSpan.textContent = 'Error';
+                statusSpan.className = 'status disconnected';
+                resultDiv.innerHTML = `<div style="color: red;"> Error: ${error.message}</div>`;
+            }
+        }
+
+        // Test authentication
+        async function testAuthentication() {
+            const resultDiv = document.getElementById('api-result');
+            resultDiv.textContent = 'Testing authentication...';
+            
+            try {
+                const result = await apiClient.login('admin', 'admin123');
+                
+                if (result.success) {
+                    resultDiv.innerHTML = `<div style="color: green;"> Logged in as: ${result.data.user.username}</div>`;
+                    ValidationDisplay.showToast('Logged in successfully!', { type: 'success' });
+                } else {
+                    resultDiv.innerHTML = `<div style="color: red;"> Login failed: ${result.error}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div style="color: red;"> Error: ${error.message}</div>`;
+            }
+        }
+
+        // Initialize vessel form validation
+        const vesselFormValidator = new FormValidator('#vessel-form', {
+            entityType: 'vessel',
+            errorContainer: '#vessel-errors',
+            validateOnBlur: true,
+            validateOnInput: true,
+            showFieldErrors: true,
+            showSummaryErrors: true,
+            
+            onSubmit: async (data) => {
+                console.log('Submitting vessel data:', data);
+                
+                // Simulate API call (since actual API might not be running)
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve({
+                            success: true,
+                            data: { vessel_id: data.id },
+                            message: `Vessel ${data.name} created successfully!`
+                        });
+                    }, 1000);
+                });
+                
+                // Uncomment to use real API:
+                // return await apiClient.createVessel(data);
+            },
+            
+            onSuccess: (result) => {
+                console.log('Vessel created successfully:', result);
+                ValidationDisplay.showToast(result.message || 'Vessel created!', {
+                    type: 'success',
+                    duration: 3000
+                });
+            },
+            
+            onError: (result) => {
+                console.error('Failed to create vessel:', result);
+            }
+        });
+
+        // Initialize cargo form validation
+        const cargoFormValidator = new FormValidator('#cargo-form', {
+            entityType: 'cargo',
+            errorContainer: '#cargo-errors',
+            validateOnBlur: true,
+            showFieldErrors: true,
+            showSummaryErrors: true,
+            
+            onValidate: (data, result) => {
+                const errors = [...result.errors];
+                
+                // Custom validation: check laycan dates
+                if (data.laycanStart && data.laycanEnd) {
+                    const start = new Date(data.laycanStart);
+                    const end = new Date(data.laycanEnd);
+                    
+                    if (start >= end) {
+                        errors.push('Laycan end date must be after start date');
+                    }
+                }
+                
+                return errors.length > 0 ? { valid: false, errors } : result;
+            },
+            
+            onSubmit: async (data) => {
+                console.log('Submitting cargo data:', data);
+                
+                // Simulate API call
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve({
+                            success: true,
+                            data: { cargo_id: data.id },
+                            message: `Cargo ${data.commodity} created successfully!`
+                        });
+                    }, 1000);
+                });
+                
+                // Uncomment to use real API:
+                // return await apiClient.createCargo(data);
+            },
+            
+            onSuccess: (result) => {
+                ValidationDisplay.showToast(result.message || 'Cargo created!', {
+                    type: 'success'
+                });
+            }
+        });
+
+        // Demo data fill functions
+        function fillValidData() {
+            document.getElementById('vessel-id').value = 'V001';
+            document.getElementById('vessel-name').value = 'Atlantic Star';
+            document.getElementById('vessel-class').value = 'Handysize';
+            document.getElementById('vessel-dwt').value = '35000';
+            document.getElementById('vessel-speed').value = '14.5';
+            document.getElementById('vessel-status').value = 'Active';
+        }
+
+        function fillInvalidData() {
+            document.getElementById('vessel-id').value = ''; // Missing
+            document.getElementById('vessel-name').value = 'X'; // Too short? Actually valid
+            document.getElementById('vessel-class').value = 'InvalidClass'; // Invalid enum
+            document.getElementById('vessel-dwt').value = '500'; // Too small
+            document.getElementById('vessel-speed').value = '50'; // Too fast
+        }
+
+        function fillPartialData() {
+            document.getElementById('vessel-id').value = 'V002';
+            document.getElementById('vessel-name').value = 'Pacific Dawn';
+            // Leave other fields empty to trigger validation errors
+        }
+
+        // Check API status on load
+        window.addEventListener('load', () => {
+            testAPIConnection();
+        });
+    </script>
+</body>
+</html>

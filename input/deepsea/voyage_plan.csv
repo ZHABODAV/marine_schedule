@@ -1,0 +1,7 @@
+voyage_id;vessel_id;route_id;cargo_type;qty_mt;load_port;disch_port;laycan_start;laycan_end;charterer;freight_rate_mt;remarks
+VOY_001;DS_01;RT_01;Crude Oil;45000;PRT_01;PRT_02;2025-01-05;2025-01-10;ExxonMobil;35.50;USGC to Rotterdam
+VOY_002;DS_02;RT_02;Fuel Oil;70000;PRT_02;PRT_03;2025-01-08;2025-01-15;Shell;42.00;Europe to Singapore via Suez
+VOY_003;DS_03;RT_04;Grain;52000;PRT_07;PRT_02;2025-01-10;2025-01-18;Cargill;28.00;Brazil to Rotterdam
+VOY_004;DS_04;RT_03;CPO;35000;PRT_03;PRT_08;2025-01-12;2025-01-20;Wilmar;38.50;Singapore to Shanghai
+VOY_005;DS_05;RT_04;Iron Ore;70000;PRT_07;PRT_02;2025-01-15;2025-01-22;Vale;22.00;Brazil to Europe
+VOY_006;DS_06;RT_02;Crude Oil;100000;PRT_02;PRT_03;2025-01-20;2025-01-28;BP;45.00;Rotterdam to Singapore

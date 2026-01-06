@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Allocation Calculator - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .cost-group {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        input[type="number"].error {
+            border-color: #dc2626;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .total-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .total-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .total-value {
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .info-box p {
+            color: #1e40af;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .breakdown {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .breakdown-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .breakdown-label {
+            color: #6b7280;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .breakdown-value {
+            color: #1f2937;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .total-value {
+                font-size: 36px;
+            }
+
+            .breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Cost Allocation Calculator</h1>
+        <p class="subtitle">Test the cost calculation feature for cargo commitments</p>
+
+        <div class="cost-group">
+            <div class="form-group">
+                <label for="operational">Operational Cost ($)</label>
+                <input 
+                    type="number" 
+                    id="operational" 
+                    min="0" 
+                    step="0.01" 
+                    value="0"
+                    placeholder="0.00"
+                >
+                <span class="error-message" id="operational-error">Operational cost cannot be negative</span>
+            </div>
+
+            <div class="form-group">
+                <label for="overhead">Overhead Cost ($)</label>
+                <input 
+                    type="number" 
+                    id="overhead" 
+                    min="0" 
+                    step="0.01" 
+                    value="0"
+                    placeholder="0.00"
+                >
+                <span class="error-message" id="overhead-error">Overhead cost cannot be negative</span>
+            </div>
+
+            <div class="form-group">
+                <label for="other">Other Cost ($)</label>
+                <input 
+                    type="number" 
+                    id="other" 
+                    min="0" 
+                    step="0.01" 
+                    value="0"
+                    placeholder="0.00"
+                >
+                <span class="error-message" id="other-error">Other cost cannot be negative</span>
+            </div>
+        </div>
+
+        <div class="total-section">
+            <div class="total-label">Total Cost</div>
+            <div class="total-value" id="total">$0.00</div>
+
+            <div class="breakdown">
+                <div class="breakdown-item">
+                    <div class="breakdown-label">Operational</div>
+                    <div class="breakdown-value" id="operational-display">$0</div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-label">Overhead</div>
+                    <div class="breakdown-value" id="overhead-display">$0</div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-label">Other</div>
+                    <div class="breakdown-value" id="other-display">$0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <p>
+                <strong> Test Results:</strong> This calculator demonstrates real-time cost calculation 
+                with validation. Try entering different values to see how the total updates automatically. 
+                Negative values are not allowed and will trigger validation errors.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Get input elements
+        const operationalInput = document.getElementById('operational');
+        const overheadInput = document.getElementById('overhead');
+        const otherInput = document.getElementById('other');
+
+        // Get display elements
+        const totalDisplay = document.getElementById('total');
+        const operationalDisplay = document.getElementById('operational-display');
+        const overheadDisplay = document.getElementById('overhead-display');
+        const otherDisplay = document.getElementById('other-display');
+
+        // Get error elements
+        const operationalError = document.getElementById('operational-error');
+        const overheadError = document.getElementById('overhead-error');
+        const otherError = document.getElementById('other-error');
+
+        // Format currency
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(value);
+        }
+
+        // Validate input
+        function validateInput(input, errorElement) {
+            const value = parseFloat(input.value) || 0;
+            
+            if (value < 0) {
+                input.classList.add('error');
+                errorElement.classList.add('show');
+                return false;
+            } else {
+                input.classList.remove('error');
+                errorElement.classList.remove('show');
+                return true;
+            }
+        }
+
+        // Calculate total
+        function calculateTotal() {
+            // Validate all inputs
+            const operationalValid = validateInput(operationalInput, operationalError);
+            const overheadValid = validateInput(overheadInput, overheadError);
+            const otherValid = validateInput(otherInput, otherError);
+
+            // Get values
+            const operational = Math.max(0, parseFloat(operationalInput.value) || 0);
+            const overhead = Math.max(0, parseFloat(overheadInput.value) || 0);
+            const other = Math.max(0, parseFloat(otherInput.value) || 0);
+
+            // Calculate total
+            const total = operational + overhead + other;
+
+            // Update displays
+            operationalDisplay.textContent = formatCurrency(operational);
+            overheadDisplay.textContent = formatCurrency(overhead);
+            otherDisplay.textContent = formatCurrency(other);
+            totalDisplay.textContent = formatCurrency(total);
+
+            // Log for testing
+            console.log('Cost Calculation:', {
+                operational,
+                overhead,
+                other,
+                total,
+                allValid: operationalValid && overheadValid && otherValid
+            });
+        }
+
+        // Add event listeners
+        operationalInput.addEventListener('input', calculateTotal);
+        overheadInput.addEventListener('input', calculateTotal);
+        otherInput.addEventListener('input', calculateTotal);
+
+        // Test data presets
+        console.log('Cost Allocation Calculator loaded');
+        console.log('Try these test scenarios:');
+        console.log('1. Operational: 1000, Overhead: 500, Other: 250 = Total: 1750');
+        console.log('2. Operational: 15000, Overhead: 5000, Other: 2000 = Total: 22000');
+        console.log('3. Test negative values to see validation');
+
+        // Auto-run test on page load
+        setTimeout(() => {
+            operationalInput.value = 1000;
+            overheadInput.value = 500;
+            otherInput.value = 250;
+            calculateTotal();
+            console.log(' Initial test completed successfully');
+        }, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+2025-12-29 10:33:56 [INFO] api_extensions.initialize_constraints_storage:1686 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 10:33:56 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-29 10:33:56 [INFO] api_extensions.register_ui_module_endpoints:1666 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 10:33:56 [INFO] api_server_enhanced.<module>:143 - UI Module API endpoints registered successfully
+2025-12-29 12:42:49 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 12:42:49 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 12:42:49 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 12:42:51 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 12:42:51 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 12:42:51 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 12:44:52 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 12:44:52 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 12:44:52 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 13:08:20 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 13:08:20 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 13:08:20 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 19:56:46 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 19:56:46 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 19:56:46 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 19:56:53 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 19:56:53 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 19:56:53 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 20:13:17 [INFO] api_extensions.initialize_constraints_storage:1714 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 20:13:17 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 20:13:17 [INFO] api_extensions.register_ui_module_endpoints:1694 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 20:47:02 [INFO] api_extensions.initialize_constraints_storage:1819 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 20:47:02 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 20:47:02 [INFO] api_extensions.register_ui_module_endpoints:1799 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 20:47:12 [INFO] api_extensions.initialize_constraints_storage:1819 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 20:47:12 [INFO] api_extensions.register_ui_module_endpoints:765 - RBAC Manager initialized
+2025-12-29 20:47:12 [INFO] api_extensions.register_ui_module_endpoints:1799 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 20:48:07 [INFO] api_extensions.initialize_constraints_storage:1933 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 20:48:07 [INFO] api_extensions.register_ui_module_endpoints:766 - RBAC Manager initialized
+2025-12-29 20:48:07 [INFO] api_extensions.register_ui_module_endpoints:1913 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 21:03:50 [INFO] api_extensions.initialize_constraints_storage:1933 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 21:03:50 [INFO] api_extensions.register_ui_module_endpoints:766 - RBAC Manager initialized
+2025-12-29 21:03:50 [INFO] api_extensions.register_ui_module_endpoints:1913 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-29 22:36:54 [INFO] api_extensions.initialize_constraints_storage:1933 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-29 22:36:54 [INFO] api_extensions.register_ui_module_endpoints:766 - RBAC Manager initialized
+2025-12-29 22:36:54 [INFO] api_extensions.register_ui_module_endpoints:1913 - [OK] Security-hardened UI Module API endpoints registered successfully

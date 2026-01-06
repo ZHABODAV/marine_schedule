@@ -1,0 +1,445 @@
+voyage_id;vessel_id;seq;operation;port;cargo;qty_mt;start_date;remarks
+VOY_Y2026_001_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-04-01;Barge BKO to OYA
+VOY_Y2026_001_B;BR01;2;sea;OYA;;;2026-04-01;River transit
+VOY_Y2026_001_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-04-04;Discharge at Olya
+VOY_Y2026_001_B;BR01;4;sea;BKO;;;2026-04-06;Return ballast
+VOY_Y2026_002_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-04-15;Barge BKO to OYA
+VOY_Y2026_002_B;BR01;2;sea;OYA;;;2026-04-15;River transit
+VOY_Y2026_002_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-04-18;Discharge at Olya
+VOY_Y2026_002_B;BR01;4;sea;BKO;;;2026-04-20;Return ballast
+VOY_Y2026_003_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-04-29;Barge BKO to OYA
+VOY_Y2026_003_B;BR01;2;sea;OYA;;;2026-04-29;River transit
+VOY_Y2026_003_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-05-02;Discharge at Olya
+VOY_Y2026_003_B;BR01;4;sea;BKO;;;2026-05-04;Return ballast
+VOY_Y2026_004_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-05-13;Barge BKO to OYA
+VOY_Y2026_004_B;BR01;2;sea;OYA;;;2026-05-13;River transit
+VOY_Y2026_004_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-05-16;Discharge at Olya
+VOY_Y2026_004_B;BR01;4;sea;BKO;;;2026-05-18;Return ballast
+VOY_Y2026_005_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-05-27;Barge BKO to OYA
+VOY_Y2026_005_B;BR01;2;sea;OYA;;;2026-05-27;River transit
+VOY_Y2026_005_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-05-30;Discharge at Olya
+VOY_Y2026_005_B;BR01;4;sea;BKO;;;2026-06-01;Return ballast
+VOY_Y2026_006_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-06-10;Barge BKO to OYA
+VOY_Y2026_006_B;BR01;2;sea;OYA;;;2026-06-10;River transit
+VOY_Y2026_006_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-06-13;Discharge at Olya
+VOY_Y2026_006_B;BR01;4;sea;BKO;;;2026-06-15;Return ballast
+VOY_Y2026_007_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-06-24;Barge BKO to OYA
+VOY_Y2026_007_B;BR01;2;sea;OYA;;;2026-06-24;River transit
+VOY_Y2026_007_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-06-27;Discharge at Olya
+VOY_Y2026_007_B;BR01;4;sea;BKO;;;2026-06-29;Return ballast
+VOY_Y2026_008_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-07-08;Barge BKO to OYA
+VOY_Y2026_008_B;BR01;2;sea;OYA;;;2026-07-08;River transit
+VOY_Y2026_008_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-07-11;Discharge at Olya
+VOY_Y2026_008_B;BR01;4;sea;BKO;;;2026-07-13;Return ballast
+VOY_Y2026_009_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-07-22;Barge BKO to OYA
+VOY_Y2026_009_B;BR01;2;sea;OYA;;;2026-07-22;River transit
+VOY_Y2026_009_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-07-25;Discharge at Olya
+VOY_Y2026_009_B;BR01;4;sea;BKO;;;2026-07-27;Return ballast
+VOY_Y2026_010_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-08-05;Barge BKO to OYA
+VOY_Y2026_010_B;BR01;2;sea;OYA;;;2026-08-05;River transit
+VOY_Y2026_010_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-08-08;Discharge at Olya
+VOY_Y2026_010_B;BR01;4;sea;BKO;;;2026-08-10;Return ballast
+VOY_Y2026_011_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-08-19;Barge BKO to OYA
+VOY_Y2026_011_B;BR01;2;sea;OYA;;;2026-08-19;River transit
+VOY_Y2026_011_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-08-22;Discharge at Olya
+VOY_Y2026_011_B;BR01;4;sea;BKO;;;2026-08-24;Return ballast
+VOY_Y2026_012_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-09-02;Barge BKO to OYA
+VOY_Y2026_012_B;BR01;2;sea;OYA;;;2026-09-02;River transit
+VOY_Y2026_012_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-09-05;Discharge at Olya
+VOY_Y2026_012_B;BR01;4;sea;BKO;;;2026-09-07;Return ballast
+VOY_Y2026_013_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-09-16;Barge BKO to OYA
+VOY_Y2026_013_B;BR01;2;sea;OYA;;;2026-09-16;River transit
+VOY_Y2026_013_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-09-19;Discharge at Olya
+VOY_Y2026_013_B;BR01;4;sea;BKO;;;2026-09-21;Return ballast
+VOY_Y2026_014_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-09-30;Barge BKO to OYA
+VOY_Y2026_014_B;BR01;2;sea;OYA;;;2026-09-30;River transit
+VOY_Y2026_014_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-10-03;Discharge at Olya
+VOY_Y2026_014_B;BR01;4;sea;BKO;;;2026-10-05;Return ballast
+VOY_Y2026_015_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-10-14;Barge BKO to OYA
+VOY_Y2026_015_B;BR01;2;sea;OYA;;;2026-10-14;River transit
+VOY_Y2026_015_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-10-17;Discharge at Olya
+VOY_Y2026_015_B;BR01;4;sea;BKO;;;2026-10-19;Return ballast
+VOY_Y2026_016_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-10-28;Barge BKO to OYA
+VOY_Y2026_016_B;BR01;2;sea;OYA;;;2026-10-28;River transit
+VOY_Y2026_016_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-10-31;Discharge at Olya
+VOY_Y2026_016_B;BR01;4;sea;BKO;;;2026-11-02;Return ballast
+VOY_Y2026_017_B;BR01;1;loading;BKO;Fuel Oil;5000.0;2026-11-11;Barge BKO to OYA
+VOY_Y2026_017_B;BR01;2;sea;OYA;;;2026-11-11;River transit
+VOY_Y2026_017_B;BR01;3;discharge;OYA;Fuel Oil;5000.0;2026-11-14;Discharge at Olya
+VOY_Y2026_017_B;BR01;4;sea;BKO;;;2026-11-16;Return ballast
+VOY_Y2026_018_B;BR02;1;loading;BKO;Diesel;5000.0;2026-04-16;Barge BKO to OYA
+VOY_Y2026_018_B;BR02;2;sea;OYA;;;2026-04-16;River transit
+VOY_Y2026_018_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-04-19;Discharge at Olya
+VOY_Y2026_018_B;BR02;4;sea;BKO;;;2026-04-21;Return ballast
+VOY_Y2026_019_B;BR02;1;loading;BKO;Diesel;5000.0;2026-04-30;Barge BKO to OYA
+VOY_Y2026_019_B;BR02;2;sea;OYA;;;2026-04-30;River transit
+VOY_Y2026_019_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-05-03;Discharge at Olya
+VOY_Y2026_019_B;BR02;4;sea;BKO;;;2026-05-05;Return ballast
+VOY_Y2026_020_B;BR02;1;loading;BKO;Diesel;5000.0;2026-05-14;Barge BKO to OYA
+VOY_Y2026_020_B;BR02;2;sea;OYA;;;2026-05-14;River transit
+VOY_Y2026_020_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-05-17;Discharge at Olya
+VOY_Y2026_020_B;BR02;4;sea;BKO;;;2026-05-19;Return ballast
+VOY_Y2026_021_B;BR02;1;loading;BKO;Diesel;5000.0;2026-05-28;Barge BKO to OYA
+VOY_Y2026_021_B;BR02;2;sea;OYA;;;2026-05-28;River transit
+VOY_Y2026_021_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-05-31;Discharge at Olya
+VOY_Y2026_021_B;BR02;4;sea;BKO;;;2026-06-02;Return ballast
+VOY_Y2026_022_B;BR02;1;loading;BKO;Diesel;5000.0;2026-06-11;Barge BKO to OYA
+VOY_Y2026_022_B;BR02;2;sea;OYA;;;2026-06-11;River transit
+VOY_Y2026_022_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-06-14;Discharge at Olya
+VOY_Y2026_022_B;BR02;4;sea;BKO;;;2026-06-16;Return ballast
+VOY_Y2026_023_B;BR02;1;loading;BKO;Diesel;5000.0;2026-06-25;Barge BKO to OYA
+VOY_Y2026_023_B;BR02;2;sea;OYA;;;2026-06-25;River transit
+VOY_Y2026_023_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-06-28;Discharge at Olya
+VOY_Y2026_023_B;BR02;4;sea;BKO;;;2026-06-30;Return ballast
+VOY_Y2026_024_B;BR02;1;loading;BKO;Diesel;5000.0;2026-07-09;Barge BKO to OYA
+VOY_Y2026_024_B;BR02;2;sea;OYA;;;2026-07-09;River transit
+VOY_Y2026_024_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-07-12;Discharge at Olya
+VOY_Y2026_024_B;BR02;4;sea;BKO;;;2026-07-14;Return ballast
+VOY_Y2026_025_B;BR02;1;loading;BKO;Diesel;5000.0;2026-07-23;Barge BKO to OYA
+VOY_Y2026_025_B;BR02;2;sea;OYA;;;2026-07-23;River transit
+VOY_Y2026_025_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-07-26;Discharge at Olya
+VOY_Y2026_025_B;BR02;4;sea;BKO;;;2026-07-28;Return ballast
+VOY_Y2026_026_B;BR02;1;loading;BKO;Diesel;5000.0;2026-08-06;Barge BKO to OYA
+VOY_Y2026_026_B;BR02;2;sea;OYA;;;2026-08-06;River transit
+VOY_Y2026_026_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-08-09;Discharge at Olya
+VOY_Y2026_026_B;BR02;4;sea;BKO;;;2026-08-11;Return ballast
+VOY_Y2026_027_B;BR02;1;loading;BKO;Diesel;5000.0;2026-08-20;Barge BKO to OYA
+VOY_Y2026_027_B;BR02;2;sea;OYA;;;2026-08-20;River transit
+VOY_Y2026_027_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-08-23;Discharge at Olya
+VOY_Y2026_027_B;BR02;4;sea;BKO;;;2026-08-25;Return ballast
+VOY_Y2026_028_B;BR02;1;loading;BKO;Diesel;5000.0;2026-09-03;Barge BKO to OYA
+VOY_Y2026_028_B;BR02;2;sea;OYA;;;2026-09-03;River transit
+VOY_Y2026_028_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-09-06;Discharge at Olya
+VOY_Y2026_028_B;BR02;4;sea;BKO;;;2026-09-08;Return ballast
+VOY_Y2026_029_B;BR02;1;loading;BKO;Diesel;5000.0;2026-09-17;Barge BKO to OYA
+VOY_Y2026_029_B;BR02;2;sea;OYA;;;2026-09-17;River transit
+VOY_Y2026_029_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-09-20;Discharge at Olya
+VOY_Y2026_029_B;BR02;4;sea;BKO;;;2026-09-22;Return ballast
+VOY_Y2026_030_B;BR02;1;loading;BKO;Diesel;5000.0;2026-10-01;Barge BKO to OYA
+VOY_Y2026_030_B;BR02;2;sea;OYA;;;2026-10-01;River transit
+VOY_Y2026_030_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-10-04;Discharge at Olya
+VOY_Y2026_030_B;BR02;4;sea;BKO;;;2026-10-06;Return ballast
+VOY_Y2026_031_B;BR02;1;loading;BKO;Diesel;5000.0;2026-10-15;Barge BKO to OYA
+VOY_Y2026_031_B;BR02;2;sea;OYA;;;2026-10-15;River transit
+VOY_Y2026_031_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-10-18;Discharge at Olya
+VOY_Y2026_031_B;BR02;4;sea;BKO;;;2026-10-20;Return ballast
+VOY_Y2026_032_B;BR02;1;loading;BKO;Diesel;5000.0;2026-10-29;Barge BKO to OYA
+VOY_Y2026_032_B;BR02;2;sea;OYA;;;2026-10-29;River transit
+VOY_Y2026_032_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-11-01;Discharge at Olya
+VOY_Y2026_032_B;BR02;4;sea;BKO;;;2026-11-03;Return ballast
+VOY_Y2026_033_B;BR02;1;loading;BKO;Diesel;5000.0;2026-11-12;Barge BKO to OYA
+VOY_Y2026_033_B;BR02;2;sea;OYA;;;2026-11-12;River transit
+VOY_Y2026_033_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-11-15;Discharge at Olya
+VOY_Y2026_033_B;BR02;4;sea;BKO;;;2026-11-17;Return ballast
+VOY_Y2026_034_B;BR02;1;loading;BKO;Diesel;5000.0;2026-11-26;Barge BKO to OYA
+VOY_Y2026_034_B;BR02;2;sea;OYA;;;2026-11-26;River transit
+VOY_Y2026_034_B;BR02;3;discharge;OYA;Diesel;5000.0;2026-11-29;Discharge at Olya
+VOY_Y2026_034_B;BR02;4;sea;BKO;;;2026-12-01;Return ballast
+VOY_Y2026_035_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-05-06;Barge BKO to OYA
+VOY_Y2026_035_B;BR03;2;sea;OYA;;;2026-05-06;River transit
+VOY_Y2026_035_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-05-09;Discharge at Olya
+VOY_Y2026_035_B;BR03;4;sea;BKO;;;2026-05-11;Return ballast
+VOY_Y2026_036_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-05-20;Barge BKO to OYA
+VOY_Y2026_036_B;BR03;2;sea;OYA;;;2026-05-20;River transit
+VOY_Y2026_036_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-05-23;Discharge at Olya
+VOY_Y2026_036_B;BR03;4;sea;BKO;;;2026-05-25;Return ballast
+VOY_Y2026_037_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-06-03;Barge BKO to OYA
+VOY_Y2026_037_B;BR03;2;sea;OYA;;;2026-06-03;River transit
+VOY_Y2026_037_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-06-06;Discharge at Olya
+VOY_Y2026_037_B;BR03;4;sea;BKO;;;2026-06-08;Return ballast
+VOY_Y2026_038_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-06-17;Barge BKO to OYA
+VOY_Y2026_038_B;BR03;2;sea;OYA;;;2026-06-17;River transit
+VOY_Y2026_038_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-06-20;Discharge at Olya
+VOY_Y2026_038_B;BR03;4;sea;BKO;;;2026-06-22;Return ballast
+VOY_Y2026_039_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-07-01;Barge BKO to OYA
+VOY_Y2026_039_B;BR03;2;sea;OYA;;;2026-07-01;River transit
+VOY_Y2026_039_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-07-04;Discharge at Olya
+VOY_Y2026_039_B;BR03;4;sea;BKO;;;2026-07-06;Return ballast
+VOY_Y2026_040_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-07-15;Barge BKO to OYA
+VOY_Y2026_040_B;BR03;2;sea;OYA;;;2026-07-15;River transit
+VOY_Y2026_040_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-07-18;Discharge at Olya
+VOY_Y2026_040_B;BR03;4;sea;BKO;;;2026-07-20;Return ballast
+VOY_Y2026_041_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-07-29;Barge BKO to OYA
+VOY_Y2026_041_B;BR03;2;sea;OYA;;;2026-07-29;River transit
+VOY_Y2026_041_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-08-01;Discharge at Olya
+VOY_Y2026_041_B;BR03;4;sea;BKO;;;2026-08-03;Return ballast
+VOY_Y2026_042_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-08-12;Barge BKO to OYA
+VOY_Y2026_042_B;BR03;2;sea;OYA;;;2026-08-12;River transit
+VOY_Y2026_042_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-08-15;Discharge at Olya
+VOY_Y2026_042_B;BR03;4;sea;BKO;;;2026-08-17;Return ballast
+VOY_Y2026_043_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-08-26;Barge BKO to OYA
+VOY_Y2026_043_B;BR03;2;sea;OYA;;;2026-08-26;River transit
+VOY_Y2026_043_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-08-29;Discharge at Olya
+VOY_Y2026_043_B;BR03;4;sea;BKO;;;2026-08-31;Return ballast
+VOY_Y2026_044_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-09-09;Barge BKO to OYA
+VOY_Y2026_044_B;BR03;2;sea;OYA;;;2026-09-09;River transit
+VOY_Y2026_044_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-09-12;Discharge at Olya
+VOY_Y2026_044_B;BR03;4;sea;BKO;;;2026-09-14;Return ballast
+VOY_Y2026_045_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-09-23;Barge BKO to OYA
+VOY_Y2026_045_B;BR03;2;sea;OYA;;;2026-09-23;River transit
+VOY_Y2026_045_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-09-26;Discharge at Olya
+VOY_Y2026_045_B;BR03;4;sea;BKO;;;2026-09-28;Return ballast
+VOY_Y2026_046_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-10-07;Barge BKO to OYA
+VOY_Y2026_046_B;BR03;2;sea;OYA;;;2026-10-07;River transit
+VOY_Y2026_046_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-10-10;Discharge at Olya
+VOY_Y2026_046_B;BR03;4;sea;BKO;;;2026-10-12;Return ballast
+VOY_Y2026_047_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-10-21;Barge BKO to OYA
+VOY_Y2026_047_B;BR03;2;sea;OYA;;;2026-10-21;River transit
+VOY_Y2026_047_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-10-24;Discharge at Olya
+VOY_Y2026_047_B;BR03;4;sea;BKO;;;2026-10-26;Return ballast
+VOY_Y2026_048_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-11-04;Barge BKO to OYA
+VOY_Y2026_048_B;BR03;2;sea;OYA;;;2026-11-04;River transit
+VOY_Y2026_048_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-11-07;Discharge at Olya
+VOY_Y2026_048_B;BR03;4;sea;BKO;;;2026-11-09;Return ballast
+VOY_Y2026_049_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-11-18;Barge BKO to OYA
+VOY_Y2026_049_B;BR03;2;sea;OYA;;;2026-11-18;River transit
+VOY_Y2026_049_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-11-21;Discharge at Olya
+VOY_Y2026_049_B;BR03;4;sea;BKO;;;2026-11-23;Return ballast
+VOY_Y2026_050_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-12-02;Barge BKO to OYA
+VOY_Y2026_050_B;BR03;2;sea;OYA;;;2026-12-02;River transit
+VOY_Y2026_050_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-12-05;Discharge at Olya
+VOY_Y2026_050_B;BR03;4;sea;BKO;;;2026-12-07;Return ballast
+VOY_Y2026_051_B;BR03;1;loading;BKO;Naphtha;5000.0;2026-12-16;Barge BKO to OYA
+VOY_Y2026_051_B;BR03;2;sea;OYA;;;2026-12-16;River transit
+VOY_Y2026_051_B;BR03;3;discharge;OYA;Naphtha;5000.0;2026-12-19;Discharge at Olya
+VOY_Y2026_051_B;BR03;4;sea;BKO;;;2026-12-21;Return ballast
+VOY_Y2026_052_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-01-06;Sea vessel OYA to IRN
+VOY_Y2026_052_S;SV01;2;sea;IRN;;;2026-01-06;Caspian sea transit
+VOY_Y2026_052_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-01-09;Discharge at Iran
+VOY_Y2026_052_S;SV01;4;sea;OYA;;;2026-01-12;Return ballast
+VOY_Y2026_053_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-01-24;Sea vessel OYA to IRN
+VOY_Y2026_053_S;SV01;2;sea;IRN;;;2026-01-24;Caspian sea transit
+VOY_Y2026_053_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-01-27;Discharge at Iran
+VOY_Y2026_053_S;SV01;4;sea;OYA;;;2026-01-30;Return ballast
+VOY_Y2026_054_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-02-11;Sea vessel OYA to IRN
+VOY_Y2026_054_S;SV01;2;sea;IRN;;;2026-02-11;Caspian sea transit
+VOY_Y2026_054_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-02-14;Discharge at Iran
+VOY_Y2026_054_S;SV01;4;sea;OYA;;;2026-02-17;Return ballast
+VOY_Y2026_055_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-03-01;Sea vessel OYA to IRN
+VOY_Y2026_055_S;SV01;2;sea;IRN;;;2026-03-01;Caspian sea transit
+VOY_Y2026_055_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-03-04;Discharge at Iran
+VOY_Y2026_055_S;SV01;4;sea;OYA;;;2026-03-07;Return ballast
+VOY_Y2026_056_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-03-19;Sea vessel OYA to IRN
+VOY_Y2026_056_S;SV01;2;sea;IRN;;;2026-03-19;Caspian sea transit
+VOY_Y2026_056_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-03-22;Discharge at Iran
+VOY_Y2026_056_S;SV01;4;sea;OYA;;;2026-03-25;Return ballast
+VOY_Y2026_057_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-04-06;Sea vessel OYA to IRN
+VOY_Y2026_057_S;SV01;2;sea;IRN;;;2026-04-06;Caspian sea transit
+VOY_Y2026_057_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-04-09;Discharge at Iran
+VOY_Y2026_057_S;SV01;4;sea;OYA;;;2026-04-12;Return ballast
+VOY_Y2026_058_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-04-24;Sea vessel OYA to IRN
+VOY_Y2026_058_S;SV01;2;sea;IRN;;;2026-04-24;Caspian sea transit
+VOY_Y2026_058_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-04-27;Discharge at Iran
+VOY_Y2026_058_S;SV01;4;sea;OYA;;;2026-04-30;Return ballast
+VOY_Y2026_059_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-05-12;Sea vessel OYA to IRN
+VOY_Y2026_059_S;SV01;2;sea;IRN;;;2026-05-12;Caspian sea transit
+VOY_Y2026_059_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-05-15;Discharge at Iran
+VOY_Y2026_059_S;SV01;4;sea;OYA;;;2026-05-18;Return ballast
+VOY_Y2026_060_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-05-30;Sea vessel OYA to IRN
+VOY_Y2026_060_S;SV01;2;sea;IRN;;;2026-05-30;Caspian sea transit
+VOY_Y2026_060_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-06-02;Discharge at Iran
+VOY_Y2026_060_S;SV01;4;sea;OYA;;;2026-06-05;Return ballast
+VOY_Y2026_061_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-06-17;Sea vessel OYA to IRN
+VOY_Y2026_061_S;SV01;2;sea;IRN;;;2026-06-17;Caspian sea transit
+VOY_Y2026_061_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-06-20;Discharge at Iran
+VOY_Y2026_061_S;SV01;4;sea;OYA;;;2026-06-23;Return ballast
+VOY_Y2026_062_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-07-05;Sea vessel OYA to IRN
+VOY_Y2026_062_S;SV01;2;sea;IRN;;;2026-07-05;Caspian sea transit
+VOY_Y2026_062_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-07-08;Discharge at Iran
+VOY_Y2026_062_S;SV01;4;sea;OYA;;;2026-07-11;Return ballast
+VOY_Y2026_063_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-07-23;Sea vessel OYA to IRN
+VOY_Y2026_063_S;SV01;2;sea;IRN;;;2026-07-23;Caspian sea transit
+VOY_Y2026_063_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-07-26;Discharge at Iran
+VOY_Y2026_063_S;SV01;4;sea;OYA;;;2026-07-29;Return ballast
+VOY_Y2026_064_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-08-10;Sea vessel OYA to IRN
+VOY_Y2026_064_S;SV01;2;sea;IRN;;;2026-08-10;Caspian sea transit
+VOY_Y2026_064_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-08-13;Discharge at Iran
+VOY_Y2026_064_S;SV01;4;sea;OYA;;;2026-08-16;Return ballast
+VOY_Y2026_065_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-08-28;Sea vessel OYA to IRN
+VOY_Y2026_065_S;SV01;2;sea;IRN;;;2026-08-28;Caspian sea transit
+VOY_Y2026_065_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-08-31;Discharge at Iran
+VOY_Y2026_065_S;SV01;4;sea;OYA;;;2026-09-03;Return ballast
+VOY_Y2026_066_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-09-15;Sea vessel OYA to IRN
+VOY_Y2026_066_S;SV01;2;sea;IRN;;;2026-09-15;Caspian sea transit
+VOY_Y2026_066_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-09-18;Discharge at Iran
+VOY_Y2026_066_S;SV01;4;sea;OYA;;;2026-09-21;Return ballast
+VOY_Y2026_067_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-10-03;Sea vessel OYA to IRN
+VOY_Y2026_067_S;SV01;2;sea;IRN;;;2026-10-03;Caspian sea transit
+VOY_Y2026_067_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-10-06;Discharge at Iran
+VOY_Y2026_067_S;SV01;4;sea;OYA;;;2026-10-09;Return ballast
+VOY_Y2026_068_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-10-21;Sea vessel OYA to IRN
+VOY_Y2026_068_S;SV01;2;sea;IRN;;;2026-10-21;Caspian sea transit
+VOY_Y2026_068_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-10-24;Discharge at Iran
+VOY_Y2026_068_S;SV01;4;sea;OYA;;;2026-10-27;Return ballast
+VOY_Y2026_069_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-11-08;Sea vessel OYA to IRN
+VOY_Y2026_069_S;SV01;2;sea;IRN;;;2026-11-08;Caspian sea transit
+VOY_Y2026_069_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-11-11;Discharge at Iran
+VOY_Y2026_069_S;SV01;4;sea;OYA;;;2026-11-14;Return ballast
+VOY_Y2026_070_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-11-26;Sea vessel OYA to IRN
+VOY_Y2026_070_S;SV01;2;sea;IRN;;;2026-11-26;Caspian sea transit
+VOY_Y2026_070_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-11-29;Discharge at Iran
+VOY_Y2026_070_S;SV01;4;sea;OYA;;;2026-12-02;Return ballast
+VOY_Y2026_071_S;SV01;1;loading;OYA;Fuel Oil;10000.0;2026-12-14;Sea vessel OYA to IRN
+VOY_Y2026_071_S;SV01;2;sea;IRN;;;2026-12-14;Caspian sea transit
+VOY_Y2026_071_S;SV01;3;discharge;IRN;Fuel Oil;10000.0;2026-12-17;Discharge at Iran
+VOY_Y2026_071_S;SV01;4;sea;OYA;;;2026-12-20;Return ballast
+VOY_Y2026_072_S;SV02;1;loading;OYA;Diesel;10000.0;2026-01-22;Sea vessel OYA to IRN
+VOY_Y2026_072_S;SV02;2;sea;IRN;;;2026-01-22;Caspian sea transit
+VOY_Y2026_072_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-01-25;Discharge at Iran
+VOY_Y2026_072_S;SV02;4;sea;OYA;;;2026-01-28;Return ballast
+VOY_Y2026_073_S;SV02;1;loading;OYA;Diesel;10000.0;2026-02-09;Sea vessel OYA to IRN
+VOY_Y2026_073_S;SV02;2;sea;IRN;;;2026-02-09;Caspian sea transit
+VOY_Y2026_073_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-02-12;Discharge at Iran
+VOY_Y2026_073_S;SV02;4;sea;OYA;;;2026-02-15;Return ballast
+VOY_Y2026_074_S;SV02;1;loading;OYA;Diesel;10000.0;2026-02-27;Sea vessel OYA to IRN
+VOY_Y2026_074_S;SV02;2;sea;IRN;;;2026-02-27;Caspian sea transit
+VOY_Y2026_074_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-03-02;Discharge at Iran
+VOY_Y2026_074_S;SV02;4;sea;OYA;;;2026-03-05;Return ballast
+VOY_Y2026_075_S;SV02;1;loading;OYA;Diesel;10000.0;2026-03-17;Sea vessel OYA to IRN
+VOY_Y2026_075_S;SV02;2;sea;IRN;;;2026-03-17;Caspian sea transit
+VOY_Y2026_075_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-03-20;Discharge at Iran
+VOY_Y2026_075_S;SV02;4;sea;OYA;;;2026-03-23;Return ballast
+VOY_Y2026_076_S;SV02;1;loading;OYA;Diesel;10000.0;2026-04-04;Sea vessel OYA to IRN
+VOY_Y2026_076_S;SV02;2;sea;IRN;;;2026-04-04;Caspian sea transit
+VOY_Y2026_076_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-04-07;Discharge at Iran
+VOY_Y2026_076_S;SV02;4;sea;OYA;;;2026-04-10;Return ballast
+VOY_Y2026_077_S;SV02;1;loading;OYA;Diesel;10000.0;2026-04-22;Sea vessel OYA to IRN
+VOY_Y2026_077_S;SV02;2;sea;IRN;;;2026-04-22;Caspian sea transit
+VOY_Y2026_077_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-04-25;Discharge at Iran
+VOY_Y2026_077_S;SV02;4;sea;OYA;;;2026-04-28;Return ballast
+VOY_Y2026_078_S;SV02;1;loading;OYA;Diesel;10000.0;2026-05-10;Sea vessel OYA to IRN
+VOY_Y2026_078_S;SV02;2;sea;IRN;;;2026-05-10;Caspian sea transit
+VOY_Y2026_078_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-05-13;Discharge at Iran
+VOY_Y2026_078_S;SV02;4;sea;OYA;;;2026-05-16;Return ballast
+VOY_Y2026_079_S;SV02;1;loading;OYA;Diesel;10000.0;2026-05-28;Sea vessel OYA to IRN
+VOY_Y2026_079_S;SV02;2;sea;IRN;;;2026-05-28;Caspian sea transit
+VOY_Y2026_079_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-05-31;Discharge at Iran
+VOY_Y2026_079_S;SV02;4;sea;OYA;;;2026-06-03;Return ballast
+VOY_Y2026_080_S;SV02;1;loading;OYA;Diesel;10000.0;2026-06-15;Sea vessel OYA to IRN
+VOY_Y2026_080_S;SV02;2;sea;IRN;;;2026-06-15;Caspian sea transit
+VOY_Y2026_080_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-06-18;Discharge at Iran
+VOY_Y2026_080_S;SV02;4;sea;OYA;;;2026-06-21;Return ballast
+VOY_Y2026_081_S;SV02;1;loading;OYA;Diesel;10000.0;2026-07-03;Sea vessel OYA to IRN
+VOY_Y2026_081_S;SV02;2;sea;IRN;;;2026-07-03;Caspian sea transit
+VOY_Y2026_081_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-07-06;Discharge at Iran
+VOY_Y2026_081_S;SV02;4;sea;OYA;;;2026-07-09;Return ballast
+VOY_Y2026_082_S;SV02;1;loading;OYA;Diesel;10000.0;2026-07-21;Sea vessel OYA to IRN
+VOY_Y2026_082_S;SV02;2;sea;IRN;;;2026-07-21;Caspian sea transit
+VOY_Y2026_082_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-07-24;Discharge at Iran
+VOY_Y2026_082_S;SV02;4;sea;OYA;;;2026-07-27;Return ballast
+VOY_Y2026_083_S;SV02;1;loading;OYA;Diesel;10000.0;2026-08-08;Sea vessel OYA to IRN
+VOY_Y2026_083_S;SV02;2;sea;IRN;;;2026-08-08;Caspian sea transit
+VOY_Y2026_083_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-08-11;Discharge at Iran
+VOY_Y2026_083_S;SV02;4;sea;OYA;;;2026-08-14;Return ballast
+VOY_Y2026_084_S;SV02;1;loading;OYA;Diesel;10000.0;2026-08-26;Sea vessel OYA to IRN
+VOY_Y2026_084_S;SV02;2;sea;IRN;;;2026-08-26;Caspian sea transit
+VOY_Y2026_084_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-08-29;Discharge at Iran
+VOY_Y2026_084_S;SV02;4;sea;OYA;;;2026-09-01;Return ballast
+VOY_Y2026_085_S;SV02;1;loading;OYA;Diesel;10000.0;2026-09-13;Sea vessel OYA to IRN
+VOY_Y2026_085_S;SV02;2;sea;IRN;;;2026-09-13;Caspian sea transit
+VOY_Y2026_085_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-09-16;Discharge at Iran
+VOY_Y2026_085_S;SV02;4;sea;OYA;;;2026-09-19;Return ballast
+VOY_Y2026_086_S;SV02;1;loading;OYA;Diesel;10000.0;2026-10-01;Sea vessel OYA to IRN
+VOY_Y2026_086_S;SV02;2;sea;IRN;;;2026-10-01;Caspian sea transit
+VOY_Y2026_086_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-10-04;Discharge at Iran
+VOY_Y2026_086_S;SV02;4;sea;OYA;;;2026-10-07;Return ballast
+VOY_Y2026_087_S;SV02;1;loading;OYA;Diesel;10000.0;2026-10-19;Sea vessel OYA to IRN
+VOY_Y2026_087_S;SV02;2;sea;IRN;;;2026-10-19;Caspian sea transit
+VOY_Y2026_087_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-10-22;Discharge at Iran
+VOY_Y2026_087_S;SV02;4;sea;OYA;;;2026-10-25;Return ballast
+VOY_Y2026_088_S;SV02;1;loading;OYA;Diesel;10000.0;2026-11-06;Sea vessel OYA to IRN
+VOY_Y2026_088_S;SV02;2;sea;IRN;;;2026-11-06;Caspian sea transit
+VOY_Y2026_088_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-11-09;Discharge at Iran
+VOY_Y2026_088_S;SV02;4;sea;OYA;;;2026-11-12;Return ballast
+VOY_Y2026_089_S;SV02;1;loading;OYA;Diesel;10000.0;2026-11-24;Sea vessel OYA to IRN
+VOY_Y2026_089_S;SV02;2;sea;IRN;;;2026-11-24;Caspian sea transit
+VOY_Y2026_089_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-11-27;Discharge at Iran
+VOY_Y2026_089_S;SV02;4;sea;OYA;;;2026-11-30;Return ballast
+VOY_Y2026_090_S;SV02;1;loading;OYA;Diesel;10000.0;2026-12-12;Sea vessel OYA to IRN
+VOY_Y2026_090_S;SV02;2;sea;IRN;;;2026-12-12;Caspian sea transit
+VOY_Y2026_090_S;SV02;3;discharge;IRN;Diesel;10000.0;2026-12-15;Discharge at Iran
+VOY_Y2026_090_S;SV02;4;sea;OYA;;;2026-12-18;Return ballast
+VOY_Y2026_091_S;SV02;1;loading;OYA;Diesel;10000.0;2026-12-30;Sea vessel OYA to IRN
+VOY_Y2026_091_S;SV02;2;sea;IRN;;;2026-12-30;Caspian sea transit
+VOY_Y2026_091_S;SV02;3;discharge;IRN;Diesel;10000.0;2027-01-02;Discharge at Iran
+VOY_Y2026_091_S;SV02;4;sea;OYA;;;2027-01-05;Return ballast
+VOY_Y2026_092_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-02-11;Sea vessel OYA to IRN
+VOY_Y2026_092_S;SV03;2;sea;IRN;;;2026-02-11;Caspian sea transit
+VOY_Y2026_092_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-02-14;Discharge at Iran
+VOY_Y2026_092_S;SV03;4;sea;OYA;;;2026-02-17;Return ballast
+VOY_Y2026_093_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-03-01;Sea vessel OYA to IRN
+VOY_Y2026_093_S;SV03;2;sea;IRN;;;2026-03-01;Caspian sea transit
+VOY_Y2026_093_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-03-04;Discharge at Iran
+VOY_Y2026_093_S;SV03;4;sea;OYA;;;2026-03-07;Return ballast
+VOY_Y2026_094_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-03-19;Sea vessel OYA to IRN
+VOY_Y2026_094_S;SV03;2;sea;IRN;;;2026-03-19;Caspian sea transit
+VOY_Y2026_094_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-03-22;Discharge at Iran
+VOY_Y2026_094_S;SV03;4;sea;OYA;;;2026-03-25;Return ballast
+VOY_Y2026_095_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-04-06;Sea vessel OYA to IRN
+VOY_Y2026_095_S;SV03;2;sea;IRN;;;2026-04-06;Caspian sea transit
+VOY_Y2026_095_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-04-09;Discharge at Iran
+VOY_Y2026_095_S;SV03;4;sea;OYA;;;2026-04-12;Return ballast
+VOY_Y2026_096_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-04-24;Sea vessel OYA to IRN
+VOY_Y2026_096_S;SV03;2;sea;IRN;;;2026-04-24;Caspian sea transit
+VOY_Y2026_096_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-04-27;Discharge at Iran
+VOY_Y2026_096_S;SV03;4;sea;OYA;;;2026-04-30;Return ballast
+VOY_Y2026_097_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-05-12;Sea vessel OYA to IRN
+VOY_Y2026_097_S;SV03;2;sea;IRN;;;2026-05-12;Caspian sea transit
+VOY_Y2026_097_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-05-15;Discharge at Iran
+VOY_Y2026_097_S;SV03;4;sea;OYA;;;2026-05-18;Return ballast
+VOY_Y2026_098_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-05-30;Sea vessel OYA to IRN
+VOY_Y2026_098_S;SV03;2;sea;IRN;;;2026-05-30;Caspian sea transit
+VOY_Y2026_098_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-06-02;Discharge at Iran
+VOY_Y2026_098_S;SV03;4;sea;OYA;;;2026-06-05;Return ballast
+VOY_Y2026_099_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-06-17;Sea vessel OYA to IRN
+VOY_Y2026_099_S;SV03;2;sea;IRN;;;2026-06-17;Caspian sea transit
+VOY_Y2026_099_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-06-20;Discharge at Iran
+VOY_Y2026_099_S;SV03;4;sea;OYA;;;2026-06-23;Return ballast
+VOY_Y2026_100_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-07-05;Sea vessel OYA to IRN
+VOY_Y2026_100_S;SV03;2;sea;IRN;;;2026-07-05;Caspian sea transit
+VOY_Y2026_100_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-07-08;Discharge at Iran
+VOY_Y2026_100_S;SV03;4;sea;OYA;;;2026-07-11;Return ballast
+VOY_Y2026_101_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-07-23;Sea vessel OYA to IRN
+VOY_Y2026_101_S;SV03;2;sea;IRN;;;2026-07-23;Caspian sea transit
+VOY_Y2026_101_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-07-26;Discharge at Iran
+VOY_Y2026_101_S;SV03;4;sea;OYA;;;2026-07-29;Return ballast
+VOY_Y2026_102_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-08-10;Sea vessel OYA to IRN
+VOY_Y2026_102_S;SV03;2;sea;IRN;;;2026-08-10;Caspian sea transit
+VOY_Y2026_102_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-08-13;Discharge at Iran
+VOY_Y2026_102_S;SV03;4;sea;OYA;;;2026-08-16;Return ballast
+VOY_Y2026_103_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-08-28;Sea vessel OYA to IRN
+VOY_Y2026_103_S;SV03;2;sea;IRN;;;2026-08-28;Caspian sea transit
+VOY_Y2026_103_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-08-31;Discharge at Iran
+VOY_Y2026_103_S;SV03;4;sea;OYA;;;2026-09-03;Return ballast
+VOY_Y2026_104_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-09-15;Sea vessel OYA to IRN
+VOY_Y2026_104_S;SV03;2;sea;IRN;;;2026-09-15;Caspian sea transit
+VOY_Y2026_104_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-09-18;Discharge at Iran
+VOY_Y2026_104_S;SV03;4;sea;OYA;;;2026-09-21;Return ballast
+VOY_Y2026_105_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-10-03;Sea vessel OYA to IRN
+VOY_Y2026_105_S;SV03;2;sea;IRN;;;2026-10-03;Caspian sea transit
+VOY_Y2026_105_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-10-06;Discharge at Iran
+VOY_Y2026_105_S;SV03;4;sea;OYA;;;2026-10-09;Return ballast
+VOY_Y2026_106_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-10-21;Sea vessel OYA to IRN
+VOY_Y2026_106_S;SV03;2;sea;IRN;;;2026-10-21;Caspian sea transit
+VOY_Y2026_106_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-10-24;Discharge at Iran
+VOY_Y2026_106_S;SV03;4;sea;OYA;;;2026-10-27;Return ballast
+VOY_Y2026_107_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-11-08;Sea vessel OYA to IRN
+VOY_Y2026_107_S;SV03;2;sea;IRN;;;2026-11-08;Caspian sea transit
+VOY_Y2026_107_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-11-11;Discharge at Iran
+VOY_Y2026_107_S;SV03;4;sea;OYA;;;2026-11-14;Return ballast
+VOY_Y2026_108_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-11-26;Sea vessel OYA to IRN
+VOY_Y2026_108_S;SV03;2;sea;IRN;;;2026-11-26;Caspian sea transit
+VOY_Y2026_108_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-11-29;Discharge at Iran
+VOY_Y2026_108_S;SV03;4;sea;OYA;;;2026-12-02;Return ballast
+VOY_Y2026_109_S;SV03;1;loading;OYA;Naphtha;10000.0;2026-12-14;Sea vessel OYA to IRN
+VOY_Y2026_109_S;SV03;2;sea;IRN;;;2026-12-14;Caspian sea transit
+VOY_Y2026_109_S;SV03;3;discharge;IRN;Naphtha;10000.0;2026-12-17;Discharge at Iran
+VOY_Y2026_109_S;SV03;4;sea;OYA;;;2026-12-20;Return ballast
+VOY_Y2026_110_S;SV03;1;loading;OYA;Naphtha;10000.0;2027-01-01;Sea vessel OYA to IRN
+VOY_Y2026_110_S;SV03;2;sea;IRN;;;2027-01-01;Caspian sea transit
+VOY_Y2026_110_S;SV03;3;discharge;IRN;Naphtha;10000.0;2027-01-04;Discharge at Iran
+VOY_Y2026_110_S;SV03;4;sea;OYA;;;2027-01-07;Return ballast
+VOY_Y2026_111_S;SV03;1;loading;OYA;Naphtha;10000.0;2027-01-19;Sea vessel OYA to IRN
+VOY_Y2026_111_S;SV03;2;sea;IRN;;;2027-01-19;Caspian sea transit
+VOY_Y2026_111_S;SV03;3;discharge;IRN;Naphtha;10000.0;2027-01-22;Discharge at Iran
+VOY_Y2026_111_S;SV03;4;sea;OYA;;;2027-01-25;Return ballast

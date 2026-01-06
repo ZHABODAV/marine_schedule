@@ -1,0 +1,28 @@
+# Конфигурация рейсов Olya - Наливные грузы
+# Баржи: BKO (loading) → OYA (discharge/transshipment) - только Apr-Nov из-за льда
+# Морские суда: OYA (loading/transshipment) → IRN (discharge) - круглогодично
+voyage_id;vessel_id;seq;operation;port;cargo;qty_mt;start_date;remarks
+V001_B;BR01;1;loading;BKO;Fuel Oil;5000;2026-04-05;Barge BKO to OYA
+V001_B;BR01;2;sea;OYA;;;2026-04-05;River transit
+V001_B;BR01;3;discharge;OYA;Fuel Oil;5000;2026-04-08;Discharge at Olya
+V001_B;BR01;4;sea;BKO;;;2026-04-10;Return ballast
+V001_S;SV01;1;loading;OYA;Fuel Oil;10000;2026-04-10;Sea vessel OYA to IRN
+V001_S;SV01;2;sea;IRN;;;2026-04-10;Caspian sea transit
+V001_S;SV01;3;discharge;IRN;Fuel Oil;10000;2026-04-13;Discharge at Iran
+V001_S;SV01;4;sea;OYA;;;2026-04-16;Return ballast
+V002_B;BR02;1;loading;BKO;Diesel;5000;2026-04-20;Barge BKO to OYA
+V002_B;BR02;2;sea;OYA;;;2026-04-20;River transit
+V002_B;BR02;3;discharge;OYA;Diesel;5000;2026-04-23;Discharge at Olya
+V002_B;BR02;4;sea;BKO;;;2026-04-25;Return ballast
+V002_S;SV02;1;loading;OYA;Diesel;10000;2026-04-26;Sea vessel OYA to IRN
+V002_S;SV02;2;sea;IRN;;;2026-04-26;Caspian sea transit
+V002_S;SV02;3;discharge;IRN;Diesel;10000;2026-04-29;Discharge at Iran
+V002_S;SV02;4;sea;OYA;;;2026-05-02;Return ballast
+V003_B;BR03;1;loading;BKO;Naphtha;5000;2026-05-10;Barge BKO to OYA
+V003_B;BR03;2;sea;OYA;;;2026-05-10;River transit
+V003_B;BR03;3;discharge;OYA;Naphtha;5000;2026-05-13;Discharge at Olya
+V003_B;BR03;4;sea;BKO;;;2026-05-15;Return ballast
+V003_S;SV03;1;loading;OYA;Naphtha;10000;2026-05-16;Sea vessel OYA to IRN
+V003_S;SV03;2;sea;IRN;;;2026-05-16;Caspian sea transit
+V003_S;SV03;3;discharge;IRN;Naphtha;10000;2026-05-19;Discharge at Iran
+V003_S;SV03;4;sea;OYA;;;2026-05-22;Return ballast

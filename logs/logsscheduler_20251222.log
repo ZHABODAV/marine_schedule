@@ -1,0 +1,1069 @@
+2025-12-22 03:41:33 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 03:41:33 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 03:41:33 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 03:41:34 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 03:41:34 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 03:41:34 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 03:47:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:47:22.269572
+2025-12-22 03:47:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:47:24 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (2s old)
+2025-12-22 03:47:24 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:47:26 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 03:47:52 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 03:47:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:48:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:48:22.340767
+2025-12-22 03:48:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:48:53 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 03:48:53 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:49:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:49:22.908054
+2025-12-22 03:49:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:49:52 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 03:49:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:50:05 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:50:22 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 03:50:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:50:52 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:50:52.342843
+2025-12-22 03:50:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:51:05 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:51:22 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 03:51:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:51:52 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:51:52.655556
+2025-12-22 03:51:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:52:05 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:52:22 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 03:52:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:52:52 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 03:52:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:53:05 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:53:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:53:22.653999
+2025-12-22 03:53:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:53:52 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 03:53:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:54:06 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:54:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:54:22.915453
+2025-12-22 03:54:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:54:52 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 03:54:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:55:05 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:55:22 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 03:55:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:55:52 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:55:52.905962
+2025-12-22 03:55:52 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:56:06 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:56:22 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 03:56:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:57:30 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:57:30.214657
+2025-12-22 03:57:30 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:57:30 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:58:31 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T00:58:31.227796
+2025-12-22 03:58:31 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:58:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 03:59:30 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 03:59:30 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 03:59:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:00:31 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T01:00:31.213242
+2025-12-22 04:00:31 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:00:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:01:30 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 04:01:30 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:01:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:02:31 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T01:02:31.222249
+2025-12-22 04:02:31 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:02:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:03:30 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 04:03:30 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:03:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:04:31 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T01:04:31.237208
+2025-12-22 04:04:31 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:04:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:05:30 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 04:05:30 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:05:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:06:31 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T01:06:31.216429
+2025-12-22 04:06:31 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 04:06:31 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 04:14:32 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 04:14:32 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 04:14:32 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 04:32:16 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 04:32:16 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 04:32:16 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 06:08:43 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 06:08:43 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 06:08:43 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 07:45:14 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: c:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 07:45:14 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 07:45:14 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 13:16:36 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 13:16:36 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 13:16:36 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 13:16:37 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 13:16:37 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 13:16:37 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 14:04:07 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 14:04:07 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 14:04:07 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 14:04:09 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 14:04:09 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 14:04:09 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 14:08:31 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 14:08:31 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 14:08:31 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 14:08:33 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 14:08:33 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 14:08:33 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 15:11:57 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 15:11:57 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 15:11:57 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 15:11:58 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 15:11:58 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 15:11:58 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 15:24:20 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:24:22 [INFO] api_extensions.get_bunker_data:981 - Returning bunker data for 5 ports
+2025-12-22 15:24:24 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 15:25:06 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:25:06.576209
+2025-12-22 15:25:06 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:25:10 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 15:25:15 [INFO] api_extensions.get_bunker_data:981 - Returning bunker data for 5 ports
+2025-12-22 15:25:16 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:25:17 [INFO] api_extensions.handle_scenarios:1139 - Returning 0 scenarios
+2025-12-22 15:25:31 [INFO] api_extensions._compute_capacity:612 - Loaded rail cargo accumulation for 6 dates
+2025-12-22 15:25:36 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 15:25:36 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:26:07 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:26:07.580856
+2025-12-22 15:26:07 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:26:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:26:37 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 15:26:37 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:27:07 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:27:07.876394
+2025-12-22 15:27:07 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:27:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:27:37 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 15:27:37 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:28:07 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:28:07 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:28:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:29:17 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:29:17.578322
+2025-12-22 15:29:17 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:29:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:30:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:30:18 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:30:18.580339
+2025-12-22 15:30:18 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:31:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:31:19 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:31:19.573010
+2025-12-22 15:31:19 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:32:20 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:32:20 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:32:20.878756
+2025-12-22 15:32:20 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:33:21 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:33:21 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:33:21.896728
+2025-12-22 15:33:21 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:34:22 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:34:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:34:22.888208
+2025-12-22 15:34:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:35:23 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:35:23 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:35:23.886582
+2025-12-22 15:35:23 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:36:24 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:36:24 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:36:24.889159
+2025-12-22 15:36:24 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:37:25 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:37:25 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:37:25.892702
+2025-12-22 15:37:25 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:38:26 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:38:26 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:38:26.895406
+2025-12-22 15:38:26 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:39:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:39:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:39:27.889046
+2025-12-22 15:39:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:40:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:40:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:40:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:41:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:41:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:41:27.886666
+2025-12-22 15:41:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:42:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:42:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:42:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:43:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:43:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:43:27.887350
+2025-12-22 15:43:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:44:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:44:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:44:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:45:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:45:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:45:27.876893
+2025-12-22 15:45:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:46:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:46:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:46:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:47:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:47:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:47:27.883014
+2025-12-22 15:47:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:48:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:48:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:48:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:49:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:49:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:49:27.878546
+2025-12-22 15:49:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:50:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:50:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:50:27.890617
+2025-12-22 15:50:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:51:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:51:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:51:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:52:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:52:27.573968
+2025-12-22 15:52:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:52:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:53:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:53:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:53:27.887208
+2025-12-22 15:53:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:54:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:54:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:54:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:55:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:55:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:55:27.884277
+2025-12-22 15:55:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:56:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:56:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:56:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:57:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:57:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:57:27.882400
+2025-12-22 15:57:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:58:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 15:58:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 15:58:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:59:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 15:59:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T12:59:27.877167
+2025-12-22 15:59:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:00:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:00:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:00:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:01:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:01:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:01:27.891346
+2025-12-22 16:01:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:02:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:02:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:02:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:03:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:03:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:03:27.888605
+2025-12-22 16:03:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:04:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:04:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:04:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:05:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:05:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:05:27.890969
+2025-12-22 16:05:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:06:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:06:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:06:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:07:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:07:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:07:27.882336
+2025-12-22 16:07:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:08:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:08:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:08:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:09:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:09:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:09:27.879014
+2025-12-22 16:09:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:10:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:10:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:10:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:11:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:11:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:11:27.888116
+2025-12-22 16:11:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:12:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:12:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:12:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:13:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:13:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:13:27.892765
+2025-12-22 16:13:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:14:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:14:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:14:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:15:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:15:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:15:27.886021
+2025-12-22 16:15:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:16:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:16:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:16:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:17:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:17:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:17:27.890871
+2025-12-22 16:17:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:18:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:18:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:18:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:19:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:19:27.569297
+2025-12-22 16:19:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:19:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:20:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:20:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:20:27.888992
+2025-12-22 16:20:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:21:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:21:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:21:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:22:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:22:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:22:27.890904
+2025-12-22 16:22:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:23:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:23:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:23:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:24:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:24:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:24:27.885727
+2025-12-22 16:24:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:25:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:25:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:25:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:26:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:26:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:26:27.891421
+2025-12-22 16:26:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:27:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:27:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:27:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:28:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:28:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:28:27.890588
+2025-12-22 16:28:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:29:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:29:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:29:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:30:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:30:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:30:27.891984
+2025-12-22 16:30:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:31:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:31:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:31:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:32:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:32:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:32:27.881672
+2025-12-22 16:32:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:33:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:33:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:33:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:34:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:34:27.895967
+2025-12-22 16:34:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:34:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:35:20 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:35:20 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:35:20 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:35:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:35:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:35:27.897402
+2025-12-22 16:35:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:35:48 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:35:48 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:35:48 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:35:50 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:35:50 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:35:50 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:36:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:36:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:36:27.897382
+2025-12-22 16:36:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:37:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:37:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:37:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:37:47 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:37:47 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:37:47 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:38:05 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:38:05 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:38:05 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:38:15 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:38:15 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:38:15 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:38:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:38:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:38:27.892652
+2025-12-22 16:38:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:39:04 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:39:04 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 16:39:04 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 16:39:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:39:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:39:27.897080
+2025-12-22 16:39:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:40:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:40:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:40:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:41:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:41:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:41:27.893868
+2025-12-22 16:41:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:42:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:42:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:42:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:43:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:43:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:43:27.886041
+2025-12-22 16:43:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:44:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:44:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:44:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:45:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:45:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:45:27.881942
+2025-12-22 16:45:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:46:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:46:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:46:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:47:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:47:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:47:27.885731
+2025-12-22 16:47:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:48:24 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (56s old)
+2025-12-22 16:48:24 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:48:25 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:48:37 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:48:37.873483
+2025-12-22 16:48:37 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:48:43 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (5s old)
+2025-12-22 16:48:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:48:44 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 16:48:58 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:48:59 [INFO] api_extensions.handle_scenarios:1139 - Returning 0 scenarios
+2025-12-22 16:49:07 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 16:49:07 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:49:13 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (35s old)
+2025-12-22 16:49:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:49:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:49:18 [INFO] api_extensions.get_bunker_data:981 - Returning bunker data for 5 ports
+2025-12-22 16:49:44 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:49:44.001470
+2025-12-22 16:49:44 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:49:58 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:50:06 [INFO] api_extensions._compute_capacity:612 - Loaded rail cargo accumulation for 6 dates
+2025-12-22 16:50:13 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 16:50:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:50:18 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (34s old)
+2025-12-22 16:50:18 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:50:18 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:50:43 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:50:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:50:58 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:51:13 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:51:13.692481
+2025-12-22 16:51:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:51:19 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (6s old)
+2025-12-22 16:51:19 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:51:19 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:51:43 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 16:51:43 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:51:58 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:52:13 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 16:52:13 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:52:20 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:52:20 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:52:20.885203
+2025-12-22 16:52:20 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:52:44 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (23s old)
+2025-12-22 16:52:44 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:52:59 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:53:14 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (53s old)
+2025-12-22 16:53:14 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:53:21 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:53:21 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:53:21.877310
+2025-12-22 16:53:21 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:53:59 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:54:15 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (54s old)
+2025-12-22 16:54:15 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:54:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:54:22.568479
+2025-12-22 16:54:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:54:22 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:54:59 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:55:16 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (54s old)
+2025-12-22 16:55:16 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:55:23 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:55:23 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:55:23.891951
+2025-12-22 16:55:23 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:56:17 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (53s old)
+2025-12-22 16:56:17 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:56:17 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:56:24 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:56:24 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:56:24.891075
+2025-12-22 16:56:24 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:57:18 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (53s old)
+2025-12-22 16:57:18 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:57:18 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:57:25 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:57:25 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:57:25.875596
+2025-12-22 16:57:25 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:58:19 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (53s old)
+2025-12-22 16:58:19 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:58:19 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:58:26 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:58:26 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:58:26.893412
+2025-12-22 16:58:26 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:59:20 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (53s old)
+2025-12-22 16:59:20 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 16:59:20 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:59:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 16:59:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T13:59:27.891938
+2025-12-22 16:59:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:00:21 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (53s old)
+2025-12-22 17:00:21 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:00:21 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:00:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:00:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:00:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:01:22 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:01:22.569440
+2025-12-22 17:01:22 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:01:22 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:01:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (5s old)
+2025-12-22 17:01:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:01:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:02:23 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:02:23.581525
+2025-12-22 17:02:23 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:02:23 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:02:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (4s old)
+2025-12-22 17:02:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:02:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:03:24 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:03:24.571287
+2025-12-22 17:03:24 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:03:24 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:03:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (3s old)
+2025-12-22 17:03:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:03:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:04:25 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:04:25.582355
+2025-12-22 17:04:25 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:04:25 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:04:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (2s old)
+2025-12-22 17:04:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:04:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:05:26 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:05:26.579172
+2025-12-22 17:05:26 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:05:26 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:05:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (1s old)
+2025-12-22 17:05:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:05:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:06:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:06:27.577507
+2025-12-22 17:06:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:06:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:06:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:06:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:06:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:07:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:07:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:07:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:07:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:07:27.881826
+2025-12-22 17:07:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:07:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:08:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:08:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:08:27.887721
+2025-12-22 17:08:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:08:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:08:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:08:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:09:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:09:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:09:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:09:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:09:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:09:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:10:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:10:27.573899
+2025-12-22 17:10:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:10:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:10:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:10:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:10:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:11:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:11:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:11:27.888301
+2025-12-22 17:11:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:11:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:11:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:11:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:12:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:12:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:12:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:12:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:12:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:12:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:13:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:13:27.579923
+2025-12-22 17:13:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:13:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:13:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:13:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:13:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:14:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:14:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:14:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:14:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:14:27.888922
+2025-12-22 17:14:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:14:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:15:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:15:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:15:27.889552
+2025-12-22 17:15:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:15:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:15:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:15:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:16:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:16:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:16:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:16:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:16:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:16:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:17:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:17:27.581742
+2025-12-22 17:17:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:17:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:17:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:17:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:17:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:18:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:18:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:18:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:18:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:18:27.886089
+2025-12-22 17:18:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:18:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:19:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:19:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:19:27.886393
+2025-12-22 17:19:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:19:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:19:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:19:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:20:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:20:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:20:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:20:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:20:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:20:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:21:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:21:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:21:27.893279
+2025-12-22 17:21:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:21:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:21:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:21:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:22:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:22:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:22:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:22:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:22:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:22:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:23:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:23:27.573668
+2025-12-22 17:23:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:23:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:23:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:23:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:23:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:24:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:24:27.582310
+2025-12-22 17:24:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:24:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:24:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:24:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:24:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:25:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:25:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:25:27.890718
+2025-12-22 17:25:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:25:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:25:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:25:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:26:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:26:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:26:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:26:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:26:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:26:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:27:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:27:27.575351
+2025-12-22 17:27:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:27:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:27:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:27:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:27:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:28:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:28:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:28:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:28:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:28:27.883837
+2025-12-22 17:28:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:28:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:29:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:29:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:29:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:29:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:29:28.143332
+2025-12-22 17:29:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:29:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:30:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:30:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:30:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:30:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:30:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:30:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:31:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:31:27.570554
+2025-12-22 17:31:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:31:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:31:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:31:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:31:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:32:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:32:27.581189
+2025-12-22 17:32:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:32:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:32:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:32:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:32:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:33:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:33:27.582642
+2025-12-22 17:33:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:33:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:33:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:33:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:33:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:34:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:34:27.583827
+2025-12-22 17:34:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:34:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:34:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:34:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:34:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:35:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:35:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:35:27.891717
+2025-12-22 17:35:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:35:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:35:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:35:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:36:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:36:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:36:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:36:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:36:27.895923
+2025-12-22 17:36:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:36:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:37:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:37:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:37:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:37:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:37:28.157299
+2025-12-22 17:37:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:37:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:38:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:38:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:38:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:38:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:38:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:38:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:39:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:39:27.579202
+2025-12-22 17:39:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:39:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:39:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:39:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:39:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:40:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:40:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:40:27.878583
+2025-12-22 17:40:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:40:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:40:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:40:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:41:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:41:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:41:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:41:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:41:27.890647
+2025-12-22 17:41:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:41:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:42:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:42:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:42:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:42:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:42:28.145007
+2025-12-22 17:42:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:42:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:43:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:43:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:43:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:43:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:43:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:43:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:44:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:44:27.574205
+2025-12-22 17:44:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:44:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:44:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:44:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:44:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:45:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:45:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:45:27.891465
+2025-12-22 17:45:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:45:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:45:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:45:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:46:23 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 17:46:23 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 17:46:23 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 17:46:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:46:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:46:27.896611
+2025-12-22 17:46:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:46:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:46:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:46:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:47:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:47:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:47:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:47:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:47:27.898367
+2025-12-22 17:47:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:47:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:47:44 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (16s old)
+2025-12-22 17:47:44 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:47:58 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:48:14 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (46s old)
+2025-12-22 17:48:14 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:48:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:48:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:48:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:48:44 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:48:44.892071
+2025-12-22 17:48:44 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:48:59 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:49:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (43s old)
+2025-12-22 17:49:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:49:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:49:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (43s old)
+2025-12-22 17:49:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:50:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:50:27.579082
+2025-12-22 17:50:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:50:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:50:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:50:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:50:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:51:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:51:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:51:27.890532
+2025-12-22 17:51:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:51:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:51:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:51:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:52:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:52:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:52:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:52:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:52:27.894616
+2025-12-22 17:52:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:52:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:53:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:53:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:53:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:53:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:53:28.141560
+2025-12-22 17:53:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:53:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:54:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:54:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:54:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:54:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:54:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:54:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:55:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:55:27.576628
+2025-12-22 17:55:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:55:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:55:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:55:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:55:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:56:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:56:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:56:27.890718
+2025-12-22 17:56:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:56:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:56:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 17:56:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:57:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:57:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:57:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:57:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:57:27.894113
+2025-12-22 17:57:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:57:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:58:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:58:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:58:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:58:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T14:58:28.142327
+2025-12-22 17:58:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:58:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:59:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:59:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:59:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 17:59:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 17:59:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 17:59:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:00:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:00:27.579062
+2025-12-22 18:00:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:00:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:00:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:00:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:00:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:01:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:01:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:01:27.892904
+2025-12-22 18:01:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:01:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:01:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:01:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:02:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:02:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:02:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:02:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:02:27.896743
+2025-12-22 18:02:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:02:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:03:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:03:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:03:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:03:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:03:28.141467
+2025-12-22 18:03:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:03:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:04:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:04:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:04:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:04:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:04:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:04:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:05:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:05:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:05:27.894084
+2025-12-22 18:05:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:05:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:05:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:05:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:06:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:06:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:06:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:06:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:06:27.896242
+2025-12-22 18:06:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:06:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:07:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:07:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:07:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:07:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:07:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:07:28.207109
+2025-12-22 18:07:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:08:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:08:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:08:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:08:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:08:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:08:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:09:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:09:27.586383
+2025-12-22 18:09:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:09:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:09:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:09:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:09:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:10:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:10:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:10:27.889235
+2025-12-22 18:10:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:10:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:10:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:10:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:11:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:11:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:11:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:11:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:11:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:11:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:11:53 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:11:53 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:11:53 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:12:03 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:12:04 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:12:04 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:12:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:12:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:12:27.901178
+2025-12-22 18:12:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:12:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:12:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:12:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:13:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:13:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:13:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:13:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:13:27.905723
+2025-12-22 18:13:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:13:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:14:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:14:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:14:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:14:28 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:14:28.161565
+2025-12-22 18:14:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:14:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:15:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:15:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:15:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:15:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:15:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:15:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:16:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:16:27.583639
+2025-12-22 18:16:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:16:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:16:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:16:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:16:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:17:11 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:17:11 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:17:11 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:17:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:17:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:17:27.896356
+2025-12-22 18:17:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:17:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:17:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:17:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:17:33 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:17:33 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:17:33 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:17:57 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:17:57 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:17:57 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:18:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:18:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:18:27.888148
+2025-12-22 18:18:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:18:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:18:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:18:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:18:48 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:18:48 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:18:48 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:19:04 [INFO] api_extensions.initialize_constraints_storage:1459 - Constraints storage initialized at: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:19:04 [INFO] api_extensions.register_ui_module_endpoints:737 - RBAC Manager initialized
+2025-12-22 18:19:04 [INFO] api_extensions.register_ui_module_endpoints:1439 - [OK] Security-hardened UI Module API endpoints registered successfully
+2025-12-22 18:19:05 [INFO] __main__.<module>:657 - ============================================================
+2025-12-22 18:19:05 [INFO] __main__.<module>:658 - Starting Enhanced Vessel Scheduler API Server v2.0
+2025-12-22 18:19:05 [INFO] __main__.<module>:659 - ============================================================
+2025-12-22 18:19:05 [INFO] __main__.<module>:660 - Server running on http://localhost:5000
+2025-12-22 18:19:05 [INFO] __main__.<module>:661 - WebSocket support enabled on same port
+2025-12-22 18:19:05 [INFO] __main__.<module>:662 - Phase 2+ Features Active:
+2025-12-22 18:19:05 [INFO] __main__.<module>:663 -   ✓ PDF Report Generation
+2025-12-22 18:19:05 [INFO] __main__.<module>:664 -   ✓ Bunker Optimization
+2025-12-22 18:19:05 [INFO] __main__.<module>:665 -   ✓ Role-Based Access Control (RBAC)
+2025-12-22 18:19:05 [INFO] __main__.<module>:666 -   ✓ Real-time Collaboration (WebSocket)
+2025-12-22 18:19:05 [INFO] __main__.<module>:667 -   ✓ Enhanced Error Handling
+2025-12-22 18:19:05 [INFO] __main__.<module>:668 - Default Admin Account:
+2025-12-22 18:19:05 [INFO] __main__.<module>:669 -   Username: admin
+2025-12-22 18:19:05 [INFO] __main__.<module>:670 -   Password: admin123 (please change immediately)
+2025-12-22 18:19:05 [INFO] __main__.<module>:671 - ============================================================
+2025-12-22 18:19:07 [INFO] __main__.<module>:657 - ============================================================
+2025-12-22 18:19:07 [INFO] __main__.<module>:658 - Starting Enhanced Vessel Scheduler API Server v2.0
+2025-12-22 18:19:07 [INFO] __main__.<module>:659 - ============================================================
+2025-12-22 18:19:07 [INFO] __main__.<module>:660 - Server running on http://localhost:5000
+2025-12-22 18:19:07 [INFO] __main__.<module>:661 - WebSocket support enabled on same port
+2025-12-22 18:19:07 [INFO] __main__.<module>:662 - Phase 2+ Features Active:
+2025-12-22 18:19:07 [INFO] __main__.<module>:663 -   ✓ PDF Report Generation
+2025-12-22 18:19:07 [INFO] __main__.<module>:664 -   ✓ Bunker Optimization
+2025-12-22 18:19:07 [INFO] __main__.<module>:665 -   ✓ Role-Based Access Control (RBAC)
+2025-12-22 18:19:07 [INFO] __main__.<module>:666 -   ✓ Real-time Collaboration (WebSocket)
+2025-12-22 18:19:07 [INFO] __main__.<module>:667 -   ✓ Enhanced Error Handling
+2025-12-22 18:19:07 [INFO] __main__.<module>:668 - Default Admin Account:
+2025-12-22 18:19:07 [INFO] __main__.<module>:669 -   Username: admin
+2025-12-22 18:19:07 [INFO] __main__.<module>:670 -   Password: admin123 (please change immediately)
+2025-12-22 18:19:07 [INFO] __main__.<module>:671 - ============================================================
+2025-12-22 18:19:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:19:27 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:19:27.900887
+2025-12-22 18:19:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:19:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:19:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (0s old)
+2025-12-22 18:19:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:20:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:20:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:20:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (59s old)
+2025-12-22 18:20:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:20:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:20:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:20:51 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:20:54 [INFO] api_extensions.handle_scenarios:1139 - Returning 0 scenarios
+2025-12-22 18:20:56 [INFO] api_extensions._compute_capacity:612 - Loaded rail cargo accumulation for 6 dates
+2025-12-22 18:20:57 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:20:57.860543
+2025-12-22 18:20:57 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:20:58 [INFO] api_extensions._load_constraints_store:474 - Constraints file does not exist: C:\Users\Asus\Documents\project\data\berth_constraints.json
+2025-12-22 18:21:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 18:21:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:21:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:21:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 18:21:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:21:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 18:21:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:21:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:21:51 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:21:57 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:21:57.883988
+2025-12-22 18:21:57 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:22:15 [INFO] api_extensions.get_bunker_data:981 - Returning bunker data for 5 ports
+2025-12-22 18:22:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 18:22:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:22:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 18:22:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:22:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:22:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 18:22:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:22:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:22:51 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:22:57 [INFO] api_extensions._get_alert_data:463 - Refreshed alert data cache at 2025-12-22T15:22:57.896256
+2025-12-22 18:22:57 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:23:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 18:23:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:23:27 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (29s old)
+2025-12-22 18:23:27 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:23:27 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
+2025-12-22 18:23:28 [DEBUG] api_extensions._get_alert_data:455 - Using cached DataLoader output for alerts (30s old)
+2025-12-22 18:23:28 [INFO] api_extensions.get_alerts:781 - Returning 0 alerts (severity=all, status=active)
+2025-12-22 18:23:28 [INFO] api_extensions.get_vessel_tracking:1105 - Loaded 3 vessel positions from CSV
