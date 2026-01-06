@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vessel Schedule - UI Modules Integration Example</title>
+    
+    <!-- Combined CSS for all modules -->
+    <link rel="stylesheet" href="ALL_MODULES_COMBINED.css">
+    
+    <!-- Optional: Include individual module CSS files instead -->
+    <!-- <link rel="stylesheet" href="alerts_dashboard/alerts_dashboard.css"> -->
+    <!-- <link rel="stylesheet" href="berth_management/berth_management.css"> -->
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f3f4f6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #1f2937;
+            margin-bottom: 30px;
+        }
+        
+        .module-section {
+            margin-bottom: 40px;
+        }
+        
+        .module-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Vessel Schedule - UI Modules Demo</h1>
+        
+        <!-- Alerts Dashboard -->
+        <div class="module-section">
+            <div id="alerts-dashboard" class="module-container"></div>
+        </div>
+        
+        <!-- Berth Management -->
+        <div class="module-section">
+            <div id="berth-management" class="module-container"></div>
+        </div>
+        
+        <!-- Bunker Optimization -->
+        <div class="module-section">
+            <div id="bunker-optimization" class="module-container"></div>
+        </div>
+        
+        <!-- Weather Integration -->
+        <div class="module-section">
+            <div id="weather-integration" class="module-container"></div>
+        </div>
+        
+        <!-- Vessel Tracking -->
+        <div class="module-section">
+            <div id="vessel-tracking" class="module-container"></div>
+        </div>
+        
+        <!-- Scenario Management -->
+        <div class="module-section">
+            <div id="scenario-management" class="module-container"></div>
+        </div>
+        
+        <!-- Voyage Templates -->
+        <div class="module-section">
+            <div id="voyage-templates" class="module-container"></div>
+        </div>
+        
+        <!-- Berth Capacity Planning -->
+        <div class="module-section">
+            <div id="berth-capacity-planning" class="module-container"></div>
+        </div>
+    </div>
+
+    <!-- Combined JavaScript for all modules -->
+    <script src="ALL_MODULES_COMBINED.js"></script>
+    
+    <!-- Optional: Include individual module files instead -->
+    <!-- <script src="alerts_dashboard/alerts_dashboard.js"></script> -->
+    <!-- <script src="berth_management/berth_management.js"></script> -->
+    
+    <!-- Optional: Leaflet for maps (vessel tracking) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Optional: html2pdf for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <!-- Initialize all modules -->
+    <script>
+        // Configuration
+        const API_BASE = '/api'; // Adjust to your API endpoint
+        
+        // Initialize modules when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            // 1. Alerts Dashboard
+            const alertsDashboard = new AlertsDashboard({
+                containerId: 'alerts-dashboard',
+                apiEndpoint: `${API_BASE}/alerts`,
+                refreshInterval: 30000,
+                soundEnabled: true
+            });
+            await alertsDashboard.init();
+            
+            // 2. Berth Management
+            const berthManagement = new BerthManagement({
+                containerId: 'berth-management',
+                apiEndpoint: `${API_BASE}/berths`,
+                refreshInterval: 60000
+            });
+            await berthManagement.init();
+            
+            // 3. Bunker Optimization
+            const bunkerOptimization = new BunkerOptimization({
+                containerId: 'bunker-optimization',
+                apiEndpoint: `${API_BASE}/bunker`
+            });
+            await bunkerOptimization.init();
+            
+            // 4. Weather Integration
+            const weatherIntegration = new WeatherIntegration({
+                containerId: 'weather-integration',
+                apiEndpoint: `${API_BASE}/weather`,
+                ganttElementId: 'gantt-chart' // If you have a Gantt chart
+            });
+            await weatherIntegration.init();
+            
+            // 5. Vessel Tracking
+            const vesselTracking = new VesselTracking({
+                containerId: 'vessel-tracking',
+                apiEndpoint: `${API_BASE}/vessels/tracking`,
+                mapProvider: 'leaflet',
+                updateInterval: 60000
+            });
+            await vesselTracking.init();
+            
+            // 6. PDF Export (standalone, no container needed)
+            const pdfExport = new PDFExport({
+                apiEndpoint: `${API_BASE}/export/pdf`,
+                reportTypes: ['schedule', 'berth', 'fleet']
+            });
+            
+            // 7. Scenario Management
+            const scenarioManagement = new ScenarioManagement({
+                containerId: 'scenario-management',
+                apiEndpoint: `${API_BASE}/scenarios`
+            });
+            await scenarioManagement.init();
+            
+            // 8. Voyage Templates
+            const voyageTemplates = new VoyageTemplates({
+                containerId: 'voyage-templates',
+                apiEndpoint: `${API_BASE}/voyage-templates`
+            });
+            await voyageTemplates.init();
+            
+            // 9. Berth Capacity Planning
+            const berthCapacityPlanning = new BerthCapacityPlanning({
+                containerId: 'berth-capacity-planning',
+                apiEndpoint: `${API_BASE}/capacity`
+            });
+            await berthCapacityPlanning.init();
+            
+            // Set up event listeners for cross-module communication
+            setupEventListeners();
+            
+            console.log(' All modules initialized successfully');
+        });
+        
+        // Cross-module event handling
+        function setupEventListeners() {
+            // Handle notifications from modules
+            document.addEventListener('showNotification', (e) => {
+                const { type, message } = e.detail;
+                showNotification(type, message);
+            });
+            
+            // Handle modal requests
+            document.addEventListener('showModal', (e) => {
+                const { content } = e.detail;
+                showModal(content);
+            });
+            
+            // Handle scenario loading
+            document.addEventListener('scenarioLoaded', (e) => {
+                console.log('Scenario loaded:', e.detail);
+                // Refresh other modules as needed
+            });
+            
+            // Handle template application
+            document.addEventListener('applyVoyageTemplate', (e) => {
+                console.log('Apply template:', e.detail);
+                // Apply template to current voyage planning
+            });
+        }
+        
+        // Simple notification system
+        function showNotification(type, message) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: 6px;
+                background: ${type === 'error' ? '#fee2e2' : type === 'success' ? '#d1fae5' : '#dbeafe'};
+                color: ${type === 'error' ? '#991b1b' : type === 'success' ? '#065f46' : '#1e40af'};
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 10000;
+                animation: slideInRight 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+        
+        // Simple modal system
+        function showModal(content) {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Details</h4>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        ${content}
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            modal.querySelector('.modal-close').addEventListener('click', () => {
+                modal.remove();
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+        
+        // Add PDF export button
+        function addPDFExportButton() {
+            const button = document.createElement('button');
+            button.textContent = ' Export PDF';
+            button.className = 'btn-primary';
+            button.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+            `;
+            button.onclick = async () => {
+                const pdfExport = new PDFExport();
+                await pdfExport.generateReport('schedule', {
+                    dateRange: {
+                        start: new Date().toISOString().split('T')[0],
+                        end: new Date(Date.now() + 30*24*60*60*1000).toISOString().split('T')[0]
+                    }
+                });
+            };
+            document.body.appendChild(button);
+        }
+        
+        // Uncomment to add floating PDF export button
+        // addPDFExportButton();
+    </script>
+    
+    <style>
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
