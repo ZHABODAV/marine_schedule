@@ -1,0 +1,18 @@
+# ================================================
+# BALAKOVO RESTRICTIONS - Ограничения работы
+# ================================================
+# restriction_id   - ID ограничения (RST_01, RST_02...)
+# restriction_type - Тип: weather, water_level, maintenance, holiday
+# start_date       - Начало (YYYY-MM-DD)
+# end_date         - Конец (YYYY-MM-DD)
+# berth_id         - ID причала (пусто = все причалы)
+# severity         - Серьёзность: low, medium, high (high = работы остановлены)
+# description      - Описание
+# ================================================
+# ТИПЫ ОГРАНИЧЕНИЙ:
+# - weather: погода (ветер, шторм)
+# - water_level: уровень воды (низкий/высокий)
+# - maintenance: техническое обслуживание причала
+# - holiday: праздники (сокращённый день)
+# ================================================
+restriction_id;restriction_type;start_date;end_date;berth_id;severity;description

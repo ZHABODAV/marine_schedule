@@ -1,0 +1,17 @@
+parameter;value;unit;description
+season_start;2025-04-01;date;Начало навигации
+season_end;2025-11-15;date;Конец навигации
+berthing_hours;2;hours;Швартовка
+unberthing_hours;2;hours;Отшвартовка
+doc_clearance_hours;3;hours;Документы
+safety_buffer_hours;4;hours;Буфер между судами
+load_rate_sfo;2500;mt/day;Погрузка SFO
+load_rate_rpo;2200;mt/day;Погрузка RPO
+load_rate_meal;2000;mt/day;Погрузка MEAL
+load_rate_pellets;1800;mt/day;Погрузка PELLETS
+demurrage_barge;3000;usd/day;Демерредж баржи
+demurrage_dry;4000;usd/day;Демерредж сухогруза
+berth_fee_day;500;usd/day;Причальный сбор
+working_hours_start;6;hour;Начало работы
+working_hours_end;22;hour;Конец работы
+night_work_allowed;yes;bool;Ночная работа

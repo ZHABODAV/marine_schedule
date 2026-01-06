@@ -1,0 +1,4 @@
+berth_id;berth_name;berth_type;max_loa_m;max_beam_m;max_draft_m;cargo_types;load_rate_mt_day;working_hours;remarks
+BERTH_T1;Танкерный причал 1;liquid;150;20;4.5;SFO,RPO,CSO;2500;24;Масла круглосуточно
+BERTH_D1;Сухой причал 1;dry;140;18;4.0;MEAL,PELLETS,GRAIN;2000;24;Шрот и пеллеты
+BERTH_D2;Сухой причал 2;dry;120;16;3.5;MEAL,PELLETS;1500;12;Резервный, только день

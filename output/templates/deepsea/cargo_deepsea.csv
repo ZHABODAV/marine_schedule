@@ -1,0 +1,15 @@
+# ================================================
+# DEEP SEA CARGO - Cargo fixtures
+# ================================================
+# cargo_id       - Cargo ID (CRG_01, CRG_02...)
+# commodity      - Product: Grain, Coal, Iron ore, etc.
+# qty_mt         - Quantity (MT)
+# load_port      - Loading port
+# disch_port     - Discharge port
+# laycan_start   - Laycan start (YYYY-MM-DD)
+# laycan_end     - Laycan end (YYYY-MM-DD)
+# charterer      - Charterer name
+# freight_rate_mt - Freight rate (USD/MT)
+# remarks        - Notes
+# ================================================
+cargo_id;commodity;qty_mt;load_port;disch_port;laycan_start;laycan_end;charterer;freight_rate_mt;remarks

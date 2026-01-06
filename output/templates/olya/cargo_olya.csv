@@ -1,0 +1,14 @@
+# ================================================
+# OLYA CARGO - Cargo movements
+# ================================================
+# cargo_id     - Cargo ID (CARG_01, CARG_02...)
+# cargo_type   - Product type (SFO, RPO, CSO)
+# qty_mt       - Quantity (MT)
+# load_port    - Loading port
+# disch_port   - Discharge port
+# earliest_date - Laycan start (YYYY-MM-DD)
+# latest_date  - Laycan end (YYYY-MM-DD)
+# priority     - Priority: 1 (high) - 3 (low)
+# remarks      - Notes
+# ================================================
+cargo_id;cargo_type;qty_mt;load_port;disch_port;earliest_date;latest_date;priority;remarks

@@ -1,0 +1,22 @@
+# ================================================
+# DEEP SEA VESSELS - Ocean-going vessels
+# ================================================
+# vessel_id        - Vessel ID (DS_01, DS_02...)
+# vessel_name      - Vessel name
+# imo              - IMO number
+# vessel_type      - Type: tanker, bulker, container
+# vessel_class     - Class: MR2, MR1, Handysize, Panamax, etc.
+# dwt_mt           - Deadweight tonnage (MT)
+# capacity_mt      - Cargo capacity (MT)
+# loa_m            - Length overall (m)
+# beam_m           - Beam (m)
+# draft_laden_m    - Laden draft (m)
+# draft_ballast_m  - Ballast draft (m)
+# speed_laden_kn   - Laden speed (knots)
+# speed_ballast_kn - Ballast speed (knots)
+# owner            - Vessel owner
+# flag             - Flag state
+# built_year       - Build year
+# remarks          - Notes
+# ================================================
+vessel_id;vessel_name;imo;vessel_type;vessel_class;dwt_mt;capacity_mt;loa_m;beam_m;draft_laden_m;draft_ballast_m;speed_laden_kn;speed_ballast_kn;owner;flag;built_year;remarks

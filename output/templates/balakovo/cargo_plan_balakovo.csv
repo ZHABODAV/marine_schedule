@@ -1,0 +1,18 @@
+# ================================================
+# BALAKOVO CARGO PLAN - План отгрузок
+# ================================================
+# cargo_id         - ID груза (CRG_01, CRG_02...)
+# cargo_type       - Тип: SFO, RPO, CSO (масла) или MEAL, PELLETS (сухие)
+# qty_mt           - Количество (MT)
+# destination      - Направление: OYA (→Olya→Иран) или TUR (→Турция)
+# priority         - Приоритет: 1 (высший) - 3 (низкий)
+# earliest_date    - Начало окна погрузки (YYYY-MM-DD)
+# latest_date      - Конец окна погрузки (YYYY-MM-DD)
+# vessel_preference - Предпочтительное судно (опционально)
+# remarks          - Примечания
+# ================================================
+# ВАЖНО: 
+# - Масла (SFO/RPO) идут на танкерный причал → баржами в Olya
+# - Сухие (MEAL/PELLETS) идут на сухой причал → сухогрузами в Турцию
+# ================================================
+cargo_id;cargo_type;qty_mt;destination;priority;earliest_date;latest_date;vessel_preference;remarks

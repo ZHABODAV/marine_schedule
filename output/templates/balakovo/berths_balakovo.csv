@@ -1,0 +1,15 @@
+# ================================================
+# BALAKOVO BERTHS - Причалы
+# ================================================
+# berth_id        - ID причала (BERTH_T1, BERTH_D1...)
+# berth_name      - Название
+# berth_type      - Тип: liquid (танкерный) или dry (сухой)
+# max_loa_m       - Макс. длина судна (м)
+# max_beam_m      - Макс. ширина судна (м)
+# max_draft_m     - Макс. осадка (м)
+# cargo_types     - Типы грузов через запятую (SFO,RPO,MEAL,PELLETS)
+# load_rate_mt_day - Норма погрузки (MT/день)
+# working_hours   - Режим работы: 24 (круглосуточно) или 12 (дневной)
+# remarks         - Примечания
+# ================================================
+berth_id;berth_name;berth_type;max_loa_m;max_beam_m;max_draft_m;cargo_types;load_rate_mt_day;working_hours;remarks

@@ -1,0 +1,2 @@
+voyage_id;vessel_name;vessel_class;route;cargo_type;qty_mt;laycan;actual_start;actual_end;total_days;sea_days;port_days;distance_nm;freight_usd;bunker_cost;port_cost;canal_cost;hire_cost;total_cost;tce_usd;charterer
+VOY_001;DYLAN (TC);MR2-CHEM;PRT_01 → PRT_02;Crude Oil;45000.0;05.01 - 10.01;05.01 08:00;11.02 07:19;37.0;37.0;0;9700.0;1597500.0;448423.0;0;0;937242.0;1385665.0;31080.0;ExxonMobil

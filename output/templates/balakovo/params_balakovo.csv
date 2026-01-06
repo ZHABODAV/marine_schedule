@@ -1,0 +1,20 @@
+# ================================================
+# BALAKOVO PARAMETERS - Параметры
+# ================================================
+parameter;value;unit;description
+season_start;2025-04-01;date;Начало навигации
+season_end;2025-11-15;date;Конец навигации
+berthing_hours;2;hours;Время швартовки
+unberthing_hours;2;hours;Время отшвартовки
+doc_clearance_hours;3;hours;Оформление документов
+safety_buffer_hours;4;hours;Буфер между судами
+load_rate_sfo;2500;mt/day;Норма погрузки SFO
+load_rate_rpo;2200;mt/day;Норма погрузки RPO
+load_rate_meal;2000;mt/day;Норма погрузки MEAL
+load_rate_pellets;1800;mt/day;Норма погрузки PELLETS
+demurrage_barge;3000;usd/day;Демерредж баржи
+demurrage_dry;4000;usd/day;Демерредж сухогруза
+berth_fee_day;500;usd/day;Причальный сбор
+working_hours_start;6;hour;Начало рабочего дня
+working_hours_end;22;hour;Конец рабочего дня
+night_work_allowed;yes;bool;Разрешена ночная работа

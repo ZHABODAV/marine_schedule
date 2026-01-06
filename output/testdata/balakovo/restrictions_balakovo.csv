@@ -1,0 +1,8 @@
+restriction_id;restriction_type;start_date;end_date;berth_id;severity;description
+RST_01;weather;2025-04-05;2025-04-06;;medium;Сильный ветер
+RST_02;weather;2025-04-18;2025-04-19;;high;Шторм, работы остановлены
+RST_03;water_level;2025-04-01;2025-04-03;;low;Низкий уровень воды
+RST_04;maintenance;2025-04-10;2025-04-11;BERTH_T1;high;ТО танкерного причала
+RST_05;maintenance;2025-05-01;2025-05-02;BERTH_D2;medium;ТО резервного причала
+RST_06;holiday;2025-05-01;2025-05-01;;low;1 мая
+RST_07;holiday;2025-05-09;2025-05-09;;low;9 мая

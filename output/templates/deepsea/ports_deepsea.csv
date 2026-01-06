@@ -1,0 +1,17 @@
+# ================================================
+# DEEP SEA PORTS - Port specifications
+# ================================================
+# port_id          - Port ID (PRT_01, PRT_02...)
+# port_name        - Port name
+# country          - Country
+# region           - Region (e.g., Med, Far East, AG)
+# latitude         - Latitude
+# longitude        - Longitude
+# port_type        - Type: load, discharge, transit, bunker
+# max_draft_m      - Maximum draft (m)
+# load_rate_mt_day - Loading rate (MT/day)
+# disch_rate_mt_day - Discharge rate (MT/day)
+# port_charges_usd - Port charges (USD)
+# remarks          - Notes
+# ================================================
+port_id;port_name;country;region;latitude;longitude;port_type;max_draft_m;load_rate_mt_day;disch_rate_mt_day;port_charges_usd;remarks

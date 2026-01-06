@@ -1,0 +1,10 @@
+# ================================================
+# DEEP SEA ROUTES - Port-to-port distances
+# ================================================
+# from_port    - Origin port
+# to_port      - Destination port
+# distance_nm  - Distance (nautical miles)
+# canal        - Canal name (Suez, Panama) or leave empty
+# remarks      - Notes
+# ================================================
+from_port;to_port;distance_nm;canal;remarks
