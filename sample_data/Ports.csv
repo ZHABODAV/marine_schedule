@@ -1,0 +1,35 @@
+port_id;port_name;country;basin;unlocode;latitude;longitude;can_handle_liquid;can_handle_dry;avg_loading_rate_tph;avg_discharge_rate_tph;typical_waiting_hours;congestion_level
+SBP;Большой порт СПб;Russia;Baltic;RUSPB;59,93;30,25;yes;yes;400;500;12;Low
+KAG;Калининград;Russia;Baltic;RUKAG;54,71;20,51;yes;yes;500;600;8;Medium
+PLA;Палдиски;Estonia;Baltic;EEPLA;59,35;24,05;yes;yes;600;700;6;Medium
+RTM;Роттердам;Netherlands;N. Europe;NLRTM;51,95;4,13;yes;yes;700;800;24;High
+SVN;Савонна;Italy;Med. Europe;ITSVN ;44,30;8,47;yes;yes;600;700;10;Low
+OYA;Оля;Russia;Caspian;RUOYA;45,3;47,9;yes;yes;450;550;8;Low
+BKO;Балаково;Russia;Volgian;RUBKO;52,05;47,85;yes;yes;200;250;4;Low
+EKM;Окарем;Turkmenistan;Caspian;TKEKM;42,47;59,62;yes;yes;250;300;6;Medium
+GIB;Гибралтар;Gibraltar;Med. Europe;GIGIB;36,15;-5,37;yes;;;;;
+AMI;Амирабад;Iran;Caspian;IRAMI;36,86;53,38;;;;;;
+ANZ;Энзали;Iran;Caspian;IRANZ;37,47;49,47;;;;;;
+AST;Астрахань;Russia;Caspian;RUAST;46,35;47,95;;;;;;
+ROV;Ростов-на-Дону;Russia;Azov;RUROV;47,21;39,71;;;;;;
+KZP;Керчь;Russia;Azov-Black;RUKZP;45,34;36,48;;;;;;
+PSD;Порт Саид;Egypt;Med EMEA;EGPSD;31,25;32,30;;;;;;
+SUEZ;Суэц;Egypt;Red Sea;EGSUEZ;29,00;32,55;;;;;;
+SOH;Сохар;Oman;Gulf;OMSOH;24,34;56,73;;;;;;
+BIK;BIK;Iran;Gulf;IRBIK;30,43;49,10;;;;;;
+BJA;Bejaia;Algeria;Med EMEA;DZBJA;36,75;5,07;;;;;;
+KAK;Какинада;India;ECI;INKAK;16,93;82,22;;;;;;
+CHE;Ченнай;India;ECI;INCHE;13,08;80,29;;;;;;
+NMA;Мангало;India;WCI;INNMA;12,93;74,81;;;;;;
+KRI;Кришнапатнам;India;ECI;INKRI;14,25;80,13;;;;;;
+MUN;Мундра;India;WCI;INMUN;22,75;69,70;;;;;;
+JNP;Нава Шева;India;WCI;INJNP;18,95;72,95;;;;;;
+COC;Кочин;India;WCI;INCOC;9,97;76,27;;;;;;
+DUM;Думай;Indonesia;Straits;IDDUM;1,69;101,45;;;;;;
+BEL;Белаван;Indonesia;Straits;IDBEL;3,79;98,69;;;;;;
+LUG;Лубук Гаунг;Indonesia;Straits;IDLUG;1,75;101,37;;;;;;
+SIN;Сингапур;Singapore;Straits;SGSIN;1,26;103,84;;;;;;
+YEI;Ейск;Russia;Azov;RUYEI;46,73;38,27;;;;;;
+KAR;Карасу;Turkey;Black sea;TRKAR;41,12;30,68;;;;;;
+IZM;Измир;Turkey;Aegen;TRIZM;38,43;27,15;;;;;;
+MER;Мерсин;Turkey;Med EMEA;TRMER;36,81;34,64;;;;;;

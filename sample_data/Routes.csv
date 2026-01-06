@@ -1,0 +1,9 @@
+route_id;route_name;port_start_id;port_end_id;distance_nm;typical_duration_days;canal_transit;canal_name;eca_pct;waypoints;typical_weather_risk
+R001;Houston-Rotterdam;Houston;Rotterdam;4800;14.5;no;;25;Gibraltar;Low
+R002;Newcastle-Singapore;Newcastle;Singapore;3900;11.2;no;;15;Sunda Strait;Medium
+R003;PortHedland-Qingdao;Port Hedland;Qingdao;2800;8.5;no;;10;;Low
+R004;Vancouver-Yokohama;Vancouver;Yokohama;4200;12.0;no;;20;Aleutians;Medium
+R005;Houston-Singapore;Houston;Singapore;9500;28.0;yes;Suez;30;Suez,Malacca;Medium
+R006;Rotterdam-Qingdao;Rotterdam;Qingdao;10200;30.0;yes;Suez;25;Suez,Singapore;Medium
+R007;Balakovo-Olya;Balakovo;Olya;500;1.5;no;;0;Volga River;Low
+R008;Olya-Baku;Olya;Baku;350;1.0;no;;0;;Low

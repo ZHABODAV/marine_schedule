@@ -1,0 +1,9 @@
+vessel_id;vessel_name;vessel_class;type;dwt_mt;capacity_mt;speed_kn;tc_daily_hire_usd;contract_type
+V001;Atlantic Star;Handysize;Dry Bulk;35000;33000;14.0;15000;Time Charter
+V002;Pacific Dawn;Panamax;Dry Bulk;75000;72000;15.0;22000;Time Charter
+V003;Baltic Voyager;Handymax;Dry Bulk;52000;50000;14.0;18000;Spot
+V004;Mediterranean Queen;Supramax;Dry Bulk;58000;56000;14.5;19500;Time Charter
+V005;Indian Ocean;Capesize;Dry Bulk;180000;175000;14.5;35000;Spot
+V006;Volga Runner;River-Sea;Dry Bulk;5000;4800;10.0;5000;Owned
+V007;Caspian Pearl;River-Sea;Dry Bulk;4500;4300;9.5;4500;Owned
+V008;Northern Star;Handysize;Dry Bulk;38000;36000;13.5;16000;Time Charter
