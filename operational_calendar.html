@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="calendar.title">Operational Calendar - Vessel Schedule Manager</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="operational_calendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- i18n Service -->
+    <script src="js/services/i18n-service.js"></script>
+    
+    <!-- External JavaScript Libraries (loaded before modules) -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="calendar-container">
+        <!-- Header -->
+        <header class="calendar-header">
+            <div class="header-left">
+                <h1><i class="fas fa-calendar-alt"></i> <span data-i18n="calendar.title">Operational Calendar</span></h1>
+                <p class="subtitle" data-i18n="calendar.subtitle">Year Schedule & Vessel Planning</p>
+            </div>
+            <div class="header-right">
+                <div id="language-toggle"></div>
+                <button class="btn btn-primary" id="todayBtn">
+                    <i class="fas fa-calendar-day"></i> <span data-i18n="calendar.today">Today</span>
+                </button>
+                <button class="btn btn-secondary" id="exportBtn">
+                    <i class="fas fa-download"></i> <span data-i18n="app.export">Export</span>
+                </button>
+                <button class="btn btn-secondary" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i> <span data-i18n="app.refresh">Refresh</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="control-group">
+                <label for="viewType">View:</label>
+                <select id="viewType" class="control-select">
+                    <option value="month">Month</option>
+                    <option value="week">Week</option>
+                    <option value="year">Year</option>
+                    <option value="timeline">Timeline</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="moduleFilter">Module:</label>
+                <select id="moduleFilter" class="control-select">
+                    <option value="all">All Modules</option>
+                    <option value="deepsea">Deep Sea</option>
+                    <option value="olya">Olya</option>
+                    <option value="balakovo">Balakovo</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="vesselFilter">Vessel:</label>
+                <select id="vesselFilter" class="control-select">
+                    <option value="all">All Vessels</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter" class="control-select">
+                    <option value="all">All Status</option>
+                    <option value="planned">Planned</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="delayed">Delayed</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="searchInput">Search:</label>
+                <input type="text" id="searchInput" class="control-input" placeholder="Search voyages...">
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="navigation-bar">
+            <button class="nav-btn" id="prevBtn">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <div class="current-period" id="currentPeriod">
+                January 2026
+            </div>
+            <button class="nav-btn" id="nextBtn">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+            <!-- Calendar View -->
+            <div class="calendar-view" id="calendarView">
+                <!-- Month View -->
+                <div class="month-view" id="monthView">
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar cells will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Timeline View -->
+                <div class="timeline-view hidden" id="timelineView">
+                    <div class="timeline-header">
+                        <div class="timeline-vessels" id="timelineVessels">
+                            <!-- Vessel rows will be generated here -->
+                        </div>
+                        <div class="timeline-dates" id="timelineDates">
+                            <!-- Date columns will be generated here -->
+                        </div>
+                    </div>
+                    <div class="timeline-body" id="timelineBody">
+                        <!-- Timeline events will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Year View -->
+                <div class="year-view hidden" id="yearView">
+                    <div class="year-grid" id="yearGrid">
+                        <!-- 12 mini-months will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-info-circle"></i> Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalVoyages">0</div>
+                            <div class="stat-label">Total Voyages</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="activeVessels">0</div>
+                            <div class="stat-label">Active Vessels</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalCargo">0</div>
+                            <div class="stat-label">Cargo (MT)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalCost">$0</div>
+                            <div class="stat-label">Total Cost</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-list"></i> Upcoming Events</h3>
+                    <div class="events-list" id="upcomingEvents">
+                        <!-- Events will be populated here -->
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-palette"></i> Legend</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #3498db;"></span>
+                            <span class="legend-text">Deep Sea</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #2ecc71;"></span>
+                            <span class="legend-text">Olya</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #e74c3c;"></span>
+                            <span class="legend-text">Balakovo</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #f39c12;"></span>
+                            <span class="legend-text">In Progress</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #95a5a6;"></span>
+                            <span class="legend-text">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Event Details Modal -->
+        <div class="modal hidden" id="eventModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Voyage Details</h2>
+                    <button class="modal-close" id="modalClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Event details will be populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="editEventBtn">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="btn btn-danger" id="deleteEventBtn">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                    <button class="btn btn-primary" id="closeModalBtn">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay hidden" id="loadingOverlay">
+            <div class="spinner"></div>
+            <p>Loading calendar data...</p>
+        </div>
+    </div>
+
+    <!-- Main Application Entry Point -->
+    <script type="module" src="js/main.js"></script>
+    
+    <!-- Standalone Calendar Module (if not using main app) -->
+    <script type="module">
+        import { OperationalCalendar } from './js/modules/operational-calendar.js';
+        import { AppState } from './js/core/app-state.js';
+        import { StorageService } from './js/services/storage-service.js';
+        
+        // Initialize standalone calendar
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize language toggle
+            const langToggleContainer = document.getElementById('language-toggle');
+            if (langToggleContainer && window.i18n) {
+                window.i18n.createLanguageToggle(langToggleContainer);
+                
+                // Listen for language changes
+                window.i18n.onLanguageChange((newLang) => {
+                    window.i18n.updateDOM();
+                    console.log(`Language changed to: ${newLang}`);
+                });
+            }
+            
+            const state = new AppState();
+            const storage = new StorageService();
+            
+            await storage.init();
+            
+            const calendar = new OperationalCalendar(state, storage);
+            await calendar.init();
+            
+            // Make calendar globally accessible
+            window.operationalCalendar = calendar;
+            
+            console.log(' Operational Calendar initialized with bilingual support');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,4459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система планирования судов - Enhanced</title>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <!-- vis-network for network visualization -->
+    <link rel="stylesheet" href="https://unpkg.com/vis-network@9.1.2/styles/vis-network.min.css">
+    <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Operational Calendar Styles -->
+    <link rel="stylesheet" href="operational_calendar.css">
+    <style>
+/* Dark Theme Variables */
+:root {
+    --bg-primary: #1a1d23;
+    --bg-secondary: #242830;
+    --bg-tertiary: #2d3139;
+    --bg-hover: #353a45;
+    --text-primary: #e4e6eb;
+    --text-secondary: #b0b3b8;
+    --text-muted: #8a8d93;
+    --border-color: #3a3f4b;
+    --border-light: #2d3139;
+    --accent-primary: #4a9eff;
+    --accent-secondary: #6c5ce7;
+    --accent-success: #00b894;
+    --accent-warning: #fdcb6e;
+    --accent-danger: #ff7675;
+    --operation-loading: #00b894;
+    --operation-discharge: #0984e3;
+    --operation-transit: #6c5ce7;
+    --operation-ballast: #fdcb6e;
+    --operation-canal: #e17055;
+    --operation-bunker: #74b9ff;
+    --operation-waiting: #636e72;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Global Filters Bar */
+.global-filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filter-group label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 0.5rem;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 140px;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.btn-filter {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-filter:hover {
+    background-color: #3a8eef;
+}
+
+.btn-filter-reset {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+   cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.btn-filter-reset:hover {
+    border-color: var(--accent-danger);
+    color: var(--accent-danger);
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-hover);
+}
+
+.tab-button.active {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+.content {
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+.operation-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.operation-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+}
+
+.operation-badge {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.operation-badge.loading { background-color: var(--operation-loading); }
+.operation-badge.discharge { background-color: var(--operation-discharge); }
+.operation-badge.transit { background-color: var(--operation-transit); }
+.operation-badge.ballast { background-color: var(--operation-ballast); }
+.operation-badge.canal { background-color: var(--operation-canal); }
+.operation-badge.bunker { background-color: var(--operation-bunker); }
+.operation-badge.waiting { background-color: var(--operation-waiting); }
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-tertiary);
+}
+
+.data-table thead {
+    background-color: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.data-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    padding: 1rem;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.data-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--bg-hover);
+}
+
+.no-data {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem !important;
+    font-style: italic;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a8eef;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.btn-success {
+    background-color: var(--accent-success);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #019874;
+}
+
+.btn-danger {
+    background-color: var(--accent-danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #e66565;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.select-input {
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.select-input:hover,
+.select-input:focus {
+    border-color: var(--accent-primary);
+}
+
+.info-box {
+    background-color: var(--bg-tertiary);
+    border-left: 4px solid var(--accent-primary);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+.info-box h3 {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+
+.info-box p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.info-box ul {
+    list-style-position: inside;
+    color: var(--text-secondary);
+}
+
+.info-box li {
+    margin-bottom: 0.5rem;
+}
+
+.report-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+}
+
+.report-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.report-card p {
+    color: var(--text-secondary);
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.import-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.file-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.file-input-group label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.file-input-group input[type="file"] {
+    padding: 0.75rem;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.file-input-group input[type="file"]:hover {
+    border-color: var(--accent-primary);
+}
+
+.file-input-group input[type="file"]::file-selector-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 1rem;
+    font-weight: 600;
+}
+
+.file-input-group input[type="file"]::file-selector-button:hover {
+    background-color: #3a8eef;
+}
+
+.footer {
+    padding: 2rem 0;
+    border-top: 2px solid var(--border-color);
+    margin-top: auto;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 0.25rem 0;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-active {
+    background-color: rgba(0, 184, 148, 0.2);
+    color: var(--accent-success);
+}
+
+.status-pending {
+    background-color: rgba(253, 203, 110, 0.2);
+    color: var(--accent-warning);
+}
+
+.status-completed, .status-assigned {
+    background-color: rgba(74, 158, 255, 0.2);
+    color: var(--accent-primary);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-primary);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.modal-buttons button {
+    flex: 1;
+}
+
+/* Network visualization */
+#networkGraph {
+    width: 100%;
+    height: 600px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-tertiary);
+}
+
+/* Gantt Chart Specific Styles */
+.gantt-chart {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.gantt-table {
+    border-collapse: collapse;
+    min-width: 100%;
+    background-color: var(--bg-tertiary);
+}
+
+.gantt-table th,
+.gantt-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.gantt-table thead th {
+    background-color: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.gantt-table tbody th {
+    background-color: var(--bg-secondary);
+    font-weight: 600;
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 5;
+    min-width: 150px;
+}
+
+.gantt-cell {
+    min-width: 40px;
+    height: 40px;
+}
+
+.gantt-cell.op-loading { background-color: var(--operation-loading); color: white; }
+.gantt-cell.op-discharge { background-color: var(--operation-discharge); color: white; }
+.gantt-cell.op-transit { background-color: var(--operation-transit); color: white; }
+.gantt-cell.op-ballast { background-color: var(--operation-ballast); color: white; }
+.gantt-cell.op-canal { background-color: var(--operation-canal); color: white; }
+.gantt-cell.op-bunker { background-color: var(--operation-bunker); color: white; }
+.gantt-cell.op-waiting { background-color: var(--operation-waiting); color: white; }
+
+/* Leg Builder */
+.leg-builder {
+    display: grid;
+    gap: 1rem;
+}
+
+.leg-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    gap: 0.75rem;
+    align-items: end;
+    padding: 1rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+}
+
+.leg-item input,
+.leg-item select {
+    padding: 0.5rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Comparison table */
+.comparison-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 150px repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+.comparison-row.header {
+    background-color: var(--bg-secondary);
+    font-weight: 600;
+}
+
+.comparison-cell {
+    padding: 0.5rem;
+}
+
+.comparison-cell.label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Stock timeline */
+.stock-timeline {
+    overflow-x: auto;
+}
+
+.stock-chart {
+    min-width: 800px;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .header h1 { font-size: 2rem; }
+    .subtitle { font-size: 1rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .section { padding: 1.5rem; }
+    .import-container { grid-template-columns: 1fr; }
+    .global-filters { flex-direction: column; align-items: stretch; }
+    .leg-item { grid-template-columns: 1fr; }
+}
+
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background-color: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background-color: var(--accent-primary); }
+
+@keyframes slideIn {
+    from { transform: translateX(400px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(400px); opacity: 0; }
+}
+    
+
+/* ===== UI MODULES STYLES ===== */
+/**
+ * Combined CSS for all UI Modules
+ * Comprehensive styling for vessel schedule UI components
+ */
+
+/* ============================================
+   GLOBAL VARIABLES
+   ============================================ */
+
+:root {
+    /* Primary Colors */
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #06b6d4;
+    
+    /* Severity Colors */
+    --critical-color: #ef4444;
+    --high-color: #f59e0b;
+    --medium-color: #eab308;
+    --low-color: #10b981;
+    
+    /* Neutral Colors */
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   COMMON WRAPPER STYLES
+   ============================================ */
+
+.alerts-dashboard-wrapper,
+.berth-management-wrapper,
+.bunker-optimization-wrapper,
+.weather-integration-wrapper,
+.vessel-tracking-wrapper,
+.scenario-management-wrapper,
+.voyage-templates-wrapper,
+.capacity-planning-wrapper {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-primary,
+.btn-secondary,
+.btn-sm,
+.btn-icon {
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--accent-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #3a8eef;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-hover);
+    border-color: var(--accent-primary);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.btn-sm:hover {
+    background: var(--bg-hover);
+}
+
+.btn-icon {
+    padding: 8px 12px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-icon:hover {
+    background: var(--bg-hover);
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.data-table thead {
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.data-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.2s;
+}
+
+.data-table tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+.data-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card, .alert-card, .berth-card, .scenario-card, .template-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: all 0.2s;
+}
+
+.card:hover, .alert-card:hover, .berth-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+
+.status-badge,
+.severity-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-badge.active, .severity-badge.critical {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.pending, .severity-badge.high {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.severity-badge.medium {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.status-badge.completed, .severity-badge.low {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* ============================================
+   ALERTS DASHBOARD SPECIFIC
+   ============================================ */
+
+.alerts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.alerts-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stat-card {
+    background: var(--bg-tertiary);
+    border-left: 4px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.stat-card.critical {
+    border-left-color: var(--critical-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.stat-card.high {
+    border-left-color: var(--high-color);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--accent-primary);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* ============================================
+   BERTH MANAGEMENT SPECIFIC
+   ============================================ */
+
+.view-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.berth-view {
+    display: none;
+}
+
+.berth-view.active {
+    display: block;
+}
+
+.berth-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.berth-card.occupied {
+    border-left: 4px solid var(--danger-color);
+    background: #615151;
+}
+
+.berth-card.available {
+    border-left: 4px solid var(--success-color);
+    background: #f0fdf4;
+}
+
+/* ============================================
+   TIMELINE / GANTT STYLES
+   ============================================ */
+
+.timeline-grid,
+.utilization-timeline {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+.timeline-day {
+    flex: 1;
+    min-width: 60px;
+    text-align: center;
+}
+
+.day-label {
+    font-size: 12px;
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-xs);
+}
+
+.util-bar-container {
+    height: 100px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-sm);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.util-bar {
+    width: 100%;
+    background: linear-gradient(to top, var(--primary-color), var(--info-color));
+    border-radius: var(--radius-sm);
+    transition: height 0.3s ease;
+    position: relative;
+}
+
+.util-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+/* ============================================
+   CHARTS
+   ============================================ */
+
+.simple-chart, .simple-bar-chart {
+    padding: var(--spacing-md);
+}
+
+.chart-row, .chart-day {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.chart-label {
+    width: 100px;
+    font-size: 13px;
+    color: var(--gray-700);
+}
+
+.chart-bars, .bars {
+    flex: 1;
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+.bar {
+    height: 30px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-sm);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    transition: width 0.3s ease;
+}
+
+.capacity-bar, bar.capacity {
+    background: var(--info-color);
+}
+
+.demand-bar, .bar.demand {
+    background: var(--primary-color);
+}
+
+.bar.overbooked {
+    background: var(--danger-color);
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
+
+/* Modal base styles - display is controlled by .show class */
+/* .modal positioning already defined above at line 579 */
+
+.modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--gray-600);
+}
+
+.modal-close:hover {
+    color: var(--gray-900);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+/* ============================================
+   WEATHER INTEGRATION
+   ============================================ */
+
+.weather-warnings-list,
+.weather-forecast-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.weather-forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.forecast-day {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.forecast-icon {
+    font-size: 32px;
+    margin: var(--spacing-sm) 0;
+}
+
+.warning-card {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--warning-color);
+    background: #fffbeb;
+    border-radius: var(--radius-md);
+}
+
+.warning-icon {
+    font-size: 24px;
+}
+
+/* ============================================
+   TRACKING MAP
+   ============================================ */
+
+#tracking-map {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.map-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: var(--gray-50);
+    color: var(--gray-600);
+    font-style: italic;
+}
+
+/* ============================================
+   TEMPLATES & SCENARIOS
+   ============================================ */
+
+.templates-grid,
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.template-card,
+.scenario-card {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: all 0.2s;
+}
+
+.template-card:hover,
+.scenario-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.scenario-card.active {
+    border-color: var(--primary-color);
+    background: #eff6ff;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .alerts-summary,
+    .berth-grid,
+    .templates-grid,
+    .scenarios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-grid,
+    .utilization-timeline {
+        overflow-x: scroll;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .view-tabs {
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.no-data {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--gray-500);
+    font-style: italic;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.error-message {
+    padding: var(--spacing-md);
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid var(--danger-color);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+}
+
+.success-message {
+    padding: var(--spacing-md);
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid var(--success-color);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: var(--radius-sm);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+</style>
+
+    <!-- External Libraries for UI Modules -->
+    <!-- Leaflet for maps (vessel tracking) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- html2pdf for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1>Система планирования судов</h1>
+                    <p class="subtitle">Управление грузовыми морскими операциями - Enhanced Edition</p>
+                    <div id="sessionInfo" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Загрузка...
+                    </div>
+                </div>
+                <div>
+                    <select class="select-input" id="moduleSelector" onchange="switchModule()" style="padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600;">
+                        <option value="deepsea">Deep Sea (Морские)</option>
+                        <option value="balakovo">Balakovo (Балаково)</option>
+                        <option value="olya">Olya (Оля)</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Global Filters -->
+        <div class="global-filters">
+            <div class="filter-group">
+                <label>Модуль</label>
+                <select id="filterModule">
+                    <option value="">Все модули</option>
+                    <option value="deepsea">Deep Sea</option>
+                    <option value="balakovo">Balakovo</option>
+                    <option value="olya">Olya</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Дата с</label>
+                <input type="date" id="filterDateStart">
+            </div>
+            <div class="filter-group">
+                <label>Дата по</label>
+                <input type="date" id="filterDateEnd">
+            </div>
+            <div class="filter-group">
+                <label>Продукт</label>
+                <select id="filterProduct">
+                    <option value="">Все продукты</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Порт</label>
+                <select id="filterPort">
+                    <option value="">Все порты</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Судно</label>
+                <select id="filterVessel">
+                    <option value="">Все суда</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button class="btn-filter" onclick="applyFilters()">Применить</button>
+                <button class="btn-filter-reset" onclick="resetFilters()">Сброс</button>
+            </div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="tab-button active" data-tab="dashboard">Общая панель</button>
+            <button class="tab-button" data-tab="vessels">Суда</button>
+            <button class="tab-button" data-tab="cargo">Грузы</button>
+            <button class="tab-button" data-tab="routes">Маршруты</button>
+            <button class="tab-button" data-tab="schedule">Расписание</button>
+            <button class="tab-button" data-tab="voyageBuilder">Конструктор рейсов</button>
+            <button class="tab-button" data-tab="comparison">Сравнение</button>
+            <button class="tab-button" data-tab="portStock">Склады портов</button>
+            <button class="tab-button" data-tab="salesPlan">План продаж</button>
+            <button class="tab-button" data-tab="network">Сеть</button>
+            <button class="tab-button" data-tab="reports">Отчеты</button>
+            <button class="tab-button" data-tab="alerts">Оповещения</button>
+            <button class="tab-button" data-tab="berthManager">Причалы</button>
+            <button class="tab-button" data-tab="bunkerOpt">Бункер</button>
+            <button class="tab-button" data-tab="weather">Погода</button>
+            <button class="tab-button" data-tab="tracking">Трекинг</button>
+            <button class="tab-button" data-tab="scenarioMgmt">Сценарии</button>
+            <button class="tab-button" data-tab="templates">Шаблоны</button>
+            <button class="tab-button" data-tab="capacityPlan">Вместимость</button>
+            <button class="tab-button" data-tab="tradingLanes">Торговые линии</button>
+            <button class="tab-button" data-tab="vesselCargoAssignment">Назначения</button>
+            <button class="tab-button" data-tab="yearSchedule">Годовое расписание</button>
+            <button class="tab-button" data-tab="operationalCalendar">Оперативный календарь</button>
+            <button class="tab-button" data-tab="financialAnalysis">Финансовый анализ</button>
+        </nav>
+
+        <main class="content">
+            <!-- Dashboard Tab - Unified Info Panel -->
+            <div class="tab-content active" id="dashboard">
+                <!-- Summary Statistics -->
+                <div class="cards-grid" style="margin-bottom: 2rem;">
+                    <div class="card">
+                        <h3>Активные суда</h3>
+                        <div class="stat-value" id="activeVessels">0</div>
+                        <p class="stat-label">В работе</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ожидающие грузы</h3>
+                        <div class="stat-value" id="pendingCargo">0</div>
+                        <p class="stat-label">Требуют назначения</p>
+                    </div>
+                    <div class="card">
+                        <h3>Активные рейсы</h3>
+                        <div class="stat-value" id="activeVoyages">0</div>
+                        <p class="stat-label">В процессе</p>
+                    </div>
+                    <div class="card">
+                        <h3>Загрузка флота</h3>
+                        <div class="stat-value" id="utilization">0%</div>
+                        <p class="stat-label">Текущий период</p>
+                    </div>
+                </div>
+
+                <!-- Cross-Filtering Panel -->
+                <div class="section" style="margin-bottom: 2rem;">
+                    <div class="section-header">
+                        <h2>Кроссфильтрация данных</h2>
+                        <button class="btn-secondary" onclick="clearCrossFilters()">Очистить фильтры</button>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div class="filter-group">
+                            <label>Груз</label>
+                            <select id="crossFilterCargo" onchange="applyCrossFilters()">
+                                <option value="">Все грузы</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Судно</label>
+                            <select id="crossFilterVessel" onchange="applyCrossFilters()">
+                                <option value="">Все суда</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Рейс</label>
+                            <select id="crossFilterVoyage" onchange="applyCrossFilters()">
+                                <option value="">Все рейсы</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Маршрут</label>
+                            <select id="crossFilterRoute" onchange="applyCrossFilters()">
+                                <option value="">Все маршруты</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unified Info Panel: Cargo - Vessel - Voyage - Route -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Информационная панель: Груз - Судно - Рейс - Маршрут</h2>
+                        <div class="controls">
+                            <input type="text" id="unifiedPanelSearch" placeholder="Быстрый поиск..." class="select-input" oninput="renderUnifiedPanel()" style="min-width: 200px;">
+                            <button class="btn-secondary" onclick="renderUnifiedPanel()">Обновить</button>
+                        </div>
+                    </div>
+                    <div id="unifiedInfoPanelGrid" class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));">
+                        <!-- Unified cards will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vessels Tab -->
+            <div class="tab-content" id="vessels">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Флот судов</h2>
+                        <button class="btn-primary" onclick="addVessel()">Добавить судно</button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID судна</th>
+                                    <th>Название</th>
+                                    <th>Класс</th>
+                                    <th>DWT (MT)</th>
+                                    <th>Скорость (узлы)</th>
+                                    <th>Статус</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vesselsTableBody">
+                                <tr>
+                                    <td colspan="7" class="no-data">Загружается...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cargo Tab -->
+            <div class="tab-content" id="cargo">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Грузовые обязательства</h2>
+                        <button class="btn-primary" onclick="addCargo()">Добавить груз</button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID груза</th>
+                                    <th>Товар</th>
+                                    <th>Количество (MT)</th>
+                                    <th>Порт погрузки</th>
+                                    <th>Порт выгрузки</th>
+                                    <th>Начало лейкэна</th>
+                                    <th>Конец лейкэна</th>
+                                    <th>Статус</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cargoTableBody">
+                                <tr>
+                                    <td colspan="8" class="no-data">Загружается...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Routes Tab -->
+            <div class="tab-content" id="routes">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Маршруты</h2>
+                        <div class="controls">
+                            <button class="btn-primary" onclick="addRoute()">Добавить маршрут</button>
+                            <button class="btn-secondary" onclick="transferSelectedRoutesToBuilder()" id="bulkTransferBtn" style="display: none;">В конструктор (выбрано: <span id="selectedRoutesCount">0</span>)</button>
+                        </div>
+                    </div>
+                    <div class="info-box" style="margin-bottom: 1.5rem;">
+                        <p><strong>Маршруты</strong> — это базовые отрезки пути между двумя портами (Point A → Point B). Они содержат информацию о дистанции и каналах. Используются как "кирпичики" для построения рейсов.</p>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;">
+                                        <input type="checkbox" id="selectAllRoutes" onclick="toggleAllRoutes(this)" style="cursor: pointer; width: 18px; height: 18px;">
+                                    </th>
+                                    <th>От</th>
+                                    <th>До</th>
+                                    <th>Дистанция (морских миль)</th>
+                                    <th>Канал</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="routesTableBody">
+                                <tr>
+                                    <td colspan="5" class="no-data">Загружается...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Tab -->
+            <div class="tab-content" id="schedule">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Расписание судов - <span id="scheduleModule">Deep Sea</span></h2>
+                        <div class="controls">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+                                <div>
+                                    <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Выбор рейсов для диаграммы:</label>
+                                    <select id="voyageSelectionForGantt" class="select-input" style="padding: 0.5rem 1rem;">
+                                        <option value="all">Все рейсы</option>
+                                        <option value="active">Только активные рейсы</option>
+                                        <option value="planned">Только запланированные</option>
+                                        <option value="custom">Пользовательский выбор...</option>
+                                    </select>
+                                </div>
+                                <div id="opTypeFilters">
+                                    <!-- Operation type checkboxes will be added here dynamically -->
+                                </div>
+                            </div>
+                            <button class="btn-primary" onclick="generateSchedule()">Сгенерировать расписание</button>
+                        </div>
+                    </div>
+
+                    <!-- Operation types legend moved here -->
+                    <div style="margin-bottom: 2rem;">
+                        <h3>Типы операций</h3>
+                        <div class="operation-types">
+                            <div class="operation-item">
+                                <span class="operation-badge loading">П</span>
+                                <span>Погрузка</span>
+                            </div>
+                            <div class="operation-item">
+                                <span class="operation-badge discharge">В</span>
+                                <span>Выгрузка</span>
+                            </div>
+                            <div class="operation-item">
+                                <span class="operation-badge transit">Т</span>
+                                <span>Транзит</span>
+                            </div>
+                            <div class="operation-item">
+                                <span class="operation-badge ballast">Б</span>
+                                <span>Балласт</span>
+                            </div>
+                            <div class="operation-item">
+                                <span class="operation-badge canal">К</span>
+                                <span>Канал</span>
+                            </div>
+                            <div class="operation-item">
+                                <span class="operation-badge bunker">Ф</span>
+                                <span>Бункеровка</span>
+                            </div>
+                            <div class="operation-item">
+                                <span class="operation-badge waiting">О</span>
+                                <span>Ожидание</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="scheduleContent">
+                        <div class="info-box">
+                            <h3>Генерация расписания</h3>
+                            <p>Нажмите "Сгенерировать расписание" для просмотра расписания судов текущего модуля (<strong><span id="currentModuleName">Deep Sea</span></strong>).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voyage Builder Tab -->
+            <div class="tab-content" id="voyageBuilder">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Конструктор рейсов</h2>
+                        <div class="controls">
+                            <button class="btn-primary" onclick="addVoyageLeg()">Добавить этап</button>
+                            <button class="btn-success" onclick="validateVoyage()">Проверить</button>
+                            <button class="btn-secondary" onclick="saveVoyageTemplate()">Сохранить шаблон</button>
+                        </div>
+                    </div>
+
+                    <div class="info-box" style="margin-bottom: 1.5rem;">
+                        <p><strong>Конструктор рейсов</strong> — инструмент для детального планирования одного конкретного рейса. Здесь вы собираете рейс из последовательности этапов (погрузка, переход, выгрузка, бункеровка). Созданный рейс можно сохранить как <em>Шаблон</em>.</p>
+                    </div>
+                    
+                    <div id="voyageLegsContainer" class="leg-builder">
+                        <!-- Legs will be added dynamically -->
+                    </div>
+
+                    <div id="voyageValidation" style="margin-top: 1.5rem;"></div>
+                </div>
+            </div>
+
+            <!-- Comparison Tab -->
+            <div class="tab-content" id="comparison">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Сравнение рейсов и сценариев</h2>
+                        <button class="btn-primary" onclick="runComparison()">Сравнить выбранные</button>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3>Выберите рейсы/сценарии</h3>
+                        <div id="comparisonSelector" style="display: grid; gap: 0.5rem;">
+                            <!-- Checkboxes for voyages will be added dynamically -->
+                        </div>
+                    </div>
+
+                    <div id="comparisonResults" class="comparison-grid">
+                        <!-- Results will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Port Stock Tab -->
+            <div class="tab-content" id="portStock">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Накопление грузов в порту</h2>
+                        <div class="controls">
+                            <select id="portStockSelect" onchange="updatePortStock()">
+                                <option value="">Выберите порт...</option>
+                            </select>
+                            <button class="btn-primary" onclick="calculatePortStock()">Рассчитать</button>
+                        </div>
+                    </div>
+
+                    <div id="portStockResults">
+                        <div class="info-box">
+                            <p>Выберите порт и нажмите "Рассчитать" для просмотра ежедневных уровней запасов, поступлений по ЖД и отгрузок морем.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Plan Tab -->
+            <div class="tab-content" id="salesPlan">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Калькулятор плана продаж</h2>
+                        <div class="controls">
+                            <button class="btn-primary" onclick="calculateSalesPlan()">Рассчитать план</button>
+                            <button class="btn-secondary" onclick="placeVolumeInTradingLanes()">Разместить объем</button>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" style="margin-bottom: 1.5rem;">
+                        <div class="card">
+                            <h3>Требуемые отгрузки</h3>
+                            <div class="stat-value" id="requiredShipments">0</div>
+                            <p class="stat-label">MT</p>
+                        </div>
+                        <div class="card">
+                            <h3>Предлагаемые рейсы</h3>
+                            <div class="stat-value" id="suggestedTrips">0</div>
+                            <p class="stat-label">Рейсов</p>
+                        </div>
+                        <div class="card">
+                            <h3>Дефицит вместимости</h3>
+                            <div class="stat-value" id="capacityGap">0</div>
+                            <p class="stat-label">MT</p>
+                        </div>
+                    </div>
+
+                    <div id="salesPlanDetails"></div>
+                </div>
+            </div>
+
+            <!-- Network Tab -->
+            <div class="tab-content" id="network">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Сеть: Порты + ЖД + Море</h2>
+                        <div class="controls">
+                            <button class="btn-primary" onclick="renderNetwork()">Сгенерировать сеть</button>
+                            <button class="btn-secondary" onclick="exportNetworkSnapshot()">Экспорт снимка</button>
+                        </div>
+                    </div>
+
+                    <div id="networkGraph"></div>
+                </div>
+            </div>
+
+            
+            <!-- Alerts Dashboard Tab -->
+            <div class="tab-content" id="alerts">
+                <div id="alerts-dashboard" class="module-container"></div>
+            </div>
+
+            <!-- Berth Management Tab -->
+            <div class="tab-content" id="berthManager">
+                <div id="berth-management" class="module-container"></div>
+            </div>
+
+            <!-- Bunker Optimization Tab -->
+            <div class="tab-content" id="bunkerOpt">
+                <div id="bunker-optimization" class="module-container"></div>
+            </div>
+
+            <!-- Weather Integration Tab -->
+            <div class="tab-content" id="weather">
+                <div id="weather-integration" class="module-container"></div>
+            </div>
+
+            <!-- Vessel Tracking Tab -->
+            <div class="tab-content" id="tracking">
+                <div id="vessel-tracking" class="module-container"></div>
+            </div>
+
+            <!-- Scenario Management Tab -->
+            <div class="tab-content" id="scenarioMgmt">
+                <div id="scenario-management" class="module-container"></div>
+            </div>
+
+            <!-- Voyage Templates Tab -->
+            <div class="tab-content" id="templates">
+                <div id="voyage-templates" class="module-container"></div>
+            </div>
+
+            <!-- Berth Capacity Planning Tab -->
+            <div class="tab-content" id="capacityPlan">
+                <div id="berth-capacity-planning" class="module-container"></div>
+            </div>
+
+            <!-- Trading Lanes Tab -->
+            <div class="tab-content" id="tradingLanes">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Торговые линии</h2>
+                        <button class="btn-primary" onclick="generateTradingLanes()">Генерировать линии</button>
+                    </div>
+                    
+                    <div class="info-box" style="margin-bottom: 1.5rem;">
+                        <p><strong>Торговые линии</strong> — это регулярные маршруты перевозки между портами, образующие систему морской логистики. Каждая линия включает цепочку портов, объемы перевозки и частоту рейсов.</p>
+                    </div>
+
+                    <div id="tradingLanesGrid" class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));">
+                        <!-- Trading lanes will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vessel-Cargo Assignment Tab -->
+            <div class="tab-content" id="vesselCargoAssignment">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Назначение судов на грузы</h2>
+                        <button class="btn-primary" onclick="autoAssignVesselsCargo()">Авто-назначение</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Груз ID</th>
+                                    <th>Товар</th>
+                                    <th>Количество (MT)</th>
+                                    <th>Маршрут</th>
+                                    <th>Лейкэн</th>
+                                    <th>Назначенное судно</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="assignmentTableBody">
+                                <tr>
+                                    <td colspan="7" class="no-data">Загружается...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Year Schedule Tab -->
+            <div class="tab-content" id="yearSchedule">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Генератор годового расписания</h2>
+                        <button class="btn-primary" onclick="generateYearSchedule()">Сгенерировать годовое расписание</button>
+                    </div>
+                    
+                    <div class="info-box" style="margin-bottom: 1.5rem;">
+                        <p><strong>Годовое расписание</strong> — автоматическая генерация расписания рейсов на год вперед с учетом времени оборота судов и базовых паттернов перевозки.</p>
+                    </div>
+                    
+                    <!-- Year Schedule Parameters -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="form-group">
+                            <label>Начальная дата:</label>
+                            <input type="date" id="yearScheduleStartDate" value="2026-01-01">
+                        </div>
+                        <div class="form-group">
+                            <label>Период (месяцев):</label>
+                            <input type="number" id="yearSchedulePeriod" value="12" min="1" max="24">
+                        </div>
+                        <div class="form-group">
+                            <label>Коэффициент оборота:</label>
+                            <input type="number" id="yearScheduleTurnaround" value="2.0" step="0.1" min="1.0" max="5.0">
+                            <small style="color: var(--text-muted);">Множитель времени оборота судна</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Базовый план:</label>
+                            <select id="yearScheduleBasePlan" class="select-input">
+                                <option value="current">Текущий план рейсов</option>
+                                <option value="salesPlan">План продаж</option>
+                                <option value="template">Из шаблона</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Year Schedule Results -->
+                    <div id="yearScheduleResults"></div>
+                </div>
+            </div>
+
+            <!-- Operational Calendar Tab -->
+            <div class="tab-content" id="operationalCalendar">
+                <div class="calendar-container" style="padding: 0;">
+                    <!-- Control Panel -->
+                    <div class="control-panel">
+                        <div class="control-group">
+                            <label for="calViewType">View:</label>
+                            <select id="calViewType" class="control-select">
+                                <option value="month">Month</option>
+                                <option value="week">Week</option>
+                                <option value="year">Year</option>
+                                <option value="timeline">Timeline</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="calModuleFilter">Module:</label>
+                            <select id="calModuleFilter" class="control-select">
+                                <option value="all">All Modules</option>
+                                <option value="deepsea">Deep Sea</option>
+                                <option value="olya">Olya</option>
+                                <option value="balakovo">Balakovo</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="calVesselFilter">Vessel:</label>
+                            <select id="calVesselFilter" class="control-select">
+                                <option value="all">All Vessels</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="calStatusFilter">Status:</label>
+                            <select id="calStatusFilter" class="control-select">
+                                <option value="all">All Status</option>
+                                <option value="planned">Planned</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="delayed">Delayed</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="calSearchInput">Search:</label>
+                            <input type="text" id="calSearchInput" class="control-input" placeholder="Search voyages...">
+                        </div>
+                    </div>
+
+                    <!-- Navigation Bar -->
+                    <div class="navigation-bar">
+                        <button class="nav-btn" id="calPrevBtn">
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <div class="current-period" id="calCurrentPeriod">
+                            January 2026
+                        </div>
+                        <button class="nav-btn" id="calNextBtn">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="content-wrapper">
+                        <!-- Calendar View -->
+                        <div class="calendar-view" id="calendarViewContent">
+                            <!-- Month View -->
+                            <div class="month-view" id="calMonthView">
+                                <div class="calendar-grid" id="calendarGrid">
+                                    <!-- Calendar cells will be generated here -->
+                                </div>
+                            </div>
+
+                            <!-- Timeline View -->
+                            <div class="timeline-view hidden" id="calTimelineView">
+                                <div class="timeline-header">
+                                    <div class="timeline-vessels" id="calTimelineVessels">
+                                        <!-- Vessel rows will be generated here -->
+                                    </div>
+                                    <div class="timeline-dates" id="calTimelineDates">
+                                        <!-- Date columns will be generated here -->
+                                    </div>
+                                </div>
+                                <div class="timeline-body" id="calTimelineBody">
+                                    <!-- Timeline events will be generated here -->
+                                </div>
+                            </div>
+
+                            <!-- Year View -->
+                            <div class="year-view hidden" id="calYearView">
+                                <div class="year-grid" id="calYearGrid">
+                                    <!-- 12 mini-months will be generated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <aside class="sidebar">
+                            <div class="sidebar-section">
+                                <h3><i class="fas fa-info-circle"></i> Statistics</h3>
+                                <div class="stats-grid">
+                                    <div class="stat-card">
+                                        <div class="stat-value" id="calTotalVoyages">0</div>
+                                        <div class="stat-label">Total Voyages</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-value" id="calActiveVessels">0</div>
+                                        <div class="stat-label">Active Vessels</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-value" id="calTotalCargo">0</div>
+                                        <div class="stat-label">Cargo (MT)</div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-value" id="calTotalCost">$0</div>
+                                        <div class="stat-label">Total Cost</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3><i class="fas fa-list"></i> Upcoming Events</h3>
+                                <div class="events-list" id="calUpcomingEvents">
+                                    <!-- Events will be populated here -->
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3><i class="fas fa-palette"></i> Legend</h3>
+                                <div class="legend-items">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #3498db;"></span>
+                                        <span class="legend-text">Deep Sea</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #2ecc71;"></span>
+                                        <span class="legend-text">Olya</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #e74c3c;"></span>
+                                        <span class="legend-text">Balakovo</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #f39c12;"></span>
+                                        <span class="legend-text">In Progress</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #95a5a6;"></span>
+                                        <span class="legend-text">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- Event Details Modal -->
+                    <div class="modal hidden" id="calEventModal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 id="calModalTitle">Voyage Details</h2>
+                                <button class="modal-close" id="calModalClose">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="calModalBody">
+                                <!-- Event details will be populated here -->
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" id="calEditEventBtn">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn btn-danger" id="calDeleteEventBtn">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                                <button class="btn btn-primary" id="calCloseModalBtn">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Analysis Tab -->
+            <div class="tab-content" id="financialAnalysis">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Финансовый анализ</h2>
+                        <button class="btn-primary" onclick="calculateFinancialAnalysis()">Рассчитать анализ</button>
+                    </div>
+                    
+                    <!-- Financial Summary Cards -->
+                    <div class="cards-grid" style="margin-bottom: 2rem;">
+                        <div class="card">
+                            <h3>Общие затраты</h3>
+                            <div class="stat-value" id="totalCosts">$0</div>
+                            <p class="stat-label">Всего за период</p>
+                        </div>
+                        <div class="card">
+                            <h3>Аренда судов</h3>
+                            <div class="stat-value" id="totalHireCosts">$0</div>
+                            <p class="stat-label">Time Charter</p>
+                        </div>
+                        <div class="card">
+                            <h3>Бункер</h3>
+                            <div class="stat-value" id="totalBunkerCosts">$0</div>
+                            <p class="stat-label">Топливо</p>
+                        </div>
+                        <div class="card">
+                            <h3>Прочие расходы</h3>
+                            <div class="stat-value" id="totalOtherCosts">$0</div>
+                            <p class="stat-label">Порты + Аллокации</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bunker Optimization Section -->
+                    <div class="section" style="background-color: var(--bg-tertiary); margin-bottom: 2rem;">
+                        <h3> Оптимизация бункера</h3>
+                        <div class="cards-grid" style="margin-top: 1rem;">
+                            <div class="card">
+                                <h3>Затраты на бункер</h3>
+                                <div class="stat-value" id="bunkerCosts">$0</div>
+                                <p class="stat-label">Всего</p>
+                            </div>
+                            <div class="card">
+                                <h3>Потенциал экономии</h3>
+                                <div class="stat-value" id="bunkerSavings">$0</div>
+                                <p class="stat-label">При оптимизации</p>
+                            </div>
+                            <div class="card">
+                                <h3>Средний расход</h3>
+                                <div class="stat-value" id="avgConsumption">0</div>
+                                <p class="stat-label">MT/день</p>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" onclick="optimizeBunkerStrategy()" style="margin-top: 1rem;">Оптимизировать стратегию</button>
+                    </div>
+                    
+                    <!-- Financial Details Table -->
+                    <div id="financialDetailsTable"></div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div class="tab-content" id="reports">
+                <div class="section">
+                    <h2>Отчеты и экспорт</h2>
+                    
+                    <!-- PDF Reports Section -->
+                    <div class="section" style="background-color: var(--bg-tertiary); border-left: 4px solid var(--accent-danger); margin-bottom: 2rem;">
+                        <h3 style="color: var(--accent-danger); margin-bottom: 1rem;"> PDF Отчеты</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Генерация комплексных PDF отчетов для печати и презентаций</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="btn-danger" onclick="generatePDFReport('comprehensive')" style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span></span>
+                                <span>Полный отчет (PDF)</span>
+                            </button>
+                            <button class="btn-secondary" onclick="generatePDFReport('fleet')" style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span></span>
+                                <span>Отчет по флоту (PDF)</span>
+                            </button>
+                            <button class="btn-secondary" onclick="generatePDFReport('schedule')" style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span></span>
+                                <span>Расписание (PDF)</span>
+                            </button>
+                            <button class="btn-secondary" onclick="generatePDFReport('financial')" style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span></span>
+                                <span>Финансовый анализ (PDF)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Excel Reports Section -->
+                    <h3>Excel Отчеты</h3>
+                    <div class="cards-grid">
+                        <div class="card report-card">
+                            <h3>Диаграмма Ганта</h3>
+                            <p>Визуальное представление расписания судов</p>
+                            <button class="btn-secondary" onclick="exportGantt()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Обзор флота</h3>
+                            <p>Комплексный отчет по загрузке флота</p>
+                            <button class="btn-secondary" onclick="exportFleetOverview()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Сводка рейсов</h3>
+                            <p>Детальные расчеты и статистика рейсов</p>
+                            <button class="btn-secondary" onclick="exportVoyageSummary()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Сравнение сценариев</h3>
+                            <p>Сравнение нескольких вариантов расписания</p>
+                            <button class="btn-secondary" onclick="exportScenarios()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Финансовый анализ Deep Sea</h3>
+                            <p>TCE, прибыль, затраты на бункер</p>
+                            <button class="btn-secondary" onclick="exportDeepSeaFinancial()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Координация Olya</h3>
+                            <p>Расписание стыковок барж и судов</p>
+                            <button class="btn-secondary" onclick="exportOlyaCoordination()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Voyage Comparison</h3>
+                            <p>Сравнение рейсов и KPI</p>
+                            <button class="btn-secondary" onclick="exportVoyageComparison()">Экспорт в Excel</button>
+                        </div>
+                        <div class="card report-card">
+                            <h3>Port Stock Timeline</h3>
+                            <p>История накопления грузов в портах</p>
+                            <button class="btn-secondary" onclick="exportPortStockTimeline()">Экспорт в Excel</button>
+                        </div>
+                    </div>
+
+                    <div class="section" style="margin-top: 2rem;">
+                        <h3>Импорт данных (Scheduler CSV, delimiter ';')</h3>
+                        <div class="import-container">
+                            <div class="file-input-group">
+                                <label for="portsFile">Ports.csv (мастер):</label>
+                                <input type="file" id="portsFile" accept=".csv" onchange="handleFileUpload(this, 'ports')">
+                            </div>
+                            <div class="file-input-group">
+                                <label for="routesFile">Routes.csv (мастер):</label>
+                                <input type="file" id="routesFile" accept=".csv" onchange="handleFileUpload(this, 'routes')">
+                            </div>
+                            <div class="file-input-group">
+                                <label for="vesselsFile">Vessels.csv (мастер):</label>
+                                <input type="file" id="vesselsFile" accept=".csv" onchange="handleFileUpload(this, 'vessels')">
+                            </div>
+                            <div class="file-input-group">
+                                <label for="cargoTypesFile">Cargo.csv (мастер типов):</label>
+                                <input type="file" id="cargoTypesFile" accept=".csv" onchange="handleFileUpload(this, 'cargoTypes')">
+                            </div>
+
+                            <div class="file-input-group">
+                                <label for="commitmentsFile">CargoCommitments.csv (план):</label>
+                                <input type="file" id="commitmentsFile" accept=".csv" onchange="handleFileUpload(this, 'commitments')">
+                            </div>
+                            <div class="file-input-group">
+                                <label for="railCargoFile">rail_cargo.csv (ЖД):</label>
+                                <input type="file" id="railCargoFile" accept=".csv" onchange="handleFileUpload(this, 'railCargo')">
+                            </div>
+                            <div class="file-input-group">
+                                <label for="movementsFile">cargo_movements.csv (факт/план):</label>
+                                <input type="file" id="movementsFile" accept=".csv" onchange="handleFileUpload(this, 'movements')">
+                            </div>
+                            <div class="file-input-group">
+                                <label for="voyageLegsFile">voyage_legs.csv (legs):</label>
+                                <input type="file" id="voyageLegsFile" accept=".csv" onchange="handleFileUpload(this, 'voyageLegs')">
+                            </div>
+                        </div>
+                        <div class="info-box" style="margin-top: 1.5rem;">
+                            <h3>Рекомендованный порядок импорта</h3>
+                            <ul>
+                                <li>Ports.csv → Routes.csv → Vessels.csv → Cargo.csv</li>
+                                <li>Далее: CargoCommitments.csv и (опционально) rail_cargo.csv / cargo_movements.csv / voyage_legs.csv</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                <strong>Примечание:</strong> Файл <code>rail_cargo.csv</code> используется для интеграции данных о поступлении грузов по железной дороге. Это позволяет рассчитывать накопление грузов в портах и планировать стыковку с морскими судами.
+                            </p>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <h3>Генерация шаблонов</h3>
+                            <p style="margin-bottom: 1rem; color: var(--text-secondary);">Создать пустые CSV шаблоны для заполнения данных.</p>
+                            <button class="btn-primary" onclick="generateTemplates()"> Сгенерировать шаблоны</button>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <h3 style="color: var(--accent-danger);">Управление данными</h3>
+                            <p style="margin-bottom: 1rem; color: var(--text-secondary);">Сброс всех данных приложения к исходному состоянию. Удаляет все загруженные файлы и очищает локальное хранилище.</p>
+                            <button class="btn-danger" onclick="clearAllData()"> Очистить все данные</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Система планирования судов &copy; 2025 - Команда морской логистики</p>
+            <p>Версия 4.0.0 Complete with UI Modules | Generated: 2025-12-18 21:16:47</p>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <!-- Cargo Modal -->
+    <div id="cargoModal" class="modal">
+        <div class="modal-content">
+            <h2 id="cargoModalTitle">Добавить груз</h2>
+            <form id="cargoForm">
+                <input type="hidden" id="cargoEditId">
+                <div class="form-group">
+                    <label>ID груза:</label>
+                    <input type="text" id="cargoId" required>
+                </div>
+                <div class="form-group">
+                    <label>Товар:</label>
+                    <input type="text" id="commodity" required>
+                </div>
+                <div class="form-group">
+                    <label>Количество (MT):</label>
+                    <input type="number" id="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label>Порт погрузки:</label>
+                    <select id="loadPort" required>
+                        <option value="">Выберите порт...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Порт выгрузки:</label>
+                    <select id="dischPort" required>
+                        <option value="">Выберите порт...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Начало лейкэна:</label>
+                    <input type="date" id="laycanStart" required>
+                </div>
+                <div class="form-group">
+                    <label>Конец лейкэна:</label>
+                    <input type="date" id="laycanEnd" required>
+                </div>
+                
+                <!-- Cost Allocation Fields -->
+                <div class="form-group">
+                    <label>Операционные расходы (USD):</label>
+                    <input type="number" id="operationalCost" value="0" min="0" step="1000">
+                </div>
+                <div class="form-group">
+                    <label>Накладные расходы (USD):</label>
+                    <input type="number" id="overheadCost" value="0" min="0" step="1000">
+                </div>
+                <div class="form-group">
+                    <label>Прочие расходы (USD):</label>
+                    <input type="number" id="otherCost" value="0" min="0" step="1000">
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-primary">Сохранить</button>
+                    <button type="button" class="btn-secondary" onclick="closeCargoModal()">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Vessel Modal -->
+    <div id="vesselModal" class="modal">
+        <div class="modal-content">
+            <h2 id="vesselModalTitle">Добавить судно</h2>
+            <form id="vesselForm">
+                <input type="hidden" id="vesselEditId">
+                <div class="form-group">
+                    <label>ID судна:</label>
+                    <input type="text" id="vesselId" required>
+                </div>
+                <div class="form-group">
+                    <label>Название:</label>
+                    <input type="text" id="vesselName" required>
+                </div>
+                <div class="form-group">
+                    <label>Класс:</label>
+                    <input type="text" id="vesselClass" required>
+                </div>
+                <div class="form-group">
+                    <label>DWT (MT):</label>
+                    <input type="number" id="vesselDwt" required>
+                </div>
+                <div class="form-group">
+                    <label>Скорость (узлы):</label>
+                    <input type="number" step="0.1" id="vesselSpeed" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-primary">Сохранить</button>
+                    <button type="button" class="btn-secondary" onclick="closeVesselModal()">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--  Route Modal -->
+    <div id="routeModal" class="modal">
+        <div class="modal-content">
+            <h2>Добавить маршрут</h2>
+            <form id="routeForm">
+                <div class="form-group">
+                    <label>Порт отправления:</label>
+                    <select id="routeFrom" required>
+                        <option value="">Выберите порт...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Порт назначения:</label>
+                    <select id="routeTo" required>
+                        <option value="">Выберите порт...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Дистанция (морских миль):</label>
+                    <input type="number" id="routeDistance" required>
+                </div>
+                <div class="form-group">
+                    <label>Канал (опционально):</label>
+                    <input type="text" id="routeCanal">
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-primary">Сохранить</button>
+                    <button type="button" class="btn-secondary" onclick="closeRouteModal()">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modern Modular JavaScript Application (ES6 Modules) -->
+    <script type="module">
+        console.log(' Initializing Vessel Scheduler (Complete Edition)...');
+        
+        // Import the main application
+        import VesselSchedulerApp from './js/main.js';
+        
+        // Initialize application when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                console.log(' Creating Vessel Scheduler Application...');
+                
+                const app = new VesselSchedulerApp();
+                await app.init();
+                
+                // Make app globally accessible
+                window.vesselSchedulerApp = app;
+                
+                console.log(' Vessel Scheduler Application initialized successfully');
+                
+                // Update session info
+                const sessionInfo = document.getElementById('sessionInfo');
+                if (sessionInfo) {
+                    sessionInfo.textContent = `Ready • Module: ${app.state.getCurrentModule()} • Version 4.0.0`;
+                }
+                
+            } catch (error) {
+                console.error(' Failed to initialize application:', error);
+                alert(`Application failed to load: ${error.message}`);
+            }
+        });
+    </script>
+    
+    <!-- Legacy JavaScript (backward compatibility - to be gradually phased out) -->
+    <script src="vessel_scheduler_enhanced.js"></script>
+
+    <!-- UI Modules JavaScript -->
+    <script>
+    /**
+ * Combined UI Modules for Vessel Schedule
+ * All modules in one file for easy deployment
+ * Separate individual files can be found in their respective directories
+ */
+
+// ======================
+// ALERTS DASHBOARD
+// ======================
+
+class AlertsDashboard {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/alerts',
+            containerId: config.containerId || 'alerts-dashboard',
+            refreshInterval: config.refreshInterval || 30000,
+            maxAlerts: config.maxAlerts || 100,
+            soundEnabled: config.soundEnabled !== false,
+            ...config
+        };
+        
+        this.alerts = [];
+        this.alertHistory = [];
+        this.filters = {
+            severity: 'all',
+            type: 'all',
+            status: 'active'
+        };
+        this.refreshTimer = null;
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        
+        const container = document.getElementById(this.config.containerId);
+        if (!container) {
+            console.error(`Container #${this.config.containerId} not found`);
+            return;
+        }
+        
+        this.render();
+        await this.loadAlerts();
+        this.startAutoRefresh();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="alerts-dashboard-wrapper">
+                <div class="alerts-header">
+                    <h3>Панель оповещений</h3>
+                    <div class="alerts-actions">
+                        <button id="alerts-refresh-btn" class="btn-icon" title="Обновить"></button>
+                        <button id="alerts-config-btn" class="btn-icon" title="Настройки"></button>
+                    </div>
+                </div>
+                <div class="alerts-filters">
+                    <select id="alerts-severity-filter" class="filter-select">
+                        <option value="all">Все уровни</option>
+                        <option value="critical">Критический</option>
+                        <option value="high">Высокий</option>
+                        <option value="medium">Средний</option>
+                        <option value="low">Низкий</option>
+                    </select>
+                    <select id="alerts-type-filter" class="filter-select">
+                        <option value="all">Все типы</option>
+                    </select>
+                    <select id="alerts-status-filter" class="filter-select">
+                        <option value="active">Только активные</option>
+                        <option value="all">Все статусы</option>
+                    </select>
+                </div>
+                <div class="alerts-summary">
+                    <div class="stat-card critical">
+                        <div class="stat-label">Критический</div>
+                        <div class="stat-value" id="critical-count">0</div>
+                    </div>
+                    <div class="stat-card high">
+                        <div class="stat-label">Высокий</div>
+                        <div class="stat-value" id="high-count">0</div>
+                    </div>
+                    <div class="stat-card medium">
+                        <div class="stat-label">Средний</div>
+                        <div class="stat-value" id="medium-count">0</div>
+                    </div>
+                    <div class="stat-card low">
+                        <div class="stat-label">Низкий</div>
+                        <div class="stat-value" id="low-count">0</div>
+                    </div>
+                </div>
+                <div class="alerts-list-container">
+                    <h4>Активные оповещения</h4>
+                    <div id="alerts-list" class="alerts-list"></div>
+                </div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.getElementById('alerts-refresh-btn')?.addEventListener('click', () => this.loadAlerts());
+        document.getElementById('alerts-severity-filter')?.addEventListener('change', (e) => {
+            this.filters.severity = e.target.value;
+            this.applyFilters();
+        });
+        document.getElementById('alerts-type-filter')?.addEventListener('change', (e) => {
+            this.filters.type = e.target.value;
+            this.applyFilters();
+        });
+        document.getElementById('alerts-status-filter')?.addEventListener('change', (e) => {
+            this.filters.status = e.target.value;
+            this.applyFilters();
+        });
+    }
+
+    async loadAlerts() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            if (!response.ok) throw new Error('Failed to fetch alerts');
+            
+            const data = await response.json();
+            this.processAlerts(data.alerts || []);
+            this.updateUI();
+        } catch (error) {
+            console.error('Error loading alerts:', error);
+        }
+    }
+
+    processAlerts(newAlerts) {
+        const existingIds = new Set(this.alerts.map(a => a.id));
+        
+        newAlerts.forEach(alert => {
+            if (!existingIds.has(alert.id)) {
+                this.alertHistory.unshift(alert);
+                if (this.config.soundEnabled && alert.severity === 'critical') {
+                    this.playAlertSound();
+                }
+            }
+        });
+
+        this.alerts = newAlerts;
+        if (this.alertHistory.length > this.config.maxAlerts) {
+            this.alertHistory = this.alertHistory.slice(0, this.config.maxAlerts);
+        }
+    }
+
+    updateUI() {
+        this.updateSummaryStats();
+        this.renderAlertsList();
+    }
+
+    updateSummaryStats() {
+        const counts = { critical: 0, high: 0, medium: 0, low: 0 };
+        this.alerts.forEach(alert => {
+            if (alert.status === 'active') {
+                counts[alert.severity] = (counts[alert.severity] || 0) + 1;
+            }
+        });
+        document.getElementById('critical-count').textContent = counts.critical;
+        document.getElementById('high-count').textContent = counts.high;
+        document.getElementById('medium-count').textContent = counts.medium;
+        document.getElementById('low-count').textContent = counts.low;
+    }
+
+    renderAlertsList() {
+        const container = document.getElementById('alerts-list');
+        const activeAlerts = this.getFilteredAlerts().filter(a => a.status === 'active');
+
+        if (activeAlerts.length === 0) {
+            container.innerHTML = '<div class="no-alerts">Нет активных оповещений</div>';
+            return;
+        }
+
+        container.innerHTML = activeAlerts.map(alert => `
+            <div class="alert-card severity-${alert.severity}" data-alert-id="${alert.id}">
+                <div class="alert-header">
+                    <span class="alert-severity">${this.getSeverityIcon(alert.severity)} ${alert.severity.toUpperCase()}</span>
+                    <span class="alert-time">${this.formatTime(alert.timestamp)}</span>
+                </div>
+                <div class="alert-message">${alert.message}</div>
+                <div class="alert-actions">
+                    <button class="btn-sm acknowledge-btn" data-alert-id="${alert.id}">Принять</button>
+                    <button class="btn-sm resolve-btn" data-alert-id="${alert.id}">Решить</button>
+                </div>
+            </div>
+        `).join('');
+
+        container.querySelectorAll('.acknowledge-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.acknowledgeAlert(e.target.dataset.alertId));
+        });
+        container.querySelectorAll('.resolve-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.resolveAlert(e.target.dataset.alertId));
+        });
+    }
+
+    applyFilters() {
+        this.updateUI();
+    }
+
+    getFilteredAlerts() {
+        return this.alerts.filter(alert => {
+            if (this.filters.severity !== 'all' && alert.severity !== this.filters.severity) return false;
+            if (this.filters.type !== 'all' && alert.type !== this.filters.type) return false;
+            if (this.filters.status !== 'all' && alert.status !== this.filters.status) return false;
+            return true;
+        });
+    }
+
+    async acknowledgeAlert(alertId) {
+        try {
+            await fetch(`${this.config.apiEndpoint}/${alertId}/acknowledge`, { method: 'POST' });
+            const alert = this.alerts.find(a => a.id === alertId);
+            if (alert) alert.status = 'acknowledged';
+            this.updateUI();
+        } catch (error) {
+            console.error('Error acknowledging alert:', error);
+        }
+    }
+
+    async resolveAlert(alertId) {
+        try {
+            await fetch(`${this.config.apiEndpoint}/${alertId}/resolve`, { method: 'POST' });
+            const alert = this.alerts.find(a => a.id === alertId);
+            if (alert) alert.status = 'resolved';
+            this.updateUI();
+        } catch (error) {
+            console.error('Error resolving alert:', error);
+        }
+    }
+
+    startAutoRefresh() {
+        if (this.refreshTimer) clearInterval(this.refreshTimer);
+        this.refreshTimer = setInterval(() => this.loadAlerts(), this.config.refreshInterval);
+    }
+
+    stopAutoRefresh() {
+        if (this.refreshTimer) {
+            clearInterval(this.refreshTimer);
+            this.refreshTimer = null;
+        }
+    }
+
+    playAlertSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.frequency.value = 800;
+        oscillator.type = 'sine';
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.5);
+    }
+
+    getSeverityIcon(severity) {
+        const icons = { critical: '', high: '', medium: '', low: '' };
+        return icons[severity] || '';
+    }
+
+    formatTime(timestamp) {
+        return new Date(timestamp).toLocaleString();
+    }
+
+    destroy() {
+        this.stopAutoRefresh();
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// ======================
+// BERTH MANAGEMENT
+// ======================
+
+class BerthManagement {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/berths',
+            containerId: config.containerId || 'berth-management',
+            refreshInterval: config.refreshInterval || 60000,
+            ...config
+        };
+        
+        this.berths = [];
+        this.constraints = [];
+        this.utilization = [];
+        this.conflicts = [];
+        this.currentView = 'dashboard';
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        
+        const container = document.getElementById(this.config.containerId);
+        if (!container) {
+            console.error(`Container #${this.config.containerId} not found`);
+            return;
+        }
+        
+        this.render();
+        await this.loadData();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="berth-management-wrapper">
+                <div class="berth-header">
+                    <h3>Управление причалами</h3>
+                    <div class="view-tabs">
+                        <button class="tab-btn active" data-view="dashboard">Панель</button>
+                        <button class="tab-btn" data-view="constraints">Ограничения</button>
+                        <button class="tab-btn" data-view="capacity">Вместимость</button>
+                        <button class="tab-btn" data-view="conflicts">Конфликты</button>
+                    </div>
+                </div>
+                <div id="berth-dashboard" class="berth-view active">
+                    <div class="dashboard-summary">
+                        <div class="summary-card">
+                            <div class="card-label">Всего причалов</div>
+                            <div class="card-value" id="total-berths">0</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-label">Активные суда</div>
+                            <div class="card-value" id="active-vessels">0</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="card-label">Ср. загрузка</div>
+                            <div class="card-value" id="avg-utilization">0%</div>
+                        </div>
+                        <div class="summary-card alert">
+                            <div class="card-label">Конфликты</div>
+                            <div class="card-value" id="conflict-count">0</div>
+                        </div>
+                    </div>
+                    <div id="berth-grid"></div>
+                </div>
+                <div id="berth-constraints" class="berth-view">
+                    <h4>Ограничения причалов</h4>
+                    <div id="constraints-list"></div>
+                </div>
+                <div id="berth-capacity" class="berth-view">
+                    <h4>Планирование вместимости</h4>
+                    <div id="capacity-content"></div>
+                </div>
+                <div id="berth-conflicts" class="berth-view">
+                    <h4>Конфликты</h4>
+                    <div id="conflicts-content"></div>
+                </div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.switchView(e.target.dataset.view));
+        });
+    }
+
+    async loadData() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            if (!response.ok) throw new Error('Failed to fetch berth data');
+            
+            const data = await response.json();
+            this.berths = data.berths || [];
+            this.constraints = data.constraints || [];
+            this.utilization = data.utilization || [];
+            this.conflicts = data.conflicts || [];
+            
+            this.updateAllViews();
+        } catch (error) {
+            console.error('Error loading berth data:', error);
+        }
+    }
+
+    switchView(viewName) {
+        this.currentView = viewName;
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.view === viewName);
+        });
+        document.querySelectorAll('.berth-view').forEach(view => {
+            view.classList.remove('active');
+        });
+        document.getElementById(`berth-${viewName}`)?.classList.add('active');
+        
+        switch(viewName) {
+            case 'dashboard':
+                this.updateDashboard();
+                break;
+            case 'constraints':
+                this.updateConstraintsView();
+                break;
+        }
+    }
+
+    updateAllViews() {
+        if (this.currentView === 'dashboard') {
+            this.updateDashboard();
+        }
+    }
+
+    updateDashboard() {
+        document.getElementById('total-berths').textContent = this.berths.length;
+        const activeVessels = this.berths.filter(b => b.currentVessel).length;
+        document.getElementById('active-vessels').textContent = activeVessels;
+        const avgUtil = this.calculateAverageUtilization();
+        document.getElementById('avg-utilization').textContent = `${avgUtil}%`;
+        document.getElementById('conflict-count').textContent = this.conflicts.length;
+        this.renderBerthGrid();
+    }
+
+    renderBerthGrid() {
+        const grid = document.getElementById('berth-grid');
+        grid.innerHTML = this.berths.map(berth => `
+            <div class="berth-card ${berth.currentVessel ? 'occupied' : 'available'}">
+                <div class="berth-name">${berth.name}</div>
+                <div class="berth-status">${berth.currentVessel ? 'Занят' : 'Свободен'}</div>
+                ${berth.currentVessel ? `<div class="berth-vessel">${berth.currentVessel}</div>` : ''}
+                <div class="berth-specs">Д: ${berth.maxLength}м | О: ${berth.maxDraft}м</div>
+            </div>
+        `).join('');
+    }
+
+    updateConstraintsView() {
+        const container = document.getElementById('constraints-list');
+        if (this.constraints.length === 0) {
+            container.innerHTML = '<div class="no-data">Ограничения не определены</div>';
+            return;
+        }
+        container.innerHTML = this.constraints.map(constraint => `
+            <div class="constraint-item">
+                <span>${constraint.berth}: ${constraint.type} = ${constraint.value}</span>
+            </div>
+        `).join('');
+    }
+
+    calculateAverageUtilization() {
+        if (this.utilization.length === 0) return 0;
+        const sum = this.utilization.reduce((acc, u) => acc + u.value, 0);
+        return Math.round(sum / this.utilization.length);
+    }
+
+    showError(message) {
+        const event = new CustomEvent('showNotification', {
+            detail: { type: 'error', message }
+        });
+        document.dispatchEvent(event);
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// ======================
+// BUNKER OPTIMIZATION
+// ======================
+
+class BunkerOptimization {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/bunker',
+            containerId: config.containerId || 'bunker-optimization',
+            ...config
+        };
+        this.routes = [];
+        this.ports = [];
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        const container = document.getElementById(this.config.containerId);
+        if (!container) return;
+        
+        this.render();
+        await this.loadData();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="bunker-optimization-wrapper">
+                <h3>Оптимизация бункера</h3>
+                <div class="bunker-calculator">
+                    <h4>Калькулятор затрат</h4>
+                    <form id="bunker-calc-form">
+                        <label>Дистанция рейса (nm): <input type="number" id="bunker-distance" required></label>
+                        <label>Скорость судна (узлы): <input type="number" id="bunker-speed" required></label>
+                        <label>Расход (MT/день): <input type="number" id="bunker-consumption" required></label>
+                        <label>Тип топлива:
+                            <select id="bunker-fuel-type">
+                                <option value="vlsfo">VLSFO</option>
+                                <option value="hfo">HFO</option>
+                                <option value="mgo">MGO</option>
+                            </select>
+                        </label>
+                        <button type="submit" class="btn-primary">Рассчитать</button>
+                    </form>
+                    <div id="bunker-result"></div>
+                </div>
+                <div class="bunker-ports">
+                    <h4>Рекомендуемые порты бункеровки</h4>
+                    <div id="bunker-ports-list"></div>
+                </div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.getElementById('bunker-calc-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.calculateBunkerCost();
+        });
+    }
+
+    async loadData() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            const data = await response.json();
+            this.ports = data.ports || [];
+            this.renderBunkerPorts();
+        } catch (error) {
+            console.error('Error loading bunker data:', error);
+        }
+    }
+
+    calculateBunkerCost() {
+        const distance = parseFloat(document.getElementById('bunker-distance').value);
+        const speed = parseFloat(document.getElementById('bunker-speed').value);
+        const consumption = parseFloat(document.getElementById('bunker-consumption').value);
+        const fuelType = document.getElementById('bunker-fuel-type').value;
+
+        const prices = { vlsfo: 450, hfo: 380, mgo: 550 };
+        const days = distance / (speed * 24);
+        const totalConsumption = days * consumption;
+        const totalCost = totalConsumption * prices[fuelType];
+
+        document.getElementById('bunker-result').innerHTML = `
+            <div class="result-card">
+                <p><strong>Длительность рейса:</strong> ${days.toFixed(2)} дней</p>
+                <p><strong>Общий расход:</strong> ${totalConsumption.toFixed(2)} MT</p>
+                <p><strong>Оценочная стоимость:</strong> $${totalCost.toFixed(2)}</p>
+            </div>
+        `;
+    }
+
+    renderBunkerPorts() {
+        const container = document.getElementById('bunker-ports-list');
+        container.innerHTML = this.ports.map(port => `
+            <div class="port-card">
+                <h5>${port.name}</h5>
+                <p>VLSFO: $${port.prices.vlsfo}/MT</p>
+                <p>HFO: $${port.prices.hfo}/MT</p>
+                <p>MGO: $${port.prices.mgo}/MT</p>
+            </div>
+        `).join('');
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// ======================
+// WEATHER INTEGRATION
+// ======================
+
+class WeatherIntegration {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/weather',
+            containerId: config.containerId || 'weather-integration',
+            ganttElementId: config.ganttElementId || null,
+            ...config
+        };
+        this.warnings = [];
+        this.forecasts = [];
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        const container = document.getElementById(this.config.containerId);
+        if (!container) return;
+        
+        this.render();
+        await this.loadWeatherData();
+        if (this.config.ganttElementId) this.overlayOnGantt();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="weather-integration-wrapper">
+                <h3>Интеграция погоды</h3>
+                <div class="weather-warnings">
+                    <h4>Активные предупреждения</h4>
+                    <div id="weather-warnings-list"></div>
+                </div>
+                <div class="weather-forecast">
+                    <h4>Прогноз на 5 дней</h4>
+                    <div id="weather-forecast-grid"></div>
+                </div>
+                <div class="weather-routes">
+                    <h4>Оценка рисков маршрута</h4>
+                    <div id="weather-route-risks"></div>
+                </div>
+            </div>
+        `;
+    }
+
+    async loadWeatherData() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            const data = await response.json();
+            this.warnings = data.warnings || [];
+            this.forecasts = data.forecasts || [];
+            this.renderWarnings();
+            this.renderForecast();
+        } catch (error) {
+            console.error('Error loading weather data:', error);
+        }
+    }
+
+    renderWarnings() {
+        const container = document.getElementById('weather-warnings-list');
+        if (this.warnings.length === 0) {
+            container.innerHTML = '<p class="no-data">Нет активных погодных предупреждений</p>';
+            return;
+        }
+
+        container.innerHTML = this.warnings.map(warning => `
+            <div class="warning-card severity-${warning.severity}">
+                <div class="warning-icon">${this.getWeatherIcon(warning.type)}</div>
+                <div class="warning-content">
+                    <h5>${warning.title}</h5>
+                    <p>${warning.description}</p>
+                    <p class="warning-location">${warning.location}</p>
+                    <p class="warning-time">${new Date(warning.validUntil).toLocaleString()}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    renderForecast() {
+        const container = document.getElementById('weather-forecast-grid');
+        container.innerHTML = this.forecasts.map(forecast => `
+            <div class="forecast-day">
+                <div class="forecast-date">${new Date(forecast.date).toLocaleDateString('en-US', {weekday: 'short', month: 'short', day: 'numeric'})}</div>
+                <div class="forecast-icon">${this.getWeatherIcon(forecast.condition)}</div>
+                <div class="forecast-temp">${forecast.temp}°C</div>
+                <div class="forecast-wind">Wind: ${forecast.windSpeed} kt</div>
+                <div class="forecast-waves">Waves: ${forecast.waveHeight} m</div>
+            </div>
+        `).join('');
+    }
+
+    overlayOnGantt() {
+        const ganttElement = document.getElementById(this.config.ganttElementId);
+        if (!ganttElement) return;
+
+        this.warnings.forEach(warning => {
+            const overlay = document.createElement('div');
+            overlay.className = 'weather-overlay';
+            overlay.style.cssText = `
+                position: absolute;
+                background: rgba(239, 68, 68, 0.2);
+                border: 2px dashed #ef4444;
+                pointer-events: none;
+                z-index: 100;
+            `;
+            overlay.title = warning.title;
+            ganttElement.appendChild(overlay);
+        });
+    }
+
+    getWeatherIcon(type) {
+        const icons = {
+            storm: '',
+            wind: '',
+            fog: '',
+            rain: '',
+            clear: '',
+            cloudy: ''
+        };
+        return icons[type] || '';
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// ======================
+// VESSEL TRACKING
+// ======================
+
+class VesselTracking {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/vessels/tracking',
+            containerId: config.containerId || 'vessel-tracking',
+            mapProvider: config.mapProvider || 'leaflet',
+            updateInterval: config.updateInterval || 60000,
+            ...config
+        };
+        this.vessels = [];
+        this.map = null;
+        this.markers = {};
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        const container = document.getElementById(this.config.containerId);
+        if (!container) return;
+        
+        this.render();
+        this.initMap();
+        await this.loadVesselData();
+        this.startTracking();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="vessel-tracking-wrapper">
+                <h3>Трекинг судов</h3>
+                <div class="tracking-controls">
+                    <button id="refresh-tracking-btn" class="btn-secondary">Обновить</button>
+                    <input type="text" id="vessel-search" placeholder="Поиск судна..." />
+                </div>
+                <div id="tracking-map" style="height: 500px; width: 100%;"></div>
+                <div class="vessel-list">
+                    <h4>Список судов</h4>
+                    <div id="vessel-status-table"></div>
+                </div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.getElementById('refresh-tracking-btn')?.addEventListener('click', () => {
+            this.loadVesselData();
+        });
+        
+        document.getElementById('vessel-search')?.addEventListener('input', (e) => {
+            this.filterVessels(e.target.value);
+        });
+    }
+
+    initMap() {
+        const mapDiv = document.getElementById('tracking-map');
+        if (!mapDiv) return;
+
+        if (typeof L !== 'undefined') {
+            this.map = L.map('tracking-map').setView([0, 0], 2);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(this.map);
+        } else {
+            mapDiv.innerHTML = '<div class="map-placeholder">Map library not loaded. Include Leaflet.js to enable mapping.</div>';
+        }
+    }
+
+    async loadVesselData() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            const data = await response.json();
+            this.vessels = data.vessels || [];
+            this.updateMap();
+            this.renderVesselTable();
+        } catch (error) {
+            console.error('Error loading vessel data:', error);
+        }
+    }
+
+    updateMap() {
+        if (!this.map) return;
+
+        Object.values(this.markers).forEach(marker => marker.remove());
+        this.markers = {};
+
+        this.vessels.forEach(vessel => {
+            if (vessel.position && vessel.position.lat && vessel.position.lon) {
+                if (typeof L !== 'undefined') {
+                    const marker = L.marker([vessel.position.lat, vessel.position.lon])
+                        .addTo(this.map)
+                        .bindPopup(`
+                            <b>${vessel.name}</b><br>
+                            Status: ${vessel.status}<br>
+                            Speed: ${vessel.speed} knots<br>
+                            Course: ${vessel.course}°<br>
+                            ETA: ${vessel.eta ? new Date(vessel.eta).toLocaleString() : 'N/A'}
+                        `);
+                    this.markers[vessel.id] = marker;
+                }
+            }
+        });
+
+        if (this.vessels.length > 0 && typeof L !== 'undefined') {
+            const bounds = L.latLngBounds(
+                this.vessels.filter(v => v.position).map(v => [v.position.lat, v.position.lon])
+            );
+            this.map.fitBounds(bounds, { padding: [50, 50] });
+        }
+    }
+
+    renderVesselTable() {
+        const container = document.getElementById('vessel-status-table');
+        container.innerHTML = `
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Судно</th>
+                        <th>Статус</th>
+                        <th>Позиция</th>
+                        <th>Скорость</th>
+                        <th>Назначение</th>
+                        <th>ETA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${this.vessels.map(vessel => `
+                        <tr>
+                            <td><strong>${vessel.name}</strong></td>
+                            <td><span class="status-badge ${vessel.status}">${vessel.status}</span></td>
+                            <td>${vessel.position ? `${vessel.position.lat.toFixed(2)}°, ${vessel.position.lon.toFixed(2)}°` : 'Н/Д'}</td>
+                            <td>${vessel.speed || 0} узлов</td>
+                            <td>${vessel.destination || 'Н/Д'}</td>
+                            <td>${vessel.eta ? new Date(vessel.eta).toLocaleString() : 'Н/Д'}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        `;
+    }
+
+    filterVessels(searchTerm) {
+        const rows = document.querySelectorAll('#vessel-status-table tbody tr');
+        rows.forEach(row => {
+            const vesselName = row.querySelector('td strong').textContent.toLowerCase();
+            row.style.display = vesselName.includes(searchTerm.toLowerCase()) ? '' : 'none';
+        });
+    }
+
+    startTracking() {
+        setInterval(() => {
+            this.loadVesselData();
+        }, this.config.updateInterval);
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        if (this.map) this.map.remove();
+        this.initialized = false;
+    }
+}
+
+// ======================
+// PDF EXPORT
+// ======================
+
+class PDFExport {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/export/pdf',
+            reportTypes: config.reportTypes || ['schedule', 'berth', 'fleet'],
+            ...config
+        };
+    }
+
+    async generateReport(reportType, options = {}) {
+        try {
+            const response = await fetch(this.config.apiEndpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    reportType,
+                    options
+                })
+            });
+
+            if (!response.ok) throw new Error('Failed to generate PDF');
+
+            const blob = await response.blob();
+            this.downloadPDF(blob, `${reportType}_report_${new Date().toISOString().split('T')[0]}.pdf`);
+        } catch (error) {
+            console.error('Error generating PDF:', error);
+            alert('Не удалось сгенерировать PDF отчет');
+        }
+    }
+
+    downloadPDF(blob, filename) {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    }
+
+    async exportCurrentView(elementId, filename = 'export.pdf') {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+
+        if (typeof html2pdf !== 'undefined') {
+            const opt = {
+                margin: 10,
+                filename: filename,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+            };
+
+            html2pdf().set(opt).from(element).save();
+        } else {
+            console.error('html2pdf library not loaded');
+            alert('Библиотека экспорта PDF недоступна');
+        }
+    }
+}
+
+// ======================
+// SCENARIO MANAGEMENT
+// ======================
+
+class ScenarioManagement {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/scenarios',
+            containerId: config.containerId || 'scenario-management',
+            ...config
+        };
+        this.scenarios = [];
+        this.currentScenario = null;
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        const container = document.getElementById(this.config.containerId);
+        if (!container) return;
+        
+        this.render();
+        await this.loadScenarios();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="scenario-management-wrapper">
+                <h3>Управление сценариями</h3>
+                <div class="scenario-header">
+                    <button id="create-scenario-btn" class="btn-primary">Создать новый сценарий</button>
+                    <button id="compare-scenarios-btn" class="btn-secondary">Сравнить сценарии</button>
+                </div>
+                <div class="scenarios-list">
+                    <h4>Доступные сценарии</h4>
+                    <div id="scenarios-grid"></div>
+                </div>
+                <div id="scenario-editor" style="display: none;">
+                    <h4>Редактор сценария</h4>
+                    <form id="scenario-form">
+                        <label>Название: <input type="text" id="scenario-name" required></label>
+                        <label>Описание: <textarea id="scenario-description"></textarea></label>
+                        <label>Основан на:
+                            <select id="scenario-base"></select>
+                        </label>
+                        <button type="submit" class="btn-primary">Сохранить сценарий</button>
+                        <button type="button" id="cancel-scenario-btn" class="btn-secondary">Отмена</button>
+                    </form>
+                </div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.getElementById('create-scenario-btn')?.addEventListener('click', () => {
+            this.showScenarioEditor();
+        });
+
+        document.getElementById('cancel-scenario-btn')?.addEventListener('click', () => {
+            this.hideScenarioEditor();
+        });
+
+        document.getElementById('scenario-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.saveScenario();
+        });
+
+        document.getElementById('compare-scenarios-btn')?.addEventListener('click', () => {
+            this.compareScenarios();
+        });
+    }
+
+    async loadScenarios() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            const data = await response.json();
+            this.scenarios = data.scenarios || [];
+            this.renderScenarios();
+        } catch (error) {
+            console.error('Error loading scenarios:', error);
+        }
+    }
+
+    renderScenarios() {
+        const container = document.getElementById('scenarios-grid');
+        container.innerHTML = this.scenarios.map(scenario => `
+            <div class="scenario-card ${scenario.id === this.currentScenario?.id ? 'active' : ''}">
+                <h5>${scenario.name}</h5>
+                <p>${scenario.description}</p>
+                <p class="scenario-meta">Создан: ${new Date(scenario.createdAt).toLocaleDateString()}</p>
+                <div class="scenario-actions">
+                    <button class="btn-sm load-scenario-btn" data-scenario-id="${scenario.id}">Загрузить</button>
+                    <button class="btn-sm edit-scenario-btn" data-scenario-id="${scenario.id}">Изменить</button>
+                    <button class="btn-sm delete-scenario-btn" data-scenario-id="${scenario.id}">Удалить</button>
+                </div>
+            </div>
+        `).join('');
+
+        container.querySelectorAll('.load-scenario-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.loadScenario(e.target.dataset.scenarioId));
+        });
+        container.querySelectorAll('.edit-scenario-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.editScenario(e.target.dataset.scenarioId));
+        });
+        container.querySelectorAll('.delete-scenario-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.deleteScenario(e.target.dataset.scenarioId));
+        });
+    }
+
+    showScenarioEditor() {
+        document.getElementById('scenario-editor').style.display = 'block';
+        const baseSelect = document.getElementById('scenario-base');
+        baseSelect.innerHTML = `
+            <option value="">None (Start Fresh)</option>
+            ${this.scenarios.map(s => `<option value="${s.id}">${s.name}</option>`).join('')}
+        `;
+    }
+
+    hideScenarioEditor() {
+        document.getElementById('scenario-editor').style.display = 'none';
+        document.getElementById('scenario-form').reset();
+    }
+
+    async saveScenario() {
+        const formData = {
+            name: document.getElementById('scenario-name').value,
+            description: document.getElementById('scenario-description').value,
+            baseScenarioId: document.getElementById('scenario-base').value || null
+        };
+
+        try {
+            const response = await fetch(this.config.apiEndpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) throw new Error('Failed to save scenario');
+
+            this.hideScenarioEditor();
+            await this.loadScenarios();
+            alert('Сценарий успешно сохранен');
+        } catch (error) {
+            console.error('Error saving scenario:', error);
+            alert('Не удалось сохранить сценарий');
+        }
+    }
+
+    async loadScenario(scenarioId) {
+        try {
+            const response = await fetch(`${this.config.apiEndpoint}/${scenarioId}/load`, {
+                method: 'POST'
+            });
+
+            if (!response.ok) throw new Error('Failed to load scenario');
+
+            const data = await response.json();
+            this.currentScenario = this.scenarios.find(s => s.id === scenarioId);
+            this.renderScenarios();
+            
+            const event = new CustomEvent('scenarioLoaded', { detail: data });
+            document.dispatchEvent(event);
+        } catch (error) {
+            console.error('Error loading scenario:', error);
+            alert('Не удалось загрузить сценарий');
+        }
+    }
+
+    async editScenario(scenarioId) {
+        const scenario = this.scenarios.find(s => s.id === scenarioId);
+        if (!scenario) return;
+
+        this.showScenarioEditor();
+        document.getElementById('scenario-name').value = scenario.name;
+        document.getElementById('scenario-description').value = scenario.description;
+    }
+
+    async deleteScenario(scenarioId) {
+        if (!confirm('Вы уверены, что хотите удалить этот сценарий?')) return;
+
+        try {
+            const response = await fetch(`${this.config.apiEndpoint}/${scenarioId}`, {
+                method: 'DELETE'
+            });
+
+            if (!response.ok) throw new Error('Failed to delete scenario');
+
+            await this.loadScenarios();
+        } catch (error) {
+            console.error('Error deleting scenario:', error);
+            alert('Не удалось удалить сценарий');
+        }
+    }
+
+    compareScenarios() {
+        alert('Функция сравнения сценариев - реализация зависит от ваших метрик');
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// ======================
+// VOYAGE TEMPLATES
+// ======================
+
+class VoyageTemplates {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/voyage-templates',
+            containerId: config.containerId || 'voyage-templates',
+            ...config
+        };
+        this.templates = [];
+        this.categories = [];
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        const container = document.getElementById(this.config.containerId);
+        if (!container) return;
+        
+        this.render();
+        await this.loadTemplates();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="voyage-templates-wrapper">
+                <h3>Шаблоны рейсов</h3>
+                <div class="info-box" style="margin-bottom: 1.5rem;">
+                    <p><strong>Шаблоны</strong> — это сохраненные схемы полных рейсов (например, "Стандартный рейс Астрахань-Иран"). Они позволяют быстро заполнить Конструктор рейсов, не добавляя каждый этап вручную.</p>
+                </div>
+                <div class="templates-header">
+                    <button id="create-template-btn" class="btn-primary">Создать шаблон</button>
+                    <select id="template-category-filter">
+                        <option value="all">Все категории</option>
+                    </select>
+                </div>
+                <div class="templates-grid" id="templates-grid"></div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.getElementById('create-template-btn')?.addEventListener('click', () => {
+            this.createTemplate();
+        });
+
+        document.getElementById('template-category-filter')?.addEventListener('change', (e) => {
+            this.filterByCategory(e.target.value);
+        });
+    }
+
+    async loadTemplates() {
+        try {
+            const response = await fetch(this.config.apiEndpoint);
+            const data = await response.json();
+            this.templates = data.templates || [];
+            this.categories = data.categories || [];
+            this.populateCategoryFilter();
+            this.renderTemplates();
+        } catch (error) {
+            console.error('Error loading templates:', error);
+        }
+    }
+
+    populateCategoryFilter() {
+        const select = document.getElementById('template-category-filter');
+        const categoriesHtml = this.categories.map(cat => 
+            `<option value="${cat}">${cat}</option>`
+        ).join('');
+        select.innerHTML = `<option value="all">All Categories</option>${categoriesHtml}`;
+    }
+
+    renderTemplates() {
+        const container = document.getElementById('templates-grid');
+        container.innerHTML = this.templates.map(template => `
+            <div class="template-card">
+                <h5>${template.name}</h5>
+                <p class="template-category">${template.category}</p>
+                <p class="template-description">${template.description}</p>
+                <div class="template-details">
+                    <span>Порты: ${template.ports.length}</span>
+                    <span>Длительность: ~${template.estimatedDays} дней</span>
+                </div>
+                <div class="template-actions">
+                    <button class="btn-sm apply-template-btn" data-template-id="${template.id}">Применить</button>
+                    <button class="btn-sm edit-template-btn" data-template-id="${template.id}">Изменить</button>
+                    <button class="btn-sm delete-template-btn" data-template-id="${template.id}">Удалить</button>
+                </div>
+            </div>
+        `).join('');
+
+        container.querySelectorAll('.apply-template-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.applyTemplate(e.target.dataset.templateId));
+        });
+        container.querySelectorAll('.edit-template-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.editTemplate(e.target.dataset.templateId));
+        });
+        container.querySelectorAll('.delete-template-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => this.deleteTemplate(e.target.dataset.templateId));
+        });
+    }
+
+    filterByCategory(category) {
+        if (category === 'all') {
+            this.renderTemplates();
+            return;
+        }
+
+        const filtered = this.templates.filter(t => t.category === category);
+        const original = this.templates;
+        this.templates = filtered;
+        this.renderTemplates();
+        this.templates = original;
+    }
+
+    applyTemplate(templateId) {
+        const template = this.templates.find(t => t.id === templateId);
+        if (!template) return;
+
+        const event = new CustomEvent('applyVoyageTemplate', { detail: template });
+        document.dispatchEvent(event);
+    }
+
+    createTemplate() {
+        alert('Мастер создания шаблонов - сбор параметров рейса и сохранение');
+    }
+
+    async editTemplate(templateId) {
+        const template = this.templates.find(t => t.id === templateId);
+        if (!template) {
+            console.error('Template not found:', templateId);
+            return;
+        }
+
+        //Create modal for editing
+        const modal = document.createElement('div');
+        modal.className = 'modal show';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h2>Редактировать шаблон: ${template.name}</h2>
+                <form id="editTemplateForm">
+                    <div class="form-group">
+                        <label>Название шаблона:</label>
+                        <input type="text" id="editTemplateName" value="${template.name}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Категория:</label>
+                        <select id="editTemplateCategory">
+                            ${this.categories.map(cat =>
+                                `<option value="${cat}" ${cat === template.category ? 'selected' : ''}>${cat}</option>`
+                            ).join('')}
+                            <option value="_new_">+ Добавить новую категорию</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="newCategoryGroup" style="display: none;">
+                        <label>Название новой категории:</label>
+                        <input type="text" id="newCategoryName">
+                    </div>
+                    <div class="form-group">
+                        <label>Описание:</label>
+                        <textarea id="editTemplateDescription" rows="3">${template.description || ''}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Оценочные дни:</label>
+                        <input type="number" id="editTemplateEstDays" value="${template.estimatedDays || 0}" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Порты (через запятую):</label>
+                        <input type="text" id="editTemplatePorts" value="${template.ports ? template.ports.join(', ') : ''}" placeholder="напр., Balakovo, Olya, Novorossiysk">
+                    </div>
+                    
+                    <!-- Cost Allocations -->
+                    <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Распределение затрат (USD)</h4>
+                        <div class="form-group">
+                            <label>Операционные расходы:</label>
+                            <input type="number" id="editTemplateOpCost" value="${template.costAllocations?.operationalCost || 0}" min="0" step="1000">
+                        </div>
+                        <div class="form-group">
+                            <label>Накладные расходы:</label>
+                            <input type="number" id="editTemplateOverheadCost" value="${template.costAllocations?.overheadCost || 0}" min="0" step="1000">
+                        </div>
+                        <div class="form-group">
+                            <label>Прочие расходы:</label>
+                            <input type="number" id="editTemplateOtherCost" value="${template.costAllocations?.otherCost || 0}" min="0" step="1000">
+                        </div>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn-primary">Сохранить изменения</button>
+                        <button type="button" class="btn-secondary" id="cancelEditTemplate">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Event listeners
+        const categorySelect = modal.querySelector('#editTemplateCategory');
+        const newCategoryGroup = modal.querySelector('#newCategoryGroup');
+        
+        categorySelect.addEventListener('change', (e) => {
+            if (e.target.value === '_new_') {
+                newCategoryGroup.style.display = 'block';
+            } else {
+                newCategoryGroup.style.display = 'none';
+            }
+        });
+
+        modal.querySelector('#cancelEditTemplate').addEventListener('click', () => {
+            document.body.removeChild(modal);
+        });
+
+        modal.querySelector('#editTemplateForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            let category = categorySelect.value;
+            if (category === '_new_') {
+                const newCat = modal.querySelector('#newCategoryName').value.trim();
+                if (!newCat) {
+                    alert('Пожалуйста, введите название категории');
+                    return;
+                }
+                category = newCat;
+            }
+
+            const updatedTemplate = {
+                id: templateId,
+                name: modal.querySelector('#editTemplateName').value,
+                category: category,
+                description: modal.querySelector('#editTemplateDescription').value,
+                estimatedDays: parseInt(modal.querySelector('#editTemplateEstDays').value),
+                ports: modal.querySelector('#editTemplatePorts').value.split(',').map(p => p.trim()).filter(p => p)
+            };
+
+            try {
+                const response = await fetch(`${this.config.apiEndpoint}/${templateId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updatedTemplate)
+                });
+
+                if (!response.ok) throw new Error('Failed to update template');
+
+                document.body.removeChild(modal);
+                await this.loadTemplates();
+                
+                // Show success message
+                const event = new CustomEvent('showNotification', {
+                    detail: { type: 'success', message: 'Шаблон успешно обновлен' }
+                });
+                document.dispatchEvent(event);
+            } catch (error) {
+                console.error('Error updating template:', error);
+                alert('Не удалось обновить шаблон: ' + error.message);
+            }
+        });
+
+        // Click outside to close
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        });
+    }
+
+    async deleteTemplate(templateId) {
+        if (!confirm('Удалить этот шаблон?')) return;
+
+        try {
+            const response = await fetch(`${this.config.apiEndpoint}/${templateId}`, {
+                method: 'DELETE'
+            });
+
+            if (!response.ok) throw new Error('Failed to delete template');
+
+            await this.loadTemplates();
+        } catch (error) {
+            console.error('Error deleting template:', error);
+        }
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// ======================
+// BERTH CAPACITY PLANNING
+// ======================
+
+class BerthCapacityPlanning {
+    constructor(config = {}) {
+        this.config = {
+            apiEndpoint: config.apiEndpoint || '/api/capacity',
+            containerId: config.containerId || 'berth-capacity-planning',
+            ...config
+        };
+        this.capacityData = [];
+        this.initialized = false;
+    }
+
+    async init() {
+        if (this.initialized) return;
+        const container = document.getElementById(this.config.containerId);
+        if (!container) return;
+        
+        this.render();
+        await this.loadCapacityData();
+        this.initialized = true;
+    }
+
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        container.innerHTML = `
+            <div class="capacity-planning-wrapper">
+                <h3>Планирование вместимости причалов</h3>
+                <div class="capacity-controls">
+                    <label>Временной диапазон:
+                        <select id="capacity-timerange">
+                            <option value="7">7 Дней</option>
+                            <option value="14" selected>14 Дней</option>
+                            <option value="30">30 Дней</option>
+                            <option value="90">90 Дней</option>
+                        </select>
+                    </label>
+                    <button id="optimize-allocation-btn" class="btn-primary">Оптимизировать распределение</button>
+                </div>
+                <div class="capacity-vs-demand">
+                    <h4>Вместимость vs Спрос</h4>
+                    <div id="capacity-chart"></div>
+                </div>
+                <div class="utilization-forecast">
+                    <h4>Прогноз загрузки</h4>
+                    <div id="utilization-forecast"></div>
+                </div>
+                <div class="allocation-recommendations">
+                    <h4>Рекомендации</h4>
+                    <div id="recommendations-list"></div>
+                </div>
+            </div>
+        `;
+        this.attachEventListeners();
+    }
+
+    attachEventListeners() {
+        document.getElementById('capacity-timerange')?.addEventListener('change', () => {
+            this.loadCapacityData();
+        });
+
+        document.getElementById('optimize-allocation-btn')?.addEventListener('click', () => {
+            this.optimizeAllocation();
+        });
+    }
+
+    async loadCapacityData() {
+        const days = document.getElementById('capacity-timerange')?.value || 14;
+
+        try {
+            const response = await fetch(`${this.config.apiEndpoint}?days=${days}`);
+            const data = await response.json();
+            this.capacityData = data.capacity || [];
+            this.renderCapacityChart();
+            this.renderForecast();
+            this.renderRecommendations(data.recommendations || []);
+        } catch (error) {
+            console.error('Error loading capacity data:', error);
+        }
+    }
+
+    renderCapacityChart() {
+        const container = document.getElementById('capacity-chart');
+        container.innerHTML = `
+            <div class="simple-bar-chart">
+                ${this.capacityData.map(item => `
+                    <div class="chart-day">
+                        <div class="day-label">${new Date(item.date).toLocaleDateString('en-US', {month: 'short', day: 'numeric'})}</div>
+                        <div class="bars">
+                            <div class="bar capacity-bar" style="height: ${item.capacity}%" title="Capacity: ${item.capacity}%">
+                                <span>${item.capacity}%</span>
+                            </div>
+                            <div class="bar demand-bar ${item.demand > 100 ? 'overbooked' : ''}" style="height: ${Math.min(item.demand, 150)}%" title="Demand: ${item.demand}%">
+                                <span>${item.demand}%</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    renderForecast() {
+        const container = document.getElementById('utilization-forecast');
+        const avgUtilization = this.capacityData.reduce((sum, item) => sum + (item.demand / item.capacity) * 100, 0) / this.capacityData.length;
+        
+        container.innerHTML = `
+            <div class="forecast-summary">
+                <div class="forecast-metric">
+                    <span class="metric-label">Average Utilization:</span>
+                    <span class="metric-value">${avgUtilization.toFixed(1)}%</span>
+                </div>
+                <div class="forecast-metric">
+                    <span class="metric-label">Peak Day:</span>
+                    <span class="metric-value">${this.getPeakDay()}</span>
+                </div>
+                <div class="forecast-metric">
+                    <span class="metric-label">Overbooking Days:</span>
+                    <span class="metric-value">${this.getOverbookingDays()}</span>
+                </div>
+            </div>
+        `;
+    }
+
+    renderRecommendations(recommendations) {
+        const container = document.getElementById('recommendations-list');
+        
+        if (recommendations.length === 0) {
+            container.innerHTML = '<p class="no-data">No recommendations at this time</p>';
+            return;
+        }
+
+        container.innerHTML = recommendations.map(rec => `
+            <div class="recommendation-item priority-${rec.priority}">
+                <div class="rec-icon">${rec.priority === 'high' ? '' : 'ℹ'}</div>
+                <div class="rec-content">
+                    <h5>${rec.title}</h5>
+                    <p>${rec.description}</p>
+                    ${rec.action ? `<button class="btn-sm apply-rec-btn" data-action="${rec.action}">Apply</button>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    getPeakDay() {
+        if (this.capacityData.length === 0) return 'N/A';
+        const peak = this.capacityData.reduce((max, item) => item.demand > max.demand ? item : max, this.capacityData[0]);
+        return new Date(peak.date).toLocaleDateString();
+    }
+
+    getOverbookingDays() {
+        return this.capacityData.filter(item => (item.demand / item.capacity) > 1).length;
+    }
+
+    async optimizeAllocation() {
+        try {
+            const response = await fetch(`${this.config.apiEndpoint}/optimize`, {
+                method: 'POST'
+            });
+
+            if (!response.ok) throw new Error('Failed to optimize');
+
+            const result = await response.json();
+            alert(`Оптимизация завершена. Предложено ${result.improvements} улучшений.`);
+            await this.loadCapacityData();
+        } catch (error) {
+            console.error('Error optimizing allocation:', error);
+            alert('Не удалось оптимизировать распределение');
+        }
+    }
+
+    destroy() {
+        const container = document.getElementById(this.config.containerId);
+        if (container) container.innerHTML = '';
+        this.initialized = false;
+    }
+}
+
+// Export all modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        BunkerOptimization,
+        WeatherIntegration,
+        VesselTracking,
+        PDFExport,
+        ScenarioManagement,
+        VoyageTemplates,
+        BerthCapacityPlanning
+    };
+}
+
+    
+    // Initialize UI modules when document is ready
+    (function initUIModules() {
+        const API_BASE = '/api'; // Adjust to your API endpoint
+        
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setupModules);
+        } else {
+            setupModules();
+        }
+        
+        function setupModules() {
+            console.log(' Initializing UI Modules...');
+            
+            // Initialize modules on tab switch
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.addEventListener('click', async function() {
+                    const tabId = this.dataset.tab;
+                    await initializeModuleForTab(tabId);
+                });
+            });
+            
+            console.log(' UI Modules setup complete');
+        }
+        
+        async function initializeModuleForTab(tabId) {
+            // Prevent re-initialization
+            if (window.initializedModules && window.initializedModules[tabId]) {
+                return;
+            }
+            
+            if (!window.initializedModules) {
+                window.initializedModules = {};
+            }
+            
+            try {
+                switch(tabId) {
+                    case 'alerts':
+                        const alertsDashboard = new AlertsDashboard({
+                            containerId: 'alerts-dashboard',
+                            apiEndpoint: `${API_BASE}/alerts`,
+                            refreshInterval: 30000
+                        });
+                        await alertsDashboard.init();
+                        window.initializedModules.alerts = alertsDashboard;
+                        break;
+                    
+                    case 'berthManager':
+                        const berthMgmt = new BerthManagement({
+                            containerId: 'berth-management',
+                            apiEndpoint: `${API_BASE}/berths`
+                        });
+                        await berthMgmt.init();
+                        window.initializedModules.berthManager = berthMgmt;
+                        break;
+                    
+                    case 'bunkerOpt':
+                        const bunkerOpt = new BunkerOptimization({
+                            containerId: 'bunker-optimization',
+                            apiEndpoint: `${API_BASE}/bunker`
+                        });
+                        await bunkerOpt.init();
+                        window.initializedModules.bunkerOpt = bunkerOpt;
+                        break;
+                    
+                    case 'weather':
+                        const weather = new WeatherIntegration({
+                            containerId: 'weather-integration',
+                            apiEndpoint: `${API_BASE}/weather`
+                        });
+                        await weather.init();
+                        window.initializedModules.weather = weather;
+                        break;
+                    
+                    case 'tracking':
+                        const tracking = new VesselTracking({
+                            containerId: 'vessel-tracking',
+                            apiEndpoint: `${API_BASE}/vessels/tracking`,
+                            mapProvider: 'leaflet',
+                            updateInterval: 60000
+                        });
+                        await tracking.init();
+                        window.initializedModules.tracking = tracking;
+                        break;
+                    
+                    case 'scenarioMgmt':
+                        const scenarios = new ScenarioManagement({
+                            containerId: 'scenario-management',
+                            apiEndpoint: `${API_BASE}/scenarios`
+                        });
+                        await scenarios.init();
+                        window.initializedModules.scenarioMgmt = scenarios;
+                        break;
+                    
+                    case 'templates':
+                        const templates = new VoyageTemplates({
+                            containerId: 'voyage-templates',
+                            apiEndpoint: `${API_BASE}/voyage-templates`
+                        });
+                        await templates.init();
+                        window.initializedModules.templates = templates;
+                        break;
+                    
+                    case 'capacityPlan':
+                        const capacity = new BerthCapacityPlanning({
+                            containerId: 'berth-capacity-planning',
+                            apiEndpoint: `${API_BASE}/capacity`
+                        });
+                        await capacity.init();
+                        window.initializedModules.capacityPlan = capacity;
+                        break;
+                }
+            } catch (error) {
+                console.error(`Error initializing module ${tabId}:`, error);
+            }
+        }
+        
+        // Setup event listeners for cross-module communication
+        document.addEventListener('showNotification', (e) => {
+            const { type, message } = e.detail;
+            // Integration with existing notification system can go here
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        });
+        
+        document.addEventListener('showModal', (e) => {
+            const { content } = e.detail;
+            // Integration with existing modal system can go here
+            console.log('Show modal:', content);
+        });
+    })();
+    </script>
+
+</body>
+</html>

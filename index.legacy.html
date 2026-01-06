@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vessel Scheduler - Maritime Operations Planning System</title>
+    
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/vis-network@9.1.2/styles/vis-network.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Application Styles -->
+    <link rel="stylesheet" href="operational_calendar.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/unified-dashboard.css">
+    
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <style>
+        /* Loading Screen Styles */
+        .app-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary, #1a1d23);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .app-loading.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(74, 158, 255, 0.2);
+            border-top-color: #4a9eff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loading-text {
+            margin-top: 2rem;
+            color: #e4e6eb;
+            font-size: 1.2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .loading-version {
+            margin-top: 0.5rem;
+            color: #8a8d93;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Application Loading Screen -->
+    <div class="app-loading" id="appLoading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Vessel Scheduler...</div>
+        <div class="loading-version">Version 4.0.0</div>
+    </div>
+
+    <!-- Main Application Container -->
+    <div id="app" style="display: none;">
+        <!-- Content will be loaded by the application -->
+        <div class="container">
+            <header class="header">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h1> Vessel Scheduler</h1>
+                        <p class="subtitle">Maritime Operations Planning System v4.0.0</p>
+                        <div id="sessionInfo" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+                            Initializing...
+                        </div>
+                    </div>
+                    <div>
+                        <select class="select-input" id="moduleSelector" style="padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600;">
+                            <option value="deepsea">Deep Sea (Морские)</option>
+                            <option value="balakovo">Balakovo (Балаково)</option>
+                            <option value="olya">Olya (Оля)</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Global Filters -->
+            <div class="global-filters">
+                <div class="filter-group">
+                    <label>Модуль</label>
+                    <select id="filterModule">
+                        <option value="">Все модули</option>
+                        <option value="deepsea">Deep Sea</option>
+                        <option value="balakovo">Balakovo</option>
+                        <option value="olya">Olya</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Дата с</label>
+                    <input type="date" id="filterDateStart">
+                </div>
+                <div class="filter-group">
+                    <label>Дата по</label>
+                    <input type="date" id="filterDateEnd">
+                </div>
+                <div class="filter-actions">
+                    <button class="btn-filter">Применить</button>
+                    <button class="btn-filter-reset">Сброс</button>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs" id="mainNavTabs">
+                <button class="tab-button active" data-tab="dashboard">Dashboard</button>
+                <button class="tab-button" data-tab="vessels">Vessels</button>
+                <button class="tab-button" data-tab="cargo">Cargo</button>
+                <button class="tab-button" data-tab="routes">Routes</button>
+                <button class="tab-button" data-tab="schedule">Schedule</button>
+                <button class="tab-button" data-tab="voyageBuilder">Voyage Builder</button>
+                <button class="tab-button" data-tab="network">Network</button>
+                <button class="tab-button" data-tab="operationalCalendar">Calendar</button>
+                <button class="tab-button" data-tab="financialAnalysis">Financial</button>
+                <button class="tab-button" data-tab="reports">Reports</button>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="content" id="mainContent">
+                <!-- Tab content will be loaded dynamically -->
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Vessel Scheduler &copy; 2025 - Maritime Logistics Team</p>
+                <p id="footerVersion">Version 4.0.0 | Modern Modular Architecture</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Legacy Support Script (for older functions, to be gradually phased out) -->
+    <script src="vessel_scheduler_enhanced.js"></script>
+
+    <!-- Main Application Entry Point (ES6 Module) -->
+    <script type="module">
+        // Import the main application
+        import VesselSchedulerApp from './js/main.js';
+        
+        // Application initialization
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log(' Starting Vessel Scheduler Application...');
+            
+            try {
+                // Show the main app container
+                const appContainer = document.getElementById('app');
+                const loadingScreen = document.getElementById('appLoading');
+                
+                // Initialize the application
+                const app = new VesselSchedulerApp();
+                await app.init();
+                
+                // Fade out loading screen and show app
+                setTimeout(() => {
+                    loadingScreen.classList.add('fade-out');
+                    appContainer.style.display = 'block';
+                    
+                    // Remove loading screen after fade
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 500);
+                }, 1000);
+                
+                // Make app globally accessible for debugging
+                window.vesselSchedulerApp = app;
+                
+                console.log(' Application started successfully');
+                
+            } catch (error) {
+                console.error(' Failed to start application:', error);
+                
+                // Show error message
+                const loadingText = document.querySelector('.loading-text');
+                const loadingVersion = document.querySelector('.loading-version');
+                
+                if (loadingText) {
+                    loadingText.textContent = 'Failed to load application';
+                    loadingText.style.color = '#ff7675';
+                }
+                
+                if (loadingVersion) {
+                    loadingVersion.textContent = error.message || 'Unknown error';
+                    loadingVersion.style.color = '#ff7675';
+                }
+            }
+        });
+        
+        // Global error handlers
+        window.addEventListener('error', (event) => {
+            console.error('Global Error:', event.error);
+        });
+        
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Unhandled Promise Rejection:', event.reason);
+        });
+    </script>
+</body>
+</html>

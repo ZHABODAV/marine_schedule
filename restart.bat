@@ -1,0 +1,6 @@
+@echo off
+echo Stopping Vessel Scheduler Server...
+taskkill /F /IM python.exe
+timeout /t 2
+echo Restarting...
+call start.bat

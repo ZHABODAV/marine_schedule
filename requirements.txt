@@ -1,0 +1,40 @@
+# Core
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Excel
+openpyxl>=3.0.0
+xlsxwriter>=3.0.0
+
+# Visualization
+matplotlib>=3.5.0
+
+# Configuration
+pyyaml>=6.0
+
+# Date/Time
+python-dateutil>=2.8.0
+
+# API Server
+flask>=2.3.0
+flask-cors>=4.0.0
+flask-socketio>=5.3.0
+
+# PDF Generation
+reportlab>=4.0.0
+
+# WebSocket Support
+python-socketio>=5.9.0
+
+# Security & Monitoring
+sentry-sdk>=1.40.0  # Error tracking
+bleach>=6.1.0  # HTML sanitization
+python-dotenv>=1.0.0  # Environment variables
+
+# Optional: Future optimization
+# ortools>=9.5.0
+# gurobipy>=10.0.0
+
+# Development & Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Upload - Vessel Scheduler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .upload-area {
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin: 15px 0;
+            background: #f8f9ff;
+            transition: all 0.3s;
+        }
+        .upload-area:hover {
+            background: #eef1ff;
+            border-color: #764ba2;
+        }
+        .upload-area.dragover {
+            background: #dde4ff;
+            border-color: #764ba2;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-label {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .file-label:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .upload-btn {
+            width: 100%;
+            padding: 12px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .upload-btn:hover:not(:disabled) {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        .upload-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .message {
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        .info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+        .file-name {
+            margin: 10px 0;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .stats {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .stat-box {
+            flex: 1;
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .template-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .template-btn {
+            padding: 10px 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        .template-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Data Upload Center</h1>
+        
+        <div class="grid">
+            <!-- Vessels Upload -->
+            <div class="card">
+                <h2> Vessels</h2>
+                <div class="upload-area" id="vesselsDropZone">
+                    <p style="margin-bottom: 15px; color: #6b7280;">Drag & drop CSV file here or click to browse</p>
+                    <label class="file-label" for="vesselsFile">Choose Vessels CSV</label>
+                    <input type="file" id="vesselsFile" accept=".csv" />
+                    <div class="file-name" id="vesselsFileName"></div>
+                </div>
+                <button class="upload-btn" id="uploadVessels" disabled>Upload Vessels</button>
+                <div id="vesselsMessage"></div>
+                <div class="template-section">
+                    <h3 style="font-size: 14px; margin-bottom: 10px; color: #6b7280;">Download Template:</h3>
+                    <button class="template-btn" onclick="downloadVesselsTemplate()"> Vessels Template</button>
+                </div>
+            </div>
+
+            <!-- Cargo Upload -->
+            <div class="card">
+                <h2> Cargo Commitments</h2>
+                <div class="upload-area" id="cargoDropZone">
+                    <p style="margin-bottom: 15px; color: #6b7280;">Drag & drop CSV file here or click to browse</p>
+                    <label class="file-label" for="cargoFile">Choose Cargo CSV</label>
+                    <input type="file" id="cargoFile" accept=".csv" />
+                    <div class="file-name" id="cargoFileName"></div>
+                </div>
+                <button class="upload-btn" id="uploadCargo" disabled>Upload Cargo</button>
+                <div id="cargoMessage"></div>
+                <div class="template-section">
+                    <h3 style="font-size: 14px; margin-bottom: 10px; color: #6b7280;">Download Template:</h3>
+                    <button class="template-btn" onclick="downloadCargoTemplate()"> Cargo Template</button>
+                </div>
+            </div>
+
+            <!-- Routes Upload -->
+            <div class="card">
+                <h2> Routes</h2>
+                <div class="upload-area" id="routesDropZone">
+                    <p style="margin-bottom: 15px; color: #6b7280;">Drag & drop CSV file here or click to browse</p>
+                    <label class="file-label" for="routesFile">Choose Routes CSV</label>
+                    <input type="file" id="routesFile" accept=".csv" />
+                    <div class="file-name" id="routesFileName"></div>
+                </div>
+                <button class="upload-btn" id="uploadRoutes" disabled>Upload Routes</button>
+                <div id="routesMessage"></div>
+                <div class="template-section">
+                    <h3 style="font-size: 14px; margin-bottom: 10px; color: #6b7280;">Download Template:</h3>
+                    <button class="template-btn" onclick="downloadRoutesTemplate()"> Routes Template</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="card">
+            <h2> Upload Statistics</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-label">Vessels</div>
+                    <div class="stat-value" id="vesselsCount">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Cargo</div>
+                    <div class="stat-value" id="cargoCount">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Routes</div>
+                    <div class="stat-value" id="routesCount">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+
+        // File handlers for each upload type
+        const fileHandlers = {
+            vessels: { file: null, input: 'vesselsFile', btn: 'uploadVessels', msg: 'vesselsMessage', name: 'vesselsFileName', dropZone: 'vesselsDropZone' },
+            cargo: { file: null, input: 'cargoFile', btn: 'uploadCargo', msg: 'cargoMessage', name: 'cargoFileName', dropZone: 'cargoDropZone' },
+            routes: { file: null, input: 'routesFile', btn: 'uploadRoutes', msg: 'routesMessage', name: 'routesFileName', dropZone: 'routesDropZone' }
+        };
+
+        // Setup file inputs
+        Object.keys(fileHandlers).forEach(type => {
+            const handler = fileHandlers[type];
+            const input = document.getElementById(handler.input);
+            const btn = document.getElementById(handler.btn);
+            const dropZone = document.getElementById(handler.dropZone);
+
+            input.addEventListener('change', (e) => handleFileSelect(type, e.target.files[0]));
+            btn.addEventListener('click', () => uploadFile(type));
+
+            // Drag and drop
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                if (e.dataTransfer.files.length > 0) {
+                    handleFileSelect(type, e.dataTransfer.files[0]);
+                }
+            });
+        });
+
+        function handleFileSelect(type, file) {
+            if (!file) return;
+            if (!file.name.endsWith('.csv')) {
+                showMessage(type, 'Please select a CSV file', 'error');
+                return;
+            }
+            fileHandlers[type].file = file;
+            document.getElementById(fileHandlers[type].name).textContent = `Selected: ${file.name}`;
+            document.getElementById(fileHandlers[type].btn).disabled = false;
+            showMessage(type, `File ready: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`, 'info');
+        }
+
+        async function uploadFile(type) {
+            const handler = fileHandlers[type];
+            const file = handler.file;
+            if (!file) return;
+
+            const btn = document.getElementById(handler.btn);
+            btn.disabled = true;
+            btn.textContent = 'Uploading...';
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch(`${API_BASE}/upload/${type}`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showMessage(type, ` ${result.message} (${result.count} records)`, 'success');
+                    // Update stats
+                    if (type === 'vessels') document.getElementById('vesselsCount').textContent = result.count;
+                    if (type === 'cargo') document.getElementById('cargoCount').textContent = result.count;
+                    if (type === 'routes') document.getElementById('routesCount').textContent = result.count;
+                } else {
+                    showMessage(type, ` Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showMessage(type, ` Upload failed: ${error.message}`, 'error');
+            } finally {
+                btn.textContent = `Upload ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+                btn.disabled = false;
+            }
+        }
+
+        function showMessage(type, message, className) {
+            const msgEl = document.getElementById(fileHandlers[type].msg);
+            msgEl.textContent = message;
+            msgEl.className = `message ${className}`;
+        }
+
+        // Template downloads
+        function downloadVesselsTemplate() {
+            const csv = 'vessel_id;vessel_name;vessel_class;dwt_mt;speed_laden_kn;speed_ballast_kn;port_costs_per_day;bunker_costs_per_day;charter_rate_per_day;status\nVSL001;Atlantic Carrier;Handysize;35000;12.5;13.5;5000;8000;12000;Active\nVSL002;Pacific Navigator;Panamax;75000;14.0;15.0;7000;12000;18000;Active';
+            downloadCSV(csv, 'vessels_template.csv');
+        }
+
+        function downloadCargoTemplate() {
+            const csv = 'commitment_id;product_name;qty_mt;load_port_id;discharge_port_id;load_date_window_start;load_date_window_end;charterer;freight_rate;status\nCRG001;Grain;30000;ODESSA;CONSTANTA;2026-02-01;2026-02-15;ABC Shipping;45.00;Pending\nCRG002;Coal;50000;ISTANBUL;VARNA;2026-02-10;2026-02-25;XYZ Cargo;38.50;Pending';
+            downloadCSV(csv, 'cargo_template.csv');
+        }
+
+        function downloadRoutesTemplate() {
+            const csv = 'route_id;route_name;from_port;to_port;distance_nm;canal_id;canal_fee\nRTE001;Black Sea Direct;ODESSA;CONSTANTA;250;;0\nRTE002;Bosphorus Route;ODESSA;VARNA;450;BOSPHORUS;5000';
+            downloadCSV(csv, 'routes_template.csv');
+        }
+
+        function downloadCSV(content, filename) {
+            const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+        }
+
+        // Load current counts on page load
+        async function loadStats() {
+            try {
+                const vessels = await fetch(`${API_BASE}/vessels`).then(r => r.json());
+                if (vessels.vessels) document.getElementById('vesselsCount').textContent = vessels.vessels.length;
+
+                const cargo = await fetch(`${API_BASE}/cargo`).then(r => r.json());
+                if (cargo.cargo) document.getElementById('cargoCount').textContent = cargo.cargo.length;
+            } catch (e) {
+                console.log('Could not load stats:', e);
+            }
+        }
+
+        loadStats();
+    </script>
+</body>
+</html>

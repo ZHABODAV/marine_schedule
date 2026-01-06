@@ -1,0 +1,205 @@
+# ============================================
+# MARITIME SCHEDULER - CONFIGURATION
+# ============================================
+
+# Общие настройки
+general:
+  date_format: "%Y-%m-%d"
+  datetime_format: "%Y-%m-%d %H%M"
+  timezone: "EuropeMoscow"
+  language: "ru"  # ru, en
+
+# Логирование
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logsscheduler.log"
+  console: true
+
+# ============================================
+# OLYA - Перевалка
+# ============================================
+olya:
+  input_dir: "inputolya"
+  output_dir: "outputolya"
+  
+  # Хранилище
+  storage:
+    capacity_mt: 10000
+    initial_mt: 1
+    min_buffer_mt: 500
+  
+  # Временные параметры
+  timing:
+    ideal_buffer_hours: 6
+    max_acceptable_wait_hours: 24
+    port_turnaround_hours: 4
+  
+  # Ставки
+  rates:
+    demurrage_barge_usd_day: 9000
+    demurrage_vessel_usd_day: 13000
+    storage_usd_mt_day: 0
+  
+  # Расстояния (если не в CSV)
+  distances:
+    bko_oya_nm: 562
+    oya_ami_nm: 614
+    oya_anz_nm: 580
+  
+  # Скорости
+  speeds:
+    barge_kn: 8
+    vessel_kn: 10
+
+# ============================================
+# DEEP SEA - Дальние рейсы
+# ============================================
+deepsea:
+  input_dir: "inputdeepsea"
+  output_dir: "outputdeepsea"
+  
+  # Скорости по умолчанию
+  speeds:
+    laden_kn: 11.5
+    ballast_kn: 12.0
+    eco_laden_kn: 11.0
+    eco_ballast_kn: 12.0
+  
+  # Время в портах
+  port_time:
+    waiting_hours: 12
+    pilot_hours: 2
+    berthing_hours: 2
+    departure_hours: 3
+  
+  # Нормы погрузки по умолчанию
+  cargo_rates:
+    default_load_mt_day: 18000
+    default_disch_mt_day: 5000
+  
+  # Бункер
+  bunker:
+    ifo380_usd_mt: 450
+    mgo_usd_mt: 650
+    bunker_time_hours: 12
+  
+  # Ставки
+  rates:
+    demurrage_usd_day: 25000
+    despatch_usd_day: 12500
+  
+  # Погодные запасы
+  weather_margins:
+    default_pct: 5
+    winter_pct: 10
+    monsoon_pct: 15
+  
+  # Каналы (буфер на ожидание)
+  canals:
+    suez_buffer_hours: 18
+    panama_buffer_hours: 8
+
+# ============================================
+# GANTT - Настройки диаграмм
+# ============================================
+gantt:
+  # Цвета операций (HEX без #)
+  colors:
+    loading: "92D050"
+    discharge: "00B0F0"
+    sea_laden: "FFC000"
+    sea_ballast: "D9D9D9"
+    canal: "7030A0"
+    bunker: "833C0C"
+    waiting: "FF0000"
+    barge_discharge: "E91E63"
+    vessel_loading: "3F51B5"
+    
+    # Cargo colors
+    SFO: "FFD700"
+    RPO: "FFA500"
+    WHEAT: "DEB887"
+    CORN: "F0E68C"
+    
+    # Status colors
+    Completed: "4CAF50"
+    In_Process: "2196F3"
+    Planned: "9E9E9E"
+    
+    # Olya specific
+    barge_arrival: "E91E63"
+    storage: "00BCD4"
+  
+  # Размеры
+  layout:
+    column_width_day: 3.2
+    column_width_week: 6
+    row_height: 15
+    vessel_column_width: 14
+  
+  # Шрифты
+  fonts:
+    header_size: 9
+    data_size: 8
+    legend_size: 8
+
+# ============================================
+# EXPORT - Настройки экспорта
+# ============================================
+export:
+  csv:
+    delimiter: ";"
+    encoding: "utf-8"
+    date_format: "%Y-%m-%d"
+    datetime_format: "%Y-%m-%d %H%M"
+  
+  excel:
+    date_format: "DD.MM.YYYY"
+    datetime_format: "DD.MM.YYYY HHMM"
+    number_format: "#,##0"
+    currency_format: "$#,##0"
+
+# ============================================
+# API EXTENSIONS - UI Module Settings
+# ============================================
+api_extensions:
+  # Berth utilization defaults (percentage)
+  berth_utilization:
+    min_pct: 40
+    max_pct: 95
+  
+  # Capacity planning defaults
+  capacity:
+    base_capacity: 100
+    demand_min: 60
+    demand_max: 120
+    overbooking_threshold_pct: 15
+  
+  # Weather forecast defaults
+  weather:
+    forecast_days: 5
+    conditions:
+      - clear
+      - cloudy
+      - rain
+      - wind
+    temp_min_c: 15
+    temp_max_c: 28
+    wind_speed_min_kn: 10
+    wind_speed_max_kn: 35
+    wave_height_min_m: 1.0
+    wave_height_max_m: 4.0
+  
+  # ID generation ranges
+  id_generation:
+    constraint_id_min: 100
+    constraint_id_max: 999
+    scenario_id_min: 100
+    scenario_id_max: 999
+    template_id_min: 100
+    template_id_max: 999
+  
+  # Conflict resolution
+  conflicts:
+    auto_resolve_enabled: true
+    manual_intervention_threshold: 1
