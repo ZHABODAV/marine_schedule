@@ -1,6 +1,0 @@
-# Порты Olya
-# Балаково → Olya → Иран (Бендер-Энзели)
-port_id;port_name;country;type
-BKO;Balakovo;Russia;loading
-OYA;Olya;Russia;transshipment
-IRN;Bandar Enzeli;Iran;discharge

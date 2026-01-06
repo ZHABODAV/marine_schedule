@@ -1,2 +1,0 @@
-position_id;vessel_id;status;eta_destination;latitude;longitude;speed_knots;course_degrees;destination_port;cargo_onboard;cargo_qty_mt;distance_to_go_nm;weather_zone_current
-POS001;Vessel_Alpha;Underway;2025-12-25T12:00:00;45.0;12.0;10.5;180;Port_A;Yes;5000;150;Zone_1

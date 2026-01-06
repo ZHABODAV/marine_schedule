@@ -1,9 +1,0 @@
-# Флот Olya - баржи и речные-морские суда
-# vessel_type: barge (баржа BKO→OYA), sea_vessel (морское судно OYA→IRN)
-vessel_id;vessel_name;vessel_type;vessel_class;capacity_mt;draft_m;speed_kn;daily_rate_usd;owner
-BR01;Volga-1;barge;River Barge;5000;3.5;8;3500;Volga Shipping
-BR02;Volga-2;barge;River Barge;5000;3.5;8;3500;Volga Shipping
-BR03;Volga-3;barge;River Barge;5000;3.5;8;3500;Volga Shipping
-SV01;Caspian Star;sea_vessel;River-Sea;10000;4.5;12;8500;Caspian Fleet
-SV02;Caspian Pearl;sea_vessel;River-Sea;10000;4.5;12;8500;Caspian Fleet
-SV03;Caspian Wave;sea_vessel;River-Sea;10000;4.5;12;8500;Caspian Fleet

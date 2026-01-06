@@ -1,3 +1,0 @@
-canal_id;canal_name;transit_hours;base_fee_usd;fee_per_ton_usd;max_draft_m;max_beam_m;max_loa_m;waiting_hours_avg
-SUEZ;Suez Canal;10;365000;10.00;17.0;50.0;400.0;11
-PANAMA;Panama Canal;10;120000;3.00;15.0;49.0;366.0;12
